@@ -24,28 +24,46 @@ function Nav() {
 }
 
 const StyledNav = styled.nav`
+    position: absolute;
+    z-index: -1;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: inherit;
     * {
         background-color: transparent;
     }
     .nav-list {
+        color: black;
         display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        gap: calc(12px + (28 - 12) * ((100vw - 300px) / (2560 - 300)));
+        justify-content: center;
+        align-items: flex-end;
+        flex-direction: column;
         list-style: none;
-        height: 6vh;
+        height: 100%;
+        width: 300px;
+        margin-right: 50px;
+        gap: 20px 0;
+       
     }
     .list-item {
+
         .link {
-            padding: 12px;
+            font-family: "Poppins", sans-serif;
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 1.3rem;
+            color: white;
         }
        
     }
-    .list-item:nth-of-type(1) {
-        margin-left: 66vw;
-    }  
-    .list-item:nth-of-type(4) {
-        margin-right: calc(24px + (48 - 24) * ((100vw - 300px) / (2560 - 300)));
-    }  
+
+    @media screen and (max-width: 798px) {
+    .list-item {
+        .link {
+            font-size: 1.8rem;
+        }
+    }
+  }
 `;
 export default Nav
