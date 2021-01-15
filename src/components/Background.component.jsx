@@ -1,12 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
-import image from '../assets/sebastian-unrau-sp-p7uuT0tw-unsplash.jpg'
 import spring from '../assets/pexels-taryn-elliott-5234994.mp4'
 function Background() {
     return (
         <BackgroundContainer>
             <div className="overlay"></div>
             <video muted loop autoPlay src={spring}></video>
+            <div className="fallback"></div>
         </BackgroundContainer>
     )
 }
@@ -32,6 +32,15 @@ const BackgroundContainer = styled.div`
         object-fit: cover;
         top: 0;
         left: 0;
+    }
+    .fallback {
+        z-index: -100;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: #1a1a1a;
     }
 
 `;

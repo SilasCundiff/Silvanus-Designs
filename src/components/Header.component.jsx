@@ -1,6 +1,10 @@
-import React from 'react'
-import logo from '../assets/logo.svg';
-import styled from 'styled-components'
+import React from 'react';
+import styled from 'styled-components';
+// import logo from '../assets/logo.svg';
+import Logo from './Logo.component'
+
+
+
 function Header(props) {
     function handleClick(event) {
         props.onClick(event.target.value)
@@ -8,12 +12,15 @@ function Header(props) {
     
     return (
         <StyledHeader>
-        <div className='Logo'>
-          <img src={logo} alt='Silvanus Designs' />
+        <div className='logo-container'>
+          <StyledLogo />
           <span className='logo-text-s'>S</span>
-          <span className='logo-text'>
-            ilvanus <br /> <span>Designs</span>
-          </span>
+          <div className='logo-text-container'>
+            <span className='logo-text-main'>
+              ilvanus
+            </span>
+            <span className='logo-text-sub'>Designs</span>
+          </div>
         </div>
         <div
           className={`toggle ${props.navOpen ? 'active' : null}`}
@@ -31,21 +38,29 @@ const StyledHeader = styled.header`
   display: flex;
   align-items: center;
   z-index: 1000;
-  & .Logo {
+  & .logo-container {
     display: flex;
     align-items: center;
-    color: #fafafa;
-
-    & .logo-text,
-    & .logo-text span {
+    color: inherit;
+    transition: color .5s;
+    & .logo-text-container {
+      display: flex;
+      flex-direction: column;
+    }
+    & .logo-text-main,
+    & .logo-text-sub {
       font-size: 1.8rem;
       font-family: 'Poppins', sans-serif;
       font-weight: 700;
       text-transform: uppercase;
       line-height: 0.8;
     }
-    & .logo-text span {
-      color: #ffa3ba;
+    & .logo-text-main {
+      color: #fafafa;
+    }
+    & .logo-text-sub {
+      transition: color .5s;
+      color: inherit;
     }
     .logo-text-s {
       font-family: 'Poppins', sans-serif;
@@ -53,14 +68,10 @@ const StyledHeader = styled.header`
       text-transform: uppercase;
       font-size: 4rem;
       line-height: 0.2;
+      color: #fafafa;
     }
   }
 
-  & img {
-    max-width: 128px;
-    min-width: 64px;
-    width: 10vw;
-  }
   .toggle {
     position: relative;
     width: 60px;
@@ -88,5 +99,14 @@ const StyledHeader = styled.header`
   @media screen and (max-width: 798px) {
     padding: 40px;
   }
+`;
+
+const StyledLogo = styled(Logo)`
+    transition: color .5s;
+    color: inherit;
+    max-width: 128px;
+    min-width: 64px;
+    width: 10vw;
+    margin: 0;
 `;
 export default Header

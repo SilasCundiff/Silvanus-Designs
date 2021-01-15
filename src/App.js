@@ -21,7 +21,6 @@ function App() {
     window.addEventListener('resize', handleResize);
   }, []);
 
-  
   return (
     <StyledApp>
       <Header navOpen={navOpen} onClick={handleClick} />
@@ -32,7 +31,7 @@ function App() {
 }
 
 const StyledApp = styled.div`
-  color: #fafafa;
+  color: #ffa3ba;
   background-color: #ffa3ba;
 `;
 
