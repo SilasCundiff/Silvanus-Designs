@@ -1,11 +1,28 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import styled from 'styled-components'
-import spring from '../assets/pexels-taryn-elliott-5234994.mp4'
-function Background() {
+import home from '../assets/spring.mp4';
+import about from '../assets/summer.mp4';
+import projects from '../assets/autumn.mp4'
+import contact from '../assets/winter.mp4'
+function Background(props) {
+    console.log('props', props)
+    const [video, setVideo] = useState(null)
+    useEffect(() => {
+        const {page} = props
+       if (page.pathname === '/') {
+            setVideo(home)
+        } else if (page.pathname === '/about') {
+            setVideo(about);
+        } else if (page.pathname === '/projects') {
+            setVideo(projects);
+        } else if (page.pathname === '/contact') {
+            setVideo(contact);
+        }
+    }, [video, props])
     return (
         <BackgroundContainer>
             <div className="overlay"></div>
-            <video muted loop autoPlay src={spring}></video>
+            <video muted loop autoPlay src={video}></video>
             <div className="fallback"></div>
         </BackgroundContainer>
     )
@@ -19,10 +36,11 @@ const BackgroundContainer = styled.div`
         object-fit: cover;
         top: 0;
         left: 0;
-        background: #ffa3ba;
+        background-color: ${props => props.theme.colors.secondary};
         z-index: -98;
         mix-blend-mode: hue;
-        backdrop-filter: blur(6px);
+        backdrop-filter: blur(3px);
+        transition: background-color 2s;
     }
     video {
         z-index: -99;

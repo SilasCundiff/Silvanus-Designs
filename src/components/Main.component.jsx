@@ -10,7 +10,7 @@ function Main(props) {
     const location = useLocation();
     return (
         <StyledMain className={props.navOpen ? 'active' : null}>
-        <Background />
+        <Background page={props.page} />
         <Switch location={location} key={location.pathname}>
           <Route path='/' exact>
             <Home />

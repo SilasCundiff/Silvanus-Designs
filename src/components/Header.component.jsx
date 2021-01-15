@@ -41,7 +41,7 @@ const StyledHeader = styled.header`
   & .logo-container {
     display: flex;
     align-items: center;
-    color: inherit;
+    color: ${props => props.theme.colors.primary};
     transition: color .5s;
     & .logo-text-container {
       display: flex;
@@ -56,7 +56,7 @@ const StyledHeader = styled.header`
       line-height: 0.8;
     }
     & .logo-text-main {
-      color: #fafafa;
+      color: ${props => props.theme.colors.tertiary};
     }
     & .logo-text-sub {
       transition: color .5s;
@@ -67,8 +67,8 @@ const StyledHeader = styled.header`
       font-weight: 700;
       text-transform: uppercase;
       font-size: 4rem;
-      line-height: 0.2;
-      color: #fafafa;
+      line-height: 0.5;
+      color: ${props => props.theme.colors.tertiary};
     }
   }
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components'
 import { Link } from 'react-router-dom';
-
+//TODO make mobile nav close when link is clicked
 function Nav() {
     return (
         <StyledNav>
@@ -48,12 +48,13 @@ const StyledNav = styled.nav`
             font-weight: 500;
             text-transform: uppercase;
             font-size: 1.3rem;
-            color: white;
+            color: ${props => props.theme.colors.tertiary};
         }
        
     }
     @media screen and (max-width: 1279px) {
-        background-color: inherit;
+        background-color: ${props => props.theme.colors.primary};
+        transition: background-color .5s;
         z-index: -1;
         .nav-list {
             justify-content: center;
