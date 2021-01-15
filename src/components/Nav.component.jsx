@@ -25,29 +25,24 @@ function Nav() {
 
 const StyledNav = styled.nav`
     position: absolute;
-    z-index: -1;
+    z-index: 1000;
     right: 0;
     top: 0;
     bottom: 0;
-    background-color: inherit;
+    background-color: transparent;
     * {
         background-color: transparent;
     }
     .nav-list {
-        color: black;
         display: flex;
         justify-content: center;
         align-items: flex-end;
-        flex-direction: column;
         list-style: none;
-        height: 100%;
-        width: 300px;
         margin-right: 50px;
-        gap: 20px 0;
-       
+        margin-top: 20px;
+        gap: 0 50px;
     }
     .list-item {
-
         .link {
             font-family: "Poppins", sans-serif;
             font-weight: 500;
@@ -57,13 +52,24 @@ const StyledNav = styled.nav`
         }
        
     }
-
-    @media screen and (max-width: 798px) {
-    .list-item {
-        .link {
-            font-size: 1.8rem;
+    @media screen and (max-width: 1279px) {
+        background-color: inherit;
+        z-index: -1;
+        .nav-list {
+            justify-content: center;
+            align-items: flex-end;
+            flex-direction: column;
+            height: 100%;
+            width: 300px;
+            gap: 20px 0;
         }
-    }
-  }
+        .list-item {
+            .link {
+                font-size: 1.8rem;
+            }
+        }
+}
+   
+
 `;
 export default Nav

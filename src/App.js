@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useLayoutEffect } from 'react';
 import { Switch, Route, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 import Home from './components/Home.component';
@@ -9,12 +9,24 @@ import Nav from './components/Nav.component';
 import Background from './components/Background.component';
 import logo from './assets/logo.svg';
 
+
 function App() {
   const location = useLocation();
   const [navOpen, setNavOpen] = useState(false);
+
   const handleClick = () => {
     setNavOpen(!navOpen);
   };
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 1279) {
+        setNavOpen(false);
+      }
+    };
+    window.addEventListener('resize', handleResize);
+  }, []);
+
   return (
     <StyledApp>
       <Header>
@@ -56,6 +68,7 @@ const StyledApp = styled.div`
   color: #fafafa;
   background-color: #ffa3ba;
 `;
+
 const Header = styled.header`
   position: absolute;
   top: 0;
@@ -105,6 +118,7 @@ const Header = styled.header`
     background-position: center;
     cursor: pointer;
     margin-left: auto;
+    display: none;
   }
   .toggle.active {
     background: url(https://i.ibb.co/rt3HybH/close.png);
@@ -112,6 +126,11 @@ const Header = styled.header`
     background-size: 25px;
     background-position: center;
     cursor: pointer;
+  }
+  @media screen and (max-width: 1279px) {
+    .toggle {
+      display: block;
+    }
   }
   @media screen and (max-width: 798px) {
     padding: 40px;
