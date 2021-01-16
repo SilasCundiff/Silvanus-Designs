@@ -1,30 +1,113 @@
 import React from 'react';
 import styled from 'styled-components';
-import Logo from './Logo.component'
+import { motion } from 'framer-motion';
+import Logo from './Logo.component';
+
+const logoVariants = {
+  hidden: {
+    opacity: 0,
+    scale: 0.2,
+  },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      type: 'spring',
+      damping: 8,
+      ease: 'easeOut',
+      duration: 1.5,
+    },
+  },
+};
+const textLogoSVariants = {
+  hidden: {
+    opacity: 0,
+    y: -100,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      ease: 'backOut',
+      duration: 0.5,
+    },
+  },
+};
+const textLogoNameVariants = {
+  hidden: {
+    opacity: 0,
+    x: -50,
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      ease: 'backOut',
+      duration: 0.75,
+      delay: 0.3,
+    },
+  },
+};
+const textLogoSubVariants = {
+  hidden: {
+    opacity: 0,
+    x: 50,
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      ease: 'backOut',
+      duration: 0.75,
+      delay: 0.3,
+    },
+  },
+};
 
 function Header(props) {
-    function handleClick(event) {
-        props.onClick(event.target.value)
-    }
-    
-    return (
-        <StyledHeader>
-        <div className='logo-container'>
+  function handleClick(event) {
+    props.onClick(event.target.value);
+  }
+
+  return (
+    <StyledHeader>
+      <div className='logo-container'>
+        <motion.div variants={logoVariants} initial='hidden' animate='visible'>
           <StyledLogo />
-          <span className='logo-text-s'>S</span>
-          <div className='logo-text-container'>
-            <span className='logo-text-main'>
-              ilvanus
-            </span>
-            <span className='logo-text-sub'>Designs</span>
-          </div>
+        </motion.div>
+        <motion.span
+          className='logo-text-s'
+          variants={textLogoSVariants}
+          initial='hidden'
+          animate='visible'
+        >
+          S
+        </motion.span>
+        <div className='logo-text-container'>
+          <motion.span
+            className='logo-text-main'
+            variants={textLogoNameVariants}
+            initial='hidden'
+            animate='visible'
+          >
+            ilvanus
+          </motion.span>
+          <motion.span
+            className='logo-text-sub'
+            variants={textLogoSubVariants}
+            initial='hidden'
+            animate='visible'
+          >
+            Designs
+          </motion.span>
         </div>
-        <div
-          className={`toggle ${props.navOpen ? 'active' : null}`}
-          onClick={handleClick}
-        ></div>
-      </StyledHeader>
-    )
+      </div>
+      <div
+        className={`toggle ${props.navOpen ? 'active' : null}`}
+        onClick={handleClick}
+      ></div>
+    </StyledHeader>
+  );
 }
 const StyledHeader = styled.header`
   position: absolute;
@@ -38,8 +121,8 @@ const StyledHeader = styled.header`
   & .logo-container {
     display: flex;
     align-items: center;
-    color: ${props => props.theme.colors.primary};
-    transition: color .5s;
+    color: ${(props) => props.theme.colors.primary};
+    transition: color 1.5s;
     & .logo-text-container {
       display: flex;
       flex-direction: column;
@@ -53,10 +136,9 @@ const StyledHeader = styled.header`
       line-height: 0.8;
     }
     & .logo-text-main {
-      color: ${props => props.theme.colors.tertiary};
+      color: ${(props) => props.theme.colors.tertiary};
     }
     & .logo-text-sub {
-      transition: color .5s;
       color: inherit;
     }
     .logo-text-s {
@@ -65,7 +147,7 @@ const StyledHeader = styled.header`
       text-transform: uppercase;
       font-size: 4rem;
       line-height: 0.5;
-      color: ${props => props.theme.colors.tertiary};
+      color: ${(props) => props.theme.colors.tertiary};
     }
   }
 
@@ -80,6 +162,7 @@ const StyledHeader = styled.header`
     cursor: pointer;
     margin-left: auto;
     display: none;
+    transition: all 0.1s;
   }
   .toggle.active {
     background: url(https://i.ibb.co/rt3HybH/close.png);
@@ -87,6 +170,7 @@ const StyledHeader = styled.header`
     background-size: 25px;
     background-position: center;
     cursor: pointer;
+    transition: all 0.1s;
   }
   @media screen and (max-width: 1279px) {
     .toggle {
@@ -99,11 +183,10 @@ const StyledHeader = styled.header`
 `;
 
 const StyledLogo = styled(Logo)`
-    transition: color .5s;
-    color: inherit;
-    max-width: 128px;
-    min-width: 64px;
-    width: 10vw;
-    margin: 0;
+  color: inherit;
+  max-width: 128px;
+  min-width: 64px;
+  width: 10vw;
+  margin: 0;
 `;
-export default Header
+export default Header;
