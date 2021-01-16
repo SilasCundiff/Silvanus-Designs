@@ -1,9 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-// import logo from '../assets/logo.svg';
 import Logo from './Logo.component'
-
-
 
 function Header(props) {
     function handleClick(event) {

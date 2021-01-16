@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import Svg from '../styled/Svg';
+import Svg from '../../styled/Svg';
 
 const StyledLogo = styled(Svg)`
     

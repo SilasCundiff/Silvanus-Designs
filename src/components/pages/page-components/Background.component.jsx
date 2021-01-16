@@ -3,25 +3,25 @@ import styled from 'styled-components'
 
 // Videos & posters
 //home
-import homeUltraHD from '../assets/1440/spring.mp4';
-import homeFullHD from '../assets/1080/spring-1920x1080.mp4';
-import homeHD from '../assets/720/spring-1280x720.mp4';
-import homePoster from '../assets/480/spring-853x480.png'
+import homeUltraHD from '../../../assets/1440/spring.mp4';
+import homeFullHD from '../../../assets/1080/spring-1920x1080.mp4';
+import homeHD from '../../../assets/720/spring-1280x720.mp4';
+import homePoster from '../../../assets/480/spring-853x480.png'
 //about
-import aboutUltraHD from '../assets/1440/summer.mp4';
-import aboutFullHD from '../assets/1080/summer-1920x1080.mp4';
-import aboutHD from '../assets/720/summer-1280x720.mp4';
-import aboutPoster from '../assets/480/summer-853x480.png'
+import aboutUltraHD from '../../../assets/1440/summer.mp4';
+import aboutFullHD from '../../../assets/1080/summer-1920x1080.mp4';
+import aboutHD from '../../../assets/720/summer-1280x720.mp4';
+import aboutPoster from '../../../assets/480/summer-853x480.png'
 //projects
-import projectsUltraHD from '../assets/1440/autumn.mp4';
-import projectsFullHD from '../assets/1080/autumn-1920x1080.mp4';
-import projectsHD from '../assets/720/autumn-1280x720.mp4';
-import projectsPoster from '../assets/480/autumn-853x480.png'
+import projectsUltraHD from '../../../assets/1440/autumn.mp4';
+import projectsFullHD from '../../../assets/1080/autumn-1920x1080.mp4';
+import projectsHD from '../../../assets/720/autumn-1280x720.mp4';
+import projectsPoster from '../../../assets/480/autumn-853x480.png'
 //contact
-import contactUltraHD from '../assets/1440/winter.mp4';
-import contactFullHD from '../assets/1080/winter-1920x1080.mp4';
-import contactHD from '../assets/720/winter-1280x720.mp4';
-import contactPoster from '../assets/480/winter-853x480.png'
+import contactUltraHD from '../../../assets/1440/winter.mp4';
+import contactFullHD from '../../../assets/1080/winter-1920x1080.mp4';
+import contactHD from '../../../assets/720/winter-1280x720.mp4';
+import contactPoster from '../../../assets/480/winter-853x480.png'
 
 
 function Background(props) {

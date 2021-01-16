@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import styled, { ThemeProvider } from 'styled-components';
-import Nav from './components/Nav.component';
-import Main from './components/Main.component';
-import Header from './components/Header.component';
+import Nav from './components/global-components/Nav.component';
+import Main from './components/global-components/Main.component';
+import Header from './components/global-components/Header.component';
 
 function App() {
   const currentPage = useLocation();
@@ -73,7 +73,7 @@ const aboutTheme = {
 const projectsTheme = {
   colors: {
     primary: '#ff4b33',
-    secondary: ' #cc8076',
+    secondary: ' #d67264',
     tertiary: '#FAFAFA',
     black: '#1A1A1A',
   },

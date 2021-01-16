@@ -1,6 +1,7 @@
 import React from 'react'
-import Background from './Background.component';
-function About(props) {
+import Background from './page-components/Background.component';
+
+function Home(props) {
     return (
         <div className='container'>
             <Background page={props.page} />
@@ -8,4 +9,4 @@ function About(props) {
     )
 }
 
-export default About
+export default Home
