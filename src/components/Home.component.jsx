@@ -1,10 +1,9 @@
 import React from 'react'
-
-function Home() {
+import Background from './Background.component';
+function Home(props) {
     return (
         <div className='container'>
-    
-           
+        <Background page={props.page} />
         </div>
     )
 }

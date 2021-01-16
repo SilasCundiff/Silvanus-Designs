@@ -1,9 +1,9 @@
 import React from 'react'
-
-function Contact() {
+import Background from './Background.component';
+function Contact(props) {
     return (
         <div className='container'>
-            
+            <Background page={props.page} />
         </div>
     )
 }

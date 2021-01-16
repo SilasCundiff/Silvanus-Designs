@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Switch, Route, useLocation } from 'react-router-dom';
-import Background from './Background.component';
 import Home from './Home.component';
 import About from './About.component';
 import Projects from './Projects.component';
@@ -10,19 +9,18 @@ function Main(props) {
     const location = useLocation();
     return (
         <StyledMain className={props.navOpen ? 'active' : null}>
-        <Background page={props.page} />
         <Switch location={location} key={location.pathname}>
           <Route path='/' exact>
-            <Home />
+            <Home page={props.page} />
           </Route>
           <Route path='/about' exact>
-            <About />
+            <About page={props.page} />
           </Route>
           <Route path='/projects' exact>
-            <Projects />
+            <Projects page={props.page} />
           </Route>
           <Route path='/contact' exact>
-            <Contact />
+            <Contact page={props.page} />
           </Route>
         </Switch>
       </StyledMain>

@@ -1,9 +1,9 @@
 import React from 'react'
-
-function About() {
+import Background from './Background.component';
+function About(props) {
     return (
         <div className='container'>
-            
+            <Background page={props.page} />
         </div>
     )
 }
