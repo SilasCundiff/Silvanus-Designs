@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
+import Tree from '../../global-components/Tree.component'
 // Videos & posters
 //home
 import homeUltraHD from '../../../assets/1440/spring.mp4';
@@ -22,7 +23,7 @@ import contactFullHD from '../../../assets/1080/winter-1920x1080.mp4';
 import contactHD from '../../../assets/720/winter-1280x720.mp4';
 import contactPoster from '../../../assets/480/winter-853x480.png';
 
-function Background(props) {
+function Background({ page }) {
   const [video, setVideo] = useState(null);
   const [videoSrc, setVideoSrc] = useState(null);
   const [poster, setPoster] = useState([]);
@@ -54,7 +55,7 @@ function Background(props) {
         if (width <= 480) setVideoSrc(null);
       }
     };
-    const { page } = props;
+    // const { page } = props;
     if (page.pathname === '/') {
       setVideo('home');
       setPoster(homePoster);
@@ -72,10 +73,11 @@ function Background(props) {
       setPoster(contactPoster);
       getVideoSrc(window.innerWidth);
     }
-  }, [props, video]);
+  }, [page, video]);
 
   return (
     <BackgroundContainer>
+    <Tree page={page.pathname} />
       <div className='overlay'></div>
       <video muted loop autoPlay preload='auto' src={videoSrc} />
       <img className='fallback' src={poster} alt={`${poster} background`} />
@@ -84,6 +86,8 @@ function Background(props) {
 }
 const BackgroundContainer = styled.div`
   z-index: -100;
+  overflow: hidden;
+
   .overlay {
     width: 100%;
     height: 100%;

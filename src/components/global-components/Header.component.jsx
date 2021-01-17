@@ -177,8 +177,10 @@ const StyledHeader = styled.header`
       display: block;
     }
   }
-  @media screen and (max-width: 798px) {
+ 
+  @media screen and (max-width: 768px) {
     padding: 40px;
+    & .logo-container { & .logo-text-sub {color: #fafafa;}}
   }
 `;
 

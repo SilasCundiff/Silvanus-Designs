@@ -28,8 +28,9 @@ function Main(props) {
                 <Contact page={props.page}  />
               </Route>
             </Switch>
+           
           </AnimatePresence>
-
+         
       </StyledMain>
     )
 }

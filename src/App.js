@@ -4,7 +4,7 @@ import styled, { ThemeProvider } from 'styled-components';
 import Nav from './components/global-components/Nav.component';
 import Main from './components/global-components/Main.component';
 import Header from './components/global-components/Header.component';
-
+import Footer from './components/global-components/Footer.component';
 function App() {
   const currentPage = useLocation();
   const [page, setPage] = useState(currentPage);
@@ -45,6 +45,7 @@ function App() {
         <Header navOpen={navOpen} onClick={handleClick} />
         <Main navOpen={navOpen} page={page} />
         <Nav />
+        <Footer />
       </StyledApp>
     </ThemeProvider>
   );

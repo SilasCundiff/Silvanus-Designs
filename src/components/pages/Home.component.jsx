@@ -1,5 +1,5 @@
 import React from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
+import {  motion } from 'framer-motion';
 import Background from './page-components/Background.component';
 
 const containerVariants = {
@@ -25,9 +25,8 @@ function Home(props) {
       animate='visible'
       exit='exit'
     >
-      <AnimatePresence exitBeforeEnter1>
+        
         <Background page={props.page} />
-      </AnimatePresence>
     </motion.div>
   );
 }
