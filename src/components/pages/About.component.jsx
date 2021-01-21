@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import AboutContent from './page-components/AboutContent.component'
 import Background from './page-components/Background.component';
 import {motion} from 'framer-motion';
 
@@ -24,6 +25,7 @@ function About(props) {
             animate='visible'
             exit='exit'
         >
+            <AboutContent />
             <Background page={props.page} />
         </motion.div>
     )

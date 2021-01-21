@@ -1,11 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const ContentWrap = styled.div`
   & .title {
     display: flex;
     flex-direction: column;
     align-items: center;
+
     * {
       font-family: 'Pacifico', cursive;
     }
@@ -14,6 +16,7 @@ const ContentWrap = styled.div`
       color: ${(props) => props.theme.colors.primary};
       padding: 0.5rem 0;
       text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.8);
+      transition: color 2s;
     }
     & h2 {
       font-size: 1.8rem;
@@ -35,6 +38,7 @@ const ContentWrap = styled.div`
       border-radius: 2rem;
       box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
       font-size: 1.2rem;
+      transition: all 1s;
     }
     & .projectsButton {
       margin: 0 0.8rem 0 auto;
@@ -54,6 +58,7 @@ const ContentWrap = styled.div`
     text-align: center;
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
     font-size: 1.2rem;
+    transition: all 1s;
   }
 `;
 
@@ -65,12 +70,12 @@ function HomeContent() {
         <h2>I design & develop websites</h2>
       </div>
       <div className='ctaButtons'>
-        <a className='projectsButton' href='#'>
+        <Link className='projectsButton' to='/projects'>
           My Projects
-        </a>
-        <a className='contactButton' href='#'>
+        </Link>
+        <Link className='contactButton' to='/contact'>
           Contact Me
-        </a>
+        </Link>
       </div>
       <a className='resumeButton' href='#'>
         My Resume
