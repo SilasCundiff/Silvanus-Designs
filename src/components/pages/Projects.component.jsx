@@ -1,4 +1,5 @@
 import React from 'react'
+import ProjectsContent from './page-components/ProjectsContent.component'
 import Background from './page-components/Background.component';
 import {motion} from 'framer-motion';
 
@@ -23,7 +24,8 @@ function Projects(props) {
             initial='hidden'
             animate='visible'
             exit='exit'
-        >
+        > 
+          <ProjectsContent />
             <Background page={props.page} />
         </motion.div>
     )
