@@ -74,6 +74,7 @@ const StyledNav = styled.nav`
   right: 0;
   top: 0;
   bottom: 0;
+  height: 8vh;
   background-color: transparent;
   * {
     background-color: transparent;
@@ -113,6 +114,7 @@ const StyledNav = styled.nav`
     background-color: ${(props) => props.theme.colors.primary};
     z-index: -1;
     transition: background-color 0.5s;
+    height: 100%;
     .nav-list {
       justify-content: center;
       align-items: flex-end;

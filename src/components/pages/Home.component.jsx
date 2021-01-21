@@ -1,7 +1,7 @@
 import React from 'react';
-import {  motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import Background from './page-components/Background.component';
-
+import HomeContent from './page-components/HomeContent.component';
 const containerVariants = {
   hidden: {
     opacity: 0,
@@ -25,8 +25,8 @@ function Home(props) {
       animate='visible'
       exit='exit'
     >
-        
-        <Background page={props.page} />
+      <HomeContent />
+      <Background page={props.page} />
     </motion.div>
   );
 }
