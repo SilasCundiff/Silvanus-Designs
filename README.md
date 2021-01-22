@@ -8,3 +8,4 @@ TODO:
 - add resume link to home content
 - make all buttons function
 - add contact form functionality
+- update footer video credits
