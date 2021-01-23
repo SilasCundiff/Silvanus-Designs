@@ -46,6 +46,7 @@ const StyledMain = styled.main`
   background: #111;
   z-index: 2;
   transition: right .5s;
+  overflow: hidden;
   &.active {
     right: 300px;
   }

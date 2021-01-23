@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import ProjectsCard from './ProjectsCard.component';
 import img from '../../../assets/zenifyimgplaceholder.png';
@@ -28,6 +28,19 @@ function ProjectsContent() {
           js: true,
         }}
       />
+      {/* <ProjectsCard
+        title={'Zenify'}
+        subtitle={'A Particle based Spotify Player & Audio Visualizer'}
+        imgSrc={img}
+        icons={{
+          react: true,
+          html: true,
+          css: true,
+          js: true,
+        }}
+        key='card2'
+        id='card2'
+      /> */}
     </ContentWrap>
   );
 }

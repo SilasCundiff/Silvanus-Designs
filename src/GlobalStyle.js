@@ -28,7 +28,7 @@ a {
     justify-content: flex-end;
 }
 .contentWrap {
-    position: relative;
+    ${'' /* position: relative; */}
     ${'' /* z-index: 2; */}
     height: auto;
     width: 50vw;

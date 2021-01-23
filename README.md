@@ -9,3 +9,4 @@ TODO:
 - make all buttons function
 - add contact form functionality
 - update footer video credits
+- custom nav toggle icon
