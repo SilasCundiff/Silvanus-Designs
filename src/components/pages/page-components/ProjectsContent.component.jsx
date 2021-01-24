@@ -1,8 +1,18 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import ProjectsCard from './ProjectsCard.component';
 import img from '../../../assets/zenifyimgplaceholder.png';
-const ContentWrap = styled.div``;
+const ContentWrap = styled.div`
+  padding: 2vh;
+  margin-top: 2vh;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+  gap: 2vh 1vw;
+  overflow: hidden;
+`;
 
 function ProjectsContent() {
   //Example icons object values
@@ -16,7 +26,7 @@ function ProjectsContent() {
   //   };
 
   return (
-    <ContentWrap className='contentWrap'>
+    <ContentWrap id='projectsWrap' className='contentWrap'>
       <ProjectsCard
         title={'Zenify'}
         subtitle={'A Particle based Spotify Player & Audio Visualizer'}
@@ -28,7 +38,20 @@ function ProjectsContent() {
           js: true,
         }}
       />
-      {/* <ProjectsCard
+      <ProjectsCard
+        title={'Test'}
+        subtitle={'A Particle based Spotify Player & Audio Visualizer'}
+        imgSrc={img}
+        icons={{
+          react: true,
+          html: true,
+          css: true,
+          js: true,
+        }}
+        key='card2'
+        id='card2'
+      />
+      <ProjectsCard
         title={'Zenify'}
         subtitle={'A Particle based Spotify Player & Audio Visualizer'}
         imgSrc={img}
@@ -40,7 +63,20 @@ function ProjectsContent() {
         }}
         key='card2'
         id='card2'
-      /> */}
+      />
+      <ProjectsCard
+        title={'Zenify'}
+        subtitle={'A Particle based Spotify Player & Audio Visualizer'}
+        imgSrc={img}
+        icons={{
+          react: true,
+          html: true,
+          css: true,
+          js: true,
+        }}
+        key='card2'
+        id='card2'
+      />
     </ContentWrap>
   );
 }

@@ -22,24 +22,11 @@ a {
 
 .container {
     width: 100vw;
-    height: 80%;
-    margin-top: 50px;
+    height: 90%;
     display: flex;
     justify-content: flex-end;
+
 }
-.contentWrap {
-    ${'' /* position: relative; */}
-    ${'' /* z-index: 2; */}
-    height: auto;
-    width: 50vw;
-    ${'' /* background: rgba(240,240,240,.2); */}
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 30px;
-    ${'' /* backdrop-filter: blur(1rem); */}
-    border-radius: 15px;
-}
+
 `;
 export default GlobalStyle;

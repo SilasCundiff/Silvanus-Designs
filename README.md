@@ -5,7 +5,7 @@ This is a re-write of my portfolio in react. I originally wrote it with pure HTM
 TODO:
 
 - make mobile nav close when link is clicked
-- add resume link to home content
+- add resume link
 - make all buttons function
 - add contact form functionality
 - update footer video credits

@@ -3,6 +3,14 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 const ContentWrap = styled.div`
+    height: 100%;
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    border-radius: 15px;
   & .title {
     display: flex;
     flex-direction: column;

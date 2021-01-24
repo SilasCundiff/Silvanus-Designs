@@ -2,6 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 
 const ContentWrap = styled.div`
+  height: 100%;
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
   padding: 0 0 0 2rem;
   .intro {
     font-family: 'Pacifico', cursive;

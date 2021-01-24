@@ -117,7 +117,8 @@ const StyledHeader = styled.header`
   padding: 40px 100px;
   display: flex;
   align-items: center;
-  z-index: 1000;
+  z-index: 10;
+  pointer-events: none;
   & .logo-container {
     display: flex;
     align-items: center;

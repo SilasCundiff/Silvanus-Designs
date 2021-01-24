@@ -28,7 +28,7 @@ const StyledTree = styled(Svg)`
   bottom: -8vh;
   left: 0;
   height: auto;
-  width: 50%;
+  width: 45%;
   object-fit: cover;
   overflow: hidden;
   z-index: 1;
