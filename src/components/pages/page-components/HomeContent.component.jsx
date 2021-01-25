@@ -3,14 +3,14 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 const ContentWrap = styled.div`
-    height: 100%;
+    height: 80vh;
     width: 50vw;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 30px;
-    border-radius: 15px;
+  
   & .title {
     display: flex;
     flex-direction: column;
@@ -68,6 +68,15 @@ const ContentWrap = styled.div`
     font-size: 1.2rem;
     transition: all 1s;
   }
+  @media screen and (max-width: 1280px) { 
+    width: 100vw;
+    background: rgba(0, 0, 0, 0.5);
+
+
+    & .resumeButton {
+    width: 40%;
+  }
+  }
 `;
 
 function HomeContent() {
@@ -85,7 +94,8 @@ function HomeContent() {
           Contact Me
         </Link>
       </div>
-      <a className='resumeButton' href='#'>
+       {/* !! TODO Update link */}
+      <a className='resumeButton' href='https://www.linkedin.com/jobs'>
         My Resume
       </a>
     </ContentWrap>

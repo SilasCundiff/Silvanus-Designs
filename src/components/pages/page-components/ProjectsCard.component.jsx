@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import Tilt from 'react-parallax-tilt';
+
 
 function ProjectsCard({ title, subtitle, imgSrc, icons }) {
   const [expanded, setExpanded] = useState(false);
@@ -9,15 +9,8 @@ function ProjectsCard({ title, subtitle, imgSrc, icons }) {
   };
   return (
     <Card>
-      <div className={`cardWrapper ${expanded ? 'expanded' : 'compact'}`}>
-        <Tilt
-          //   tiltEnable={expanded ? false : true}
-          className='tilt'
-          perspective={1000}
-          tiltMaxAngleX={expanded ? 0 : 20}
-          tiltMaxAngleY={expanded ? 0 : 20}
-          transitionSpeed={1000}
-        >
+      <div className={`cardWrapper ${expanded ? 'expanded' : 'compact'} ${window.innerWidth < 1280 ? 'expanded' : 'compact'}`}>
+
           <div className='card'>
             <div className='imgWrapper'>
               <div className='imgOverlay'></div>
@@ -27,7 +20,7 @@ function ProjectsCard({ title, subtitle, imgSrc, icons }) {
                 width='560'
                 height='315'
                 src={`${
-                  expanded ? 'https://www.youtube.com/embed/VoUHpIFCetk' : null
+                  expanded || window.innerWidth < 1280 ? 'https://www.youtube.com/embed/VoUHpIFCetk' : null
                 }`}
                 frameBorder='0'
                 allow='clipboard-write; encrypted-media; picture-in-picture'
@@ -61,7 +54,7 @@ function ProjectsCard({ title, subtitle, imgSrc, icons }) {
                     </p>
                   </div>
                   <div className='expandedSkillBar'>
-                    <h3>Main Skills used:</h3>
+                    <h3>Main Skills:</h3>
                     {icons.html ? <i className='fab fa-html5'></i> : null}
                     {icons.css ? <i className='fab fa-css3-alt'></i> : null}
                     {icons.js ? <i className='fab fa-js-square'></i> : null}
@@ -126,7 +119,7 @@ function ProjectsCard({ title, subtitle, imgSrc, icons }) {
               <i className='fas fa-times'></i>
             </button>
           </div>
-        </Tilt>
+      
       </div>
     </Card>
   );
@@ -134,14 +127,10 @@ function ProjectsCard({ title, subtitle, imgSrc, icons }) {
 const Card = styled.div`
   flex: 0 1 40%;
   margin-top: 8vh;
+  transform-origin: initial;
   .cardWrapper {
     background: none;
-    transform: translate3d(0, 0, 0);
-    transition: all 0.5s;
-    transform-origin: initial;
-    .tilt {
-      transform-style: preserve-3d;
-    }
+
     & .card {
       height: 300px;
       width: 450px;
@@ -155,19 +144,16 @@ const Card = styled.div`
         right: -15%;
         width: 50%;
         z-index: 2;
-        transform-style: preserve-3d;
+ 
         & .cardTitleWrapper {
           & .cardTitle,
           & .cardSubTitle {
             font-family: 'Poppins', sans-serif;
-            transform-style: preserve-3d;
-            transform: translate3d(0, 0, 15px);
-            transition: all 0.1s;
+            transition: all .2s;
           }
           & .cardTitle {
             font-size: 3.5vw;
             line-height: 2rem;
-            /* background: red; */
           }
           & .cardSubTitle {
             margin-top: 15px;
@@ -180,10 +166,25 @@ const Card = styled.div`
         .col-2 {
           opacity: 0;
           visibility: hidden;
+          position: absolute;
+          top: 0;
+          left: 0;
+          & * {
+            opacity: 0;
+            visibility: hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+          }
+        }
+      }
+      & .col-1, .col-2 {
+        & p {
+          display: none;
         }
       }
 
-      & .imgOverlay {
+        & .imgOverlay {
         width: 450px;
         height: 300px;
         background-color: rgba(0, 0, 0, 0.4);
@@ -202,6 +203,7 @@ const Card = styled.div`
         position: absolute;
         top: 0;
         left: 0;
+
         opacity: 1;
         visibility: visible;
         transition: opacity 0.5s 0.4s;
@@ -210,15 +212,21 @@ const Card = styled.div`
       .extraImage {
         opacity: 0;
         visibility: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 0;
+ 
       }
+      
+     
       & .cardSkillBar,
       & .expandButton {
         opacity: 0;
         visibility: none;
         position: absolute;
         transition: opacity 0.5s;
-        transform-style: preserve-3d;
-        transform: translate3d(0, 0, 15px);
       }
       & .cardSkillBar {
         bottom: -16px;
@@ -237,9 +245,8 @@ const Card = styled.div`
         padding: 10px;
         top: 50%;
         left: 50%;
-        transform-style: preserve-3d;
         z-index: 2;
-        transform: translate3d(-50%, -50%, 15px);
+        transform: translate(-50%, -50%);
         & i {
           font-size: 1.6rem;
         }
@@ -252,8 +259,7 @@ const Card = styled.div`
       top: 70%;
       left: 50%;
       z-index: 2;
-      transform: translate3d(-50%, -50%, 15px);
-      transform-style: preserve-3d;
+      transform: translate(-50%, -50%);
       font-size: 0.8rem;
       opacity: 0;
       transition: opacity 0.4s;
@@ -276,7 +282,7 @@ const Card = styled.div`
   /*!! start of expanded styles */
   .expanded {
     margin-top: 2vh;
-    transform: translate3d(-50%, -50%, 30px);
+    transform: translate(-50%, -50%);
     top: 55%;
     left: 50%;
     z-index: 10;
@@ -306,7 +312,6 @@ const Card = styled.div`
           height: fit-content;
           display: flex;
           gap: 0 1.5rem;
-          /* background: green; */
           height: 5%;
           margin-top: -5%;
           margin-bottom: 0;
@@ -322,7 +327,6 @@ const Card = styled.div`
             margin: 0 auto 0 1.2rem;
             padding: 0;
             height: fit-content;
-            /* background: red; */
           }
           & .cardSubTitle {
             font-size: 1.8vw;
@@ -331,8 +335,6 @@ const Card = styled.div`
             line-height: 1.5rem;
             text-align: left;
             flex: 0 1 60%;
-
-            /* background: blue; */
           }
         }
 
@@ -381,8 +383,23 @@ const Card = styled.div`
         .col-2 {
           opacity: 1;
           visibility: visible;
+          position: relative;
+          & * {
+            opacity: 1;
+            visibility: visible;
+            position: relative;
+            & p {
+              opacity: 1;
+            visibility: visible;
+            position: relative;
+            }
+          }
         }
-
+        & .col-1, .col-2 {
+        & p {
+          display: block;
+        }
+      }
         & .col-1 {
           height: 100%;
           width: 50%;
@@ -420,7 +437,6 @@ const Card = styled.div`
           height: 100%;
           flex: 1 1 50%;
           transition: opacity 0.8s 1.2s;
-          /* background: dodgerblue; */
           display: flex;
           flex-direction: column;
           & .solution {
@@ -441,12 +457,16 @@ const Card = styled.div`
       .extraImage {
         opacity: 1;
         visibility: visible;
-        transition: opacity 0.8s 0.2s;
+        position: relative;
+        transition: opacity 0.8s 0.4s;
+
       }
       & .mainImage {
         opacity: 0;
         visibility: hidden;
         position: absolute;
+        top: 0;
+        left: 0;
         pointer-events: none;
         transition: opacity 0.8s 0.2s;
       }
@@ -454,7 +474,7 @@ const Card = styled.div`
         opacity: 0;
         transition: none;
       }
-      & iframe {
+      & .demoVideo {
         flex: 1 0 100%;
         width: 100%;
         height: 50%;
@@ -462,13 +482,12 @@ const Card = styled.div`
         padding: 0.2rem;
         border-radius: 15px;
       }
-      & img {
+      & .extraImage {
         width: 45%;
         height: fit-content;
         margin: 0 10px 0 20px;
         border-radius: 10px;
         position: relative;
-        /* flex: 0 1 50%; */
       }
     }
     & .card:hover {
@@ -501,6 +520,167 @@ const Card = styled.div`
       outline: none;
     }
   }
+  @media only screen and (max-width: 1280px) {
+    .expanded {
+    margin-top: 0;
+    top:50%;
+    left: 50%;
+    position: relative;
+    & .card {
+      height: fit-content;
+      width: 80vw;
+      flex-direction: column-reverse;
+      & .cardText {
+        position: relative;
+        width: 100%;
+        & .cardTitleWrapper {
+          margin-top: 0;
+
+          & .cardTitle {
+            font-size: 10vw;
+          }
+          & .cardSubTitle {
+            font-size: 3vw;
+            padding: 1rem;
+            line-height: 2rem;
+            flex: 0 1 100%;
+          }
+        }
+
+        & .expandedCardText {
+          /* display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          height: fit-content;
+          align-self: unset; */
+          & .description,
+          .challenges,
+          .solution,
+          .expandedSkillBar,
+          .expandedCardLinks {
+            padding: 0;
+
+            & h3 {
+              font-size: 5vw;
+              padding-bottom: 6px;
+            }
+            & h4 {
+              font-size: 4vw;
+              padding: 16px 0 0 0;
+            }
+            & p {
+              font-size: 2vw;
+            }
+          }
+          & .description {
+            & p {
+              padding-bottom: 20px;
+            }
+            & p:last-of-type {
+              padding-bottom: 20px;
+            }
+          }
+        }
+        & .expandedCardText,
+        .col-1,
+        .col-2 {
+          opacity: 1;
+          visibility: visible;
+          padding: 2vw;
+        }
+
+        & .col-1 {
+          height: 100%;
+          width: 100%;
+          flex: 1 0 100%;
+          flex-direction: row;
+          flex-wrap: wrap;
+          transition: opacity 0.4s 0.8s;
+          /* background: purple; */
+          & .expandedSkillBar {
+            margin: 0 auto 0 auto;
+            width: 50%;
+            flex: 1 1 45%;
+            & i {
+              padding: 0 1.6vw 0 0;
+              font-size: 4vw;
+            }
+
+            & .additionalSkills {
+              padding: 0;
+            }
+          }
+          & .expandedCardLinks {
+            width: 50%;
+            flex: 1 1 45%;
+            display: flex;
+            flex-direction: column;
+            & a {
+              height: fit-content;
+              width: 70%;
+              text-align: center;
+              padding:2vw;
+              font-size: 3vw;
+              margin: 20px auto;
+            }
+          }
+        }
+      }
+    }
+
+    & .imgWrapper {
+      flex-direction: row;
+      width: 100%;
+      height: 100%;
+
+      & iframe {
+        flex: 1 0 100%;
+        width: 100%;
+        height: 400px;
+        margin-bottom: 20px;
+        padding: 0 20px;
+      }
+      & img {
+        width: 40%;
+        height: fit-content;
+        margin:0 10px 20px;
+      }
+    }
+
+    & .closeButton {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+}
+@media only screen and (max-width: 768px) {
+    .expanded {
+      & .imgWrapper {
+        & iframe {
+          flex: 1 1 100%;
+          width: 100%;
+          height: 300px;
+        }
+        & img {
+          width: 90%;
+          height: fit-content;
+          margin:0 10px 20px;
+        }
+}
+    }
+
+}
+@media only screen and (max-width: 480px) {
+    .expanded {
+      & .imgWrapper {
+        & iframe {
+          flex: 1 1 100%;
+          width: 100%;
+          height: 200px;
+        }
+     }
+  }
+}
 `;
 
 export default ProjectsCard;

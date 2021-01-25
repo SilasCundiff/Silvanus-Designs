@@ -174,6 +174,7 @@ const StyledHeader = styled.header`
     transition: all 0.1s;
   }
   @media screen and (max-width: 1279px) {
+    pointer-events: all;
     .toggle {
       display: block;
     }

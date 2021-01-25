@@ -28,5 +28,6 @@ a {
 
 }
 
+
 `;
 export default GlobalStyle;

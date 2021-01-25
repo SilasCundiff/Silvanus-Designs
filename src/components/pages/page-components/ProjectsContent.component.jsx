@@ -11,8 +11,26 @@ const ContentWrap = styled.div`
   width: 100%;
   height: 100%;
   gap: 2vh 1vw;
-  overflow: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
+  @media only screen and (max-width: 1440px) {
+    gap: 2vh 5vw;
+  }
+  @media only screen and (max-width: 1280px) {
+    gap: 0;
+    padding: 0;
+    margin-top: 0;
+  }
+  /* @media only screen and (max-width: 1280px) {
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+
+  } */
 `;
+
+
 
 function ProjectsContent() {
   //Example icons object values
@@ -37,6 +55,7 @@ function ProjectsContent() {
           css: true,
           js: true,
         }}
+        id="ZenifyCard"
       />
       <ProjectsCard
         title={'Test'}
@@ -48,8 +67,6 @@ function ProjectsContent() {
           css: true,
           js: true,
         }}
-        key='card2'
-        id='card2'
       />
       <ProjectsCard
         title={'Zenify'}
@@ -61,8 +78,6 @@ function ProjectsContent() {
           css: true,
           js: true,
         }}
-        key='card2'
-        id='card2'
       />
       <ProjectsCard
         title={'Zenify'}
@@ -74,8 +89,6 @@ function ProjectsContent() {
           css: true,
           js: true,
         }}
-        key='card2'
-        id='card2'
       />
     </ContentWrap>
   );

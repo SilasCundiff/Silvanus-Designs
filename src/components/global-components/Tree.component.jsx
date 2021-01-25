@@ -36,19 +36,21 @@ const StyledTree = styled(Svg)`
   @media screen and (max-width: 1639px) { 
     width: 55%;
   }
-  @media screen and (max-width: 1439px) { 
+
+  @media screen and (max-width: 1359px) { 
     width: 60%;
   }
-  @media screen and (max-width: 1359px) { 
-    width: 65%;
-  }
   @media screen and (max-width: 1279px) { 
-    width: auto;
-    height: 100%;
+    position: sticky;
+    width: 80%;
+    margin-bottom: -8vh;
+    top: 100%;
+
+    
   }
   @media screen and (max-width: 979px) { 
-
-    height: 90%;
+    width: 100%;
+    /* height: 90%; */
   }
 `;
 

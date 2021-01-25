@@ -10,3 +10,5 @@ TODO:
 - add contact form functionality
 - update footer video credits
 - custom nav toggle icon
+- bugfix projects page layout moving on card collapse
+- make projects page responsive

@@ -8,7 +8,7 @@ const ContentWrap = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border-radius: 15px;
+
   padding: 0 0 0 2rem;
   .intro {
     font-family: 'Pacifico', cursive;
@@ -54,36 +54,59 @@ const ContentWrap = styled.div`
     transition: all 1s;
     align-self: flex-start;
   }
+  @media screen and (max-width: 1280px) { 
+    width: 100vw;
+    background: rgba(0, 0, 0, 0.5);
+    margin-top: auto;
+    padding: 0;
+
+    .intro {
+    margin-top: auto;
+    width: 50%;
+  }
+
+  & div {
+    width: 50%;
+  }
+  & .resumeButton {
+    width: 40%;
+    align-self: unset;
+    margin: 20px auto;
+  }
+  }
 `;
 
 function AboutContent() {
   return (
     <ContentWrap className='contentWrap'>
-      <h1 className='intro'>My name is Silas, and I'm</h1>
-      <div className='education'>
-        <h2>
-          A graduate of <br /> Southern Crescent Technical College
-        </h2>
-        <p>With a double major in programming & Web Design/Development</p>
-      </div>
-      <div className='type'>
-        <h2>
-          Front-end Focused,
-          <br /> Back-end Capable
-        </h2>
-        <p>with a love of projects that allow for creativity</p>
-      </div>
-      <div className='codeExperience'>
-        <h2>Most experienced in HTML, CSS, & JS</h2>
-        <p>with experience in Sass, Express, Redux, and React</p>
-      </div>
-      <div className='designExperience'>
-        <h2>An Abode suite Designer</h2>
-        <p>that loves Photoshop, Illustrator, XD, Animate</p>
-      </div>
-      <a className='resumeButton' href='#'>
-        My Resume
-      </a>
+
+        <h1 className='intro'>My name is Silas, and I'm</h1>
+        <div className='education'>
+          <h2>
+            A graduate of <br /> Southern Crescent Technical College
+          </h2>
+          <p>With a double major in programming & Web Design/Development</p>
+        </div>
+        <div className='type'>
+          <h2>
+            Front-end Focused,
+            <br /> Back-end Capable
+          </h2>
+          <p>with a love of projects that allow for creativity</p>
+        </div>
+        <div className='codeExperience'>
+          <h2>Most experienced in HTML, CSS, & JS</h2>
+          <p>with experience in Sass, Express, Redux, and React</p>
+        </div>
+        <div className='designExperience'>
+          <h2>An Abode suite Designer</h2>
+          <p>that loves Photoshop, Illustrator, XD, Animate</p>
+        </div>
+        {/* !! TODO Update link */}
+        <a className='resumeButton' href='https://www.linkedin.com/jobs'>
+          My Resume
+        </a>
+
     </ContentWrap>
   );
 }
