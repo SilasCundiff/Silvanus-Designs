@@ -84,16 +84,15 @@ const StyledNav = styled.nav`
     justify-content: center;
     align-items: flex-end;
     list-style: none;
-    margin-right: 50px;
-    margin-top: 20px;
+    margin-right: 4rem;
+    margin-top: 2rem;
     gap: 0 50px;
   }
   .list-item {
     .link {
-      font-family: 'Poppins', sans-serif;
-      font-weight: 500;
+      font-weight: 600;
       text-transform: uppercase;
-      font-size: 1.3rem;
+      font-size: 3.4rem;
       color: ${(props) => props.theme.colors.tertiary};
       transition: all 0.5s;
     }

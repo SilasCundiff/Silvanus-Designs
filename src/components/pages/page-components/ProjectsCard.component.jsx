@@ -2,147 +2,149 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 
 
-function ProjectsCard({ title, subtitle, imgSrc, icons }) {
+function ProjectsCard({ title, subtitle, imgSrc, icons, id }) {
   const [expanded, setExpanded] = useState(false);
   const handleClick = () => {
     setExpanded(!expanded);
   };
   return (
-    <Card>
-      <div className={`cardWrapper ${expanded ? 'expanded' : 'compact'} ${window.innerWidth < 1280 ? 'expanded' : 'compact'}`}>
+    <Card id={id}>
 
-          <div className='card'>
-            <div className='imgWrapper'>
-              <div className='imgOverlay'></div>
-              <iframe
-                className='demoVideo'
-                title='test'
-                width='560'
-                height='315'
-                src={`${
-                  expanded || window.innerWidth < 1280 ? 'https://www.youtube.com/embed/VoUHpIFCetk' : null
-                }`}
-                frameBorder='0'
-                allow='clipboard-write; encrypted-media; picture-in-picture'
-                allowFullScreen
-              ></iframe>
-              <img src={imgSrc} alt='' className='cardImage mainImage' />
-              <img src={imgSrc} alt='' className='cardImage extraImage' />
-              <img src={imgSrc} alt='' className='cardImage extraImage' />
-              <img src={imgSrc} alt='' className='cardImage extraImage' />
-              <img src={imgSrc} alt='' className='cardImage extraImage' />
-            </div>
-            <div className='cardText'>
-              <div className='cardTitleWrapper'>
-                <h2 className='cardTitle'>{title}</h2>
-                <p className='cardSubTitle'>{subtitle}</p>
-              </div>
-              <div className='expandedCardText'>
-                <div className='col-1'>
-                  <div className='description'>
-                    <h3>The Rundown</h3>
-                    <p>
-                      Zenify is an app I created that makes use of Spotify's web
-                      playback and audio analysis to power a particle based
-                      audio visualizer. Many of the hardest problems that arose
-                      during development did not have solutions or information
-                      online.
-                    </p>
-                    <p>
-                      For more detailed information, feel free to drop by my
-                      GitHub.
-                    </p>
-                  </div>
-                  <div className='expandedSkillBar'>
-                    <h3>Main Skills:</h3>
-                    {icons.html ? <i className='fab fa-html5'></i> : null}
-                    {icons.css ? <i className='fab fa-css3-alt'></i> : null}
-                    {icons.js ? <i className='fab fa-js-square'></i> : null}
-                    {icons.react ? <i className='fab fa-react'></i> : null}
-                    {icons.bootstrap ? (
-                      <i className='fab fa-bootstrap'></i>
-                    ) : null}
-                    {icons.sass ? <i className='fab fa-sass'></i> : null}
-                    <h4>Additional Skills:</h4>
-                    <p className='additionalSkills'>
-                      Spotify Web Api, tsParticles, styled-components, redux,
-                      express
-                    </p>
-                  </div>
-                  <div className='expandedCardLinks'>
-                    <a href='https://github.com/SilasCundiff/zenify'>
-                      Project Github
-                    </a>
-                    <a href='zenify-server.herokuapp.com/'>Live Project</a>
-                  </div>
+        <div className={`cardWrapper ${expanded ? 'expanded' : ""} ${window.innerWidth < 1280 ? 'expanded' : ""}`}>
+            <div className='card'>
+              <div className='cardText'>
+                <div className='cardTitleWrapper'>
+                  <h2 className='cardTitle'>{title}</h2>
+                  <p className='cardSubTitle'>{subtitle}</p>
                 </div>
-                <div className='col-2'>
-                  <div className='challenges'>
-                    <h3>The Hardest Problem</h3>
-                    <p>
-                      The Spotify's Web Api information is very detailed, but it
-                      is all in JSON format. I needed a way to compare the
-                      listener's current position in the song to the analysis
-                      data for the current segment in the song.
-                    </p>
+                <div className='expandedCardText'>
+                  <div className='col-1'>
+                    <div className='description'>
+                      <h3>The Rundown</h3>
+                      <p>
+                        Zenify is an app I created that makes use of Spotify's web
+                        playback and audio analysis to power a particle based
+                        audio visualizer. Many of the hardest problems that arose
+                        during development did not have solutions or information
+                        online.
+                      </p>
+                      <p>
+                        For more detailed information, feel free to drop by my
+                        GitHub.
+                      </p>
+                      <div className='expandedCardLinks'>
+                      <a href='https://github.com/SilasCundiff/zenify'>
+                        Project Github
+                      </a>
+                      <a href='zenify-server.herokuapp.com/'>Live Project</a>
+                    </div>
+                    </div>
+                    <div className='expandedSkillBar'>
+                      <h3>Main Skills:</h3>
+                      {icons.html ? <i className='fab fa-html5'></i> : null}
+                      {icons.css ? <i className='fab fa-css3-alt'></i> : null}
+                      {icons.js ? <i className='fab fa-js-square'></i> : null}
+                      {icons.react ? <i className='fab fa-react'></i> : null}
+                      {icons.bootstrap ? (
+                        <i className='fab fa-bootstrap'></i>
+                      ) : null}
+                      {icons.sass ? <i className='fab fa-sass'></i> : null}
+                      <h4>Additional Skills:</h4>
+                      <p className='additionalSkills'>
+                        Spotify Web Api, tsParticles, styled-components, redux,
+                        express
+                      </p>
+                    </div>
+                    
                   </div>
-                  <div className='solution'>
-                    <h3>My Solution</h3>
-                    <p>
-                      I designed a system that uses real time to create
-                      timestamps that can be used to track playback progress.
-                      Then I use the timestamp to retrieve the current segment
-                      in the song. Then I make use of the segment's data to
-                      manipulate the particles based on the musical properties
-                      of the segment.
-                    </p>
+                  <div className='col-2'>
+                    <div className='challenges'>
+                      <h3>The Hardest Problem</h3>
+                      <p>
+                        The Spotify's Web Api information is very detailed, but it
+                        is all in JSON format. I needed a way to compare the
+                        listener's current position in the song to the analysis
+                        data for the current segment in the song.
+                      </p>
+                    </div>
+                    <div className='solution'>
+                      <h3>My Solution</h3>
+                      <p>
+                        I designed a system that uses real time to create
+                        timestamps that can be used to track playback progress.
+                        Then I use the timestamp to retrieve the current segment
+                        in the song. Then I make use of the segment's data to
+                        manipulate the particles based on the musical properties
+                        of the segment.
+                      </p>
+                    </div>
                   </div>
+                  
                 </div>
+               
               </div>
+              <div className='imgWrapper'>
+                <div className='imgOverlay'></div>
+                <h4 className='videoTitle'>{title} Demo Video</h4>
+                <iframe
+                  className='demoVideo'
+                  title='test'
+                  width='560'
+                  height='315'
+                  src={`${
+                    expanded || window.innerWidth < 1280 ? 'https://www.youtube.com/embed/VoUHpIFCetk' : null
+                  }`}
+                  frameBorder='0'
+                  allow='clipboard-write; encrypted-media; picture-in-picture'
+                  allowFullScreen
+                ></iframe>
+                <img src={imgSrc} alt='' className='cardImage mainImage' />
+                <img src={imgSrc} alt='' className='cardImage extraImage' />
+                <img src={imgSrc} alt='' className='cardImage extraImage' />
+                <img src={imgSrc} alt='' className='cardImage extraImage' />
+                <img src={imgSrc} alt='' className='cardImage extraImage' />
+              </div>
+              <div className='cardSkillBar'>
+                {icons.html ? <i className='fab fa-html5'></i> : null}
+                {icons.css ? <i className='fab fa-css3-alt'></i> : null}
+                {icons.js ? <i className='fab fa-js-square'></i> : null}
+                {icons.react ? <i className='fab fa-react'></i> : null}
+                {icons.bootstrap ? <i className='fab fa-bootstrap'></i> : null}
+                {icons.sass ? <i className='fab fa-sass'></i> : null}
+              </div>
+              <button onClick={handleClick} className='expandButton'>
+                <i className='fas fa-expand'></i>
+              </button>
+              <button
+                onClick={handleClick}
+                className={`closeButton ${expanded ? null : 'hidden'}`}
+              >
+                <i className='fas fa-times'></i>
+              </button>
             </div>
+        </div>
 
-            <div className='cardSkillBar'>
-              {icons.html ? <i className='fab fa-html5'></i> : null}
-              {icons.css ? <i className='fab fa-css3-alt'></i> : null}
-              {icons.js ? <i className='fab fa-js-square'></i> : null}
-              {icons.react ? <i className='fab fa-react'></i> : null}
-              {icons.bootstrap ? <i className='fab fa-bootstrap'></i> : null}
-              {icons.sass ? <i className='fab fa-sass'></i> : null}
-            </div>
-            <button onClick={handleClick} className='expandButton'>
-              <i className='fas fa-expand'></i>
-            </button>
-            <button
-              onClick={handleClick}
-              className={`closeButton ${expanded ? null : 'hidden'}`}
-            >
-              <i className='fas fa-times'></i>
-            </button>
-          </div>
-      
-      </div>
     </Card>
   );
 }
 const Card = styled.div`
-  flex: 0 1 40%;
-  margin-top: 8vh;
   transform-origin: initial;
+
   .cardWrapper {
     background: none;
-
     & .card {
       height: 300px;
       width: 450px;
       display: flex;
-      position: relative;
+      /* position: relative; */
       transition: all 0.4s;
       & .cardText {
         position: absolute;
         color: ${(props) => props.theme.colors.tertiary};
-        top: -20%;
-        right: -15%;
+        top: -5%;
+        right: -5%;
         width: 50%;
+        height: fit-content;
         z-index: 2;
  
         & .cardTitleWrapper {
@@ -152,13 +154,13 @@ const Card = styled.div`
             transition: all .2s;
           }
           & .cardTitle {
-            font-size: 3.5vw;
-            line-height: 2rem;
+            font-size: 6rem;
+            line-height: 6rem;
           }
           & .cardSubTitle {
-            margin-top: 15px;
-            font-size: 1.4vw;
-            line-height: 1rem;
+            margin-top: 3rem;
+            font-size: 3rem;
+            line-height: 2.6rem;
           }
         }
         & .expandedCardText,
@@ -183,7 +185,6 @@ const Card = styled.div`
           display: none;
         }
       }
-
         & .imgOverlay {
         width: 450px;
         height: 300px;
@@ -203,12 +204,11 @@ const Card = styled.div`
         position: absolute;
         top: 0;
         left: 0;
-
         opacity: 1;
         visibility: visible;
         transition: opacity 0.5s 0.4s;
       }
-      & .demoVideo,
+      & .demoVideo, 
       .extraImage {
         opacity: 0;
         visibility: hidden;
@@ -219,8 +219,6 @@ const Card = styled.div`
         height: 0;
  
       }
-      
-     
       & .cardSkillBar,
       & .expandButton {
         opacity: 0;
@@ -229,38 +227,40 @@ const Card = styled.div`
         transition: opacity 0.5s;
       }
       & .cardSkillBar {
-        bottom: -16px;
-        left: 6px;
+        font-size: 6rem;
+        bottom: -1.2rem;
+        left: .6rem;
         z-index: 2;
-        color: ${(props) => props.theme.colors.tertiary};
+        color: ${(props) => props.theme.colors.primary};
         & i {
           padding: 5px 10px;
         }
       }
       & .expandButton {
-        color: ${(props) => props.theme.colors.tertiary};
+        color: ${(props) => props.theme.colors.primary};
         border: none;
         background-color: transparent;
         cursor: pointer;
         padding: 10px;
+      
         top: 50%;
         left: 50%;
         z-index: 2;
         transform: translate(-50%, -50%);
         & i {
-          font-size: 1.6rem;
+          font-size: 8rem;
         }
       }
     }
     & .card::after {
       content: 'See more';
-      color: ${(props) => props.theme.colors.tertiary};
+      color: ${(props) => props.theme.colors.primary};
       position: absolute;
       top: 70%;
       left: 50%;
       z-index: 2;
       transform: translate(-50%, -50%);
-      font-size: 0.8rem;
+      font-size: 3rem;
       opacity: 0;
       transition: opacity 0.4s;
     }
@@ -280,13 +280,17 @@ const Card = styled.div`
     }
   }
   /*!! start of expanded styles */
+
   .expanded {
-    margin-top: 2vh;
+    /* margin-top: 2vh; */
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: fixed;
     transform: translate(-50%, -50%);
     top: 55%;
     left: 50%;
     z-index: 10;
-    position: absolute;
+    /* position: absolute; */
     transition: translate 0.2s;
     background: radial-gradient(
       rgba(200, 200, 200, 0.2),
@@ -294,47 +298,44 @@ const Card = styled.div`
     );
     border-radius: 15px;
     backdrop-filter: blur(10px);
-    transform-origin: initial;
+    /* transform-origin: initial; */
     & .card {
-      height: 73vh;
+      height: 80vh;
       width: 80vw;
+      display: flex;
+      flex-direction: column;
       & .cardText {
         position: relative;
         top: 0;
         right: 0;
-        height: 100%;
-        width: 75%;
+        height: fit-content;
+        width: 100%;
         display: flex;
         align-items: flex-start;
         flex-wrap: wrap;
-
+        margin-bottom: 2rem;
         & .cardTitleWrapper {
-          height: fit-content;
           display: flex;
-          gap: 0 1.5rem;
-          height: 5%;
-          margin-top: -5%;
-          margin-bottom: 0;
-          align-items: center;
+          height: fit-content;
+          align-items: flex-end;
+          margin: 2rem auto 4rem;
+          padding: 2rem;
           & .cardTitle,
           & .cardSubTitle {
             transform: translate3d(0, 0, 0);
             text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
           }
           & .cardTitle {
-            font-size: 6vw;
-            line-height: initial;
-            margin: 0 auto 0 1.2rem;
-            padding: 0;
-            height: fit-content;
+            font-size: 16rem;
+            line-height: 14rem;
+            width: 50%;
           }
           & .cardSubTitle {
-            font-size: 1.8vw;
-            padding-top: 1rem;
-            padding-left: 0.2vw;
-            line-height: 1.5rem;
+            width: 50%;
+            font-size: 4.6rem;
+            padding: 0 2rem;
+            line-height: 6rem;
             text-align: left;
-            flex: 0 1 60%;
           }
         }
 
@@ -342,14 +343,13 @@ const Card = styled.div`
           display: flex;
           flex-direction: row;
           flex-wrap: wrap;
-          height: 95%;
+          height: 90%;
           align-self: flex-end;
           & .description,
           .challenges,
           .solution,
-          .expandedSkillBar,
-          .expandedCardLinks {
-            padding: 10px 30px 20px;
+          .expandedSkillBar {
+            padding: 1rem 3rem 2rem;
             & h3,
             h4,
             p,
@@ -358,20 +358,20 @@ const Card = styled.div`
               color: ${(props) => props.theme.colors.tertiary};
             }
             & h3 {
-              font-size: 1.6vw;
-              padding-bottom: 6px;
+              font-size: 3.8rem;
+              padding-bottom: 1rem;
             }
             & h4 {
-              font-size: 1.2vw;
-              padding: 16px 0 0 0;
+              font-size: 3.8rem;
+              padding: 1.6rem 0 0 0;
             }
             & p {
-              font-size: 1vw;
+              font-size: 2.2rem;
             }
           }
           & .description {
             & p {
-              padding-bottom: 20px;
+              padding-bottom: 2rem;
             }
             & p:last-of-type {
               padding-bottom: 0;
@@ -409,27 +409,25 @@ const Card = styled.div`
           transition: opacity 0.4s 0.8s;
           /* background: purple; */
           & .expandedSkillBar {
-            margin: 0 0 0 auto;
             & i {
-              padding: 0 1.6vw 0 0;
-              font-size: 2.4vw;
+              padding: 0 3rem 0 0;
+              font-size:3.8rem;
             }
 
-            & .additionalSkills {
-              padding: 0;
-            }
           }
           & .expandedCardLinks {
             display: flex;
-            justify-content: center;
-
+            padding: 0;
+            /* justify-content: center; */
+            align-items: center;
             & a {
               background: ${(props) => props.theme.colors.tertiary};
               color: ${(props) => props.theme.colors.primary};
-              padding: 0.5vw;
+              padding: 0.5rem 1rem;
               border-radius: 15px;
-              font-size: 1.2vw;
-              margin: 0 auto 0 0;
+              font-size: 3rem;
+              margin: 1.6rem auto 0 0;
+              text-transform: uppercase;
             }
           }
         }
@@ -439,9 +437,6 @@ const Card = styled.div`
           transition: opacity 0.8s 1.2s;
           display: flex;
           flex-direction: column;
-          & .solution {
-            margin: 0 0 auto;
-          }
         }
       }
     }
@@ -450,10 +445,12 @@ const Card = styled.div`
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
-      width: 50%;
-      height: 100%;
+      width: 100%;
+      height: auto;
       justify-content: center;
-      & .demoVideo,
+      margin: 0;
+      padding: 0 3rem 2rem;
+      & .demoVideo, .videoTitle, 
       .extraImage {
         opacity: 1;
         visibility: visible;
@@ -474,18 +471,27 @@ const Card = styled.div`
         opacity: 0;
         transition: none;
       }
-      & .demoVideo {
-        flex: 1 0 100%;
+      & .videoTitle {
+        font-size: 6rem;
+        justify-self: flex-start;
+        text-align: left;
         width: 100%;
-        height: 50%;
+        font-family: 'Poppins', sans-serif;
+        color: ${(props) => props.theme.colors.tertiary};
+      }
+      & .demoVideo {
+        width: 90%;
+        height: 60rem;
+        margin: 1rem 0 2rem;
         object-fit: cover;
         padding: 0.2rem;
         border-radius: 15px;
       }
       & .extraImage {
-        width: 45%;
-        height: fit-content;
-        margin: 0 10px 0 20px;
+        width: 40%;
+        height: auto;
+        object-fit: cover;
+        margin:  20px;
         border-radius: 10px;
         position: relative;
       }
@@ -503,9 +509,9 @@ const Card = styled.div`
     & .closeButton {
       opacity: 1;
       visibility: visible;
-      position: absolute;
-      top: -6vh;
-      right: -3vw;
+      position: fixed;
+      top: .5rem;
+      right: 1rem;
       background: none;
       padding: 0.2rem 0.5rem;
       color: ${(props) => props.theme.colors.tertiary};
@@ -548,11 +554,6 @@ const Card = styled.div`
         }
 
         & .expandedCardText {
-          /* display: flex;
-          flex-direction: row;
-          flex-wrap: wrap;
-          height: fit-content;
-          align-self: unset; */
           & .description,
           .challenges,
           .solution,

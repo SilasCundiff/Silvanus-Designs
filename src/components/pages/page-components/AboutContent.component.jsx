@@ -3,110 +3,105 @@ import styled from 'styled-components';
 
 const ContentWrap = styled.div`
   height: 100%;
-    width: 50vw;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-  padding: 0 0 0 2rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem;
   .intro {
     font-family: 'Pacifico', cursive;
-    font-size: calc(38px + (38 - 24) * ((100vw - 300px) / (1600 - 300)));
+    font-size: 8rem;
     color: ${(props) => props.theme.colors.tertiary};
     padding: 0 0 1rem 0;
-    text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+    text-shadow: 2px 2px 1px ${(props) => props.theme.colors.primary};
     transition: color 2s;
     width: 100%;
   }
 
   & div {
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    & * {
+      font-family: 'Poppins', sans-serif;
+    }
   }
   & div h2 {
-    font-family: 'Poppins', sans-serif;
     font-weight: bold;
-    font-size: calc(24px + (24 - 18) * ((100vw - 300px) / (1600 - 300)));
+    font-size: 6rem;
     color: ${(props) => props.theme.colors.tertiary};
-    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.8);
-    line-height: 1;
-    padding-bottom: 0.3rem;
+    text-shadow: 2px 2px 1px ${(props) => props.theme.colors.primary};
+    line-height: 0.9;
   }
   & div p {
-    font-family: 'Poppins', sans-serif;
     font-weight: light;
-    font-size: calc(18px + (18 - 14) * ((100vw - 300px) / (1600 - 300)));
-    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.8);
+    font-size: 3rem;
+    text-shadow: 2px 2px 1px ${(props) => props.theme.colors.primary};
     color: ${(props) => props.theme.colors.tertiary};
-    padding-bottom: 1rem;
+    padding-bottom: 1.8rem;
   }
   & .resumeButton {
     cursor: pointer;
     background-color: ${(props) => props.theme.colors.primary};
     color: ${(props) => props.theme.colors.tertiary};
-    padding: 0.3rem 0.2rem;
+    padding: 0.2rem 0.4rem;
     border-radius: 2rem;
-    margin: 0.5rem 0 0 4rem;
-    width: 40%;
+    margin: auto;
+    width: 25%;
     text-align: center;
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
-    font-size: 1.1rem;
+    font-size: 3.8rem;
     transition: all 1s;
-    align-self: flex-start;
+    text-transform: uppercase;
   }
-  @media screen and (max-width: 1280px) { 
+  @media screen and (max-width: 1680px) {
     width: 100vw;
     background: rgba(0, 0, 0, 0.5);
     margin-top: auto;
     padding: 0;
 
     .intro {
-    margin-top: auto;
-    width: 50%;
-  }
+      margin-top: auto;
+      width: 100%;
+      text-align: center;
+    }
 
-  & div {
-    width: 50%;
-  }
-  & .resumeButton {
-    width: 40%;
-    align-self: unset;
-    margin: 20px auto;
-  }
+    & div {
+      width: 80%;
+      padding: 0 auto;
+    }
+    & .resumeButton {
+      width: 40%;
+      align-self: unset;
+      margin: 20px auto;
+    }
   }
 `;
 
 function AboutContent() {
   return (
     <ContentWrap className='contentWrap'>
-
-        <h1 className='intro'>My name is Silas, and I'm</h1>
-        <div className='education'>
-          <h2>
-            A graduate of <br /> Southern Crescent Technical College
-          </h2>
-          <p>With a double major in programming & Web Design/Development</p>
-        </div>
-        <div className='type'>
-          <h2>
-            Front-end Focused,
-            <br /> Back-end Capable
-          </h2>
-          <p>with a love of projects that allow for creativity</p>
-        </div>
-        <div className='codeExperience'>
-          <h2>Most experienced in HTML, CSS, & JS</h2>
-          <p>with experience in Sass, Express, Redux, and React</p>
-        </div>
-        <div className='designExperience'>
-          <h2>An Abode suite Designer</h2>
-          <p>that loves Photoshop, Illustrator, XD, Animate</p>
-        </div>
-        {/* !! TODO Update link */}
-        <a className='resumeButton' href='https://www.linkedin.com/jobs'>
-          My Resume
-        </a>
-
+      <h1 className='intro'>My name is Silas, and I'm</h1>
+      <div className='education'>
+        <h2>A graduate of Southern Crescent Technical College</h2>
+        <p>With a double major in programming & Web Design/Development</p>
+      </div>
+      <div className='type'>
+        <h2>Front-end Focused, Back-end Capable</h2>
+        <p>with a love of projects that allow for creativity</p>
+      </div>
+      <div className='codeExperience'>
+        <h2>Most experienced in HTML, CSS, & JS</h2>
+        <p>with experience in Sass, Express, Redux, and React</p>
+      </div>
+      <div className='designExperience'>
+        <h2>An Abode suite Designer</h2>
+        <p>that loves Photoshop, Illustrator, XD, Animate</p>
+      </div>
+      {/* !! TODO Update link */}
+      <a className='resumeButton' href='https://www.linkedin.com/jobs'>
+        My Resume
+      </a>
     </ContentWrap>
   );
 }

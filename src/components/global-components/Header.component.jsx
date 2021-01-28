@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import Logo from './Logo.component';
-
+import { Link } from 'react-router-dom';
 const logoVariants = {
   hidden: {
     opacity: 0,
@@ -71,37 +71,44 @@ function Header(props) {
 
   return (
     <StyledHeader>
-      <div className='logo-container'>
-        <motion.div variants={logoVariants} initial='hidden' animate='visible'>
-          <StyledLogo />
-        </motion.div>
-        <motion.span
-          className='logo-text-s'
-          variants={textLogoSVariants}
-          initial='hidden'
-          animate='visible'
-        >
-          S
-        </motion.span>
-        <div className='logo-text-container'>
-          <motion.span
-            className='logo-text-main'
-            variants={textLogoNameVariants}
+      <Link to='/'>
+        <div className='logo-container'>
+          <motion.div
+            variants={logoVariants}
             initial='hidden'
             animate='visible'
           >
-            ilvanus
-          </motion.span>
+            <StyledLogo />
+          </motion.div>
           <motion.span
-            className='logo-text-sub'
-            variants={textLogoSubVariants}
+            className='logo-text-s'
+            variants={textLogoSVariants}
             initial='hidden'
             animate='visible'
           >
-            Designs
+            S
           </motion.span>
+          <div className='logo-text-container'>
+            <motion.span
+              className='logo-text-main'
+              variants={textLogoNameVariants}
+              initial='hidden'
+              animate='visible'
+            >
+              ilvanus
+            </motion.span>
+            <motion.span
+              className='logo-text-sub'
+              variants={textLogoSubVariants}
+              initial='hidden'
+              animate='visible'
+            >
+              Designs
+            </motion.span>
+          </div>
+          
         </div>
-      </div>
+        </Link>
       <div
         className={`toggle ${props.navOpen ? 'active' : null}`}
         onClick={handleClick}
@@ -113,25 +120,23 @@ const StyledHeader = styled.header`
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  padding: 40px 100px;
-  display: flex;
-  align-items: center;
-  z-index: 10;
-  pointer-events: none;
+  width: fit-content;
+  padding-left: 2rem;
+  padding-top: 2.6rem;
+  z-index: 3;
   & .logo-container {
     display: flex;
     align-items: center;
     color: ${(props) => props.theme.colors.primary};
     transition: color 1.5s;
+    
     & .logo-text-container {
       display: flex;
       flex-direction: column;
     }
     & .logo-text-main,
     & .logo-text-sub {
-      font-size: 1.8rem;
-      font-family: 'Poppins', sans-serif;
+      font-size: 4.6rem;
       font-weight: 700;
       text-transform: uppercase;
       line-height: 0.8;
@@ -143,17 +148,18 @@ const StyledHeader = styled.header`
       color: inherit;
     }
     .logo-text-s {
-      font-family: 'Poppins', sans-serif;
       font-weight: 700;
       text-transform: uppercase;
-      font-size: 4rem;
+      font-size: 10rem;
       line-height: 0.5;
       color: ${(props) => props.theme.colors.tertiary};
     }
   }
 
   .toggle {
-    position: relative;
+    position: absolute;
+    top: 15%;
+    right: 5%;
     width: 60px;
     height: 60px;
     background: url(https://i.ibb.co/HrfVRcx/menu.png);
@@ -179,10 +185,14 @@ const StyledHeader = styled.header`
       display: block;
     }
   }
- 
+
   @media screen and (max-width: 768px) {
-    padding: 40px;
-    & .logo-container { & .logo-text-sub {color: #fafafa;}}
+    /* padding: 40px; */
+    & .logo-container {
+      & .logo-text-sub {
+        color: ${(props) => props.theme.colors.tertiary};
+      }
+    }
   }
 `;
 
@@ -190,7 +200,7 @@ const StyledLogo = styled(Logo)`
   color: inherit;
   max-width: 128px;
   min-width: 64px;
-  width: 10vw;
-  margin: 0;
+  width: 10rem;
+  margin: 0 -1rem 0 0;
 `;
 export default Header;

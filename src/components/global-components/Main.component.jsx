@@ -38,21 +38,20 @@ const StyledMain = styled.main`
   position: absolute;
   right: 0;
   width: 100%;
-  min-height: 100vh;
-  padding: 100px;
+  min-height: 100%;
+  padding: 0;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #111;
+  align-items: flex-end;
+  background: ${(props) => props.theme.colors.black};
   z-index: 2;
   transition: right .5s;
   overflow: hidden;
   &.active {
     right: 300px;
   }
-  @media only screen and (max-width: 1280px) {
+  /* @media only screen and (max-width: 1280px) {
     padding: 100px 0 0;
-  }
+  } */
 `;
 
 export default Main
