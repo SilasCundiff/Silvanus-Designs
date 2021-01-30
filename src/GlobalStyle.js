@@ -10,9 +10,6 @@ const GlobalStyle = createGlobalStyle`
     font-size: 62.5%;
 }
 
-h1, h2, h3, h4 {
-    font-family: 'Trirong', serif;
-}
 a {
     text-decoration: none;
     color: inherit;
@@ -23,7 +20,11 @@ a {
     height: 90vh;
     display: flex;
 }
+@media screen and (max-width: 768px) { 
+    .container {
+    height: 100vh;
+}
 
-
+}
 `;
 export default GlobalStyle;

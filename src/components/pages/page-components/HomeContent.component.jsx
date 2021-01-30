@@ -3,13 +3,13 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 const ContentWrap = styled.div`
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
   & .title {
     display: flex;
     flex-direction: column;
@@ -36,7 +36,7 @@ const ContentWrap = styled.div`
     width: 100%;
     display: flex;
     align-items: center;
-   
+
     & a {
       cursor: pointer;
       background-color: ${(props) => props.theme.colors.primary};
@@ -69,14 +69,99 @@ const ContentWrap = styled.div`
     transition: all 1s;
     text-transform: uppercase;
   }
-  @media screen and (max-width: 1280px) { 
-    
-
-
+  @media screen and (max-width: 768px) {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    & .title {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      text-align: center;
+      padding-top: 0;
+      & h1 {
+        font-size:10rem;
+        padding: 0 2rem;
+        margin: 0 auto;
+      }
+      & h2 {
+        font-size: 8rem;
+        padding: 2rem 8rem;
+        margin: 2rem 1rem;
+        line-height: 10rem;
+      }
+    }
+    & .ctaButtons {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      margin: 0 auto;
+      & a {
+        padding: 0.3rem 2rem;
+        font-size: 4rem;
+      }
+      & .projectsButton,
+      .contactButton {
+        margin: 1rem auto;
+      }
+    }
     & .resumeButton {
-    width: 40%;
-  }
-  }
+      width: 70%;
+      padding: 0.3rem 2rem;
+      margin: 3rem auto 0;
+      font-size: 4.8rem;
+    }
+  } /* end of 375px */
+  @media screen and (max-width: 375px) {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    & .title {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      text-align: center;
+      padding-top: 4rem;
+      & h1 {
+        font-size: 4.8rem;
+        padding: 0 2rem;
+        margin: 0 1rem;
+      }
+      & h2 {
+        font-size: 3.8rem;
+        padding: 0 4rem;
+        margin: 2rem 1rem;
+        line-height: 4.6rem;
+      }
+    }
+    & .ctaButtons {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      & a {
+        padding: 0.3rem 2rem;
+        font-size: 3rem;
+      }
+      & .projectsButton,
+      .contactButton {
+        margin: 1rem auto;
+      }
+    }
+    & .resumeButton {
+      width: 70%;
+      padding: 0.3rem 2rem;
+      margin: 3rem auto 0;
+
+      font-size: 2.8rem;
+    }
+  } /* end of 375px */
 `;
 
 function HomeContent() {
@@ -94,7 +179,7 @@ function HomeContent() {
           Contact Me
         </Link>
       </div>
-       {/* !! TODO Update link */}
+      {/* !! TODO Update link */}
       <a className='resumeButton' href='https://www.linkedin.com/jobs'>
         My Resume
       </a>

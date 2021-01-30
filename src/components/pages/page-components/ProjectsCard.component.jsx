@@ -9,8 +9,7 @@ function ProjectsCard({ title, subtitle, imgSrc, icons, id }) {
   };
   return (
     <Card id={id}>
-
-        <div className={`cardWrapper ${expanded ? 'expanded' : ""} ${window.innerWidth < 1280 ? 'expanded' : ""}`}>
+        <div className={`cardWrapper ${expanded ? 'expanded' : ""}  ${window.innerWidth < 1280 ? 'expanded' : ""}  `}>
             <div className='card'>
               <div className='cardText'>
                 <div className='cardTitleWrapper'>
@@ -208,7 +207,7 @@ const Card = styled.div`
         visibility: visible;
         transition: opacity 0.5s 0.4s;
       }
-      & .demoVideo, 
+      & .demoVideo,  
       .extraImage {
         opacity: 0;
         visibility: hidden;
@@ -654,33 +653,181 @@ const Card = styled.div`
     }
   }
 }
+
 @media only screen and (max-width: 768px) {
+  width: 90vw;
+  height: fit-content;
+  margin: 2rem auto;
     .expanded {
-      & .imgWrapper {
-        & iframe {
-          flex: 1 1 100%;
-          width: 100%;
-          height: 300px;
+    margin-top: 2rem;
+    position: relative;
+    overflow-y: hidden;
+    top: unset;
+    left: unset;
+    transform: translate(0, 0);
+    & .card {
+      height: fit-content;
+      width: 100%;
+      flex-direction: column;
+      & .cardText {
+        margin-bottom: 2rem;
+
+        & .cardTitleWrapper {
+          margin-top: 0;
+          margin-bottom: 2rem;
+          flex-direction: column;
+          padding-bottom: 0;
+          & .cardTitle {
+            font-size: 10rem;
+            line-height: 7rem;
+            width: 100%;
+          }
+          & .cardSubTitle {
+            width: 100%;
+            font-size: 4.8rem;
+            padding: 0;
+            line-height: 4.4rem;
+          }
         }
-        & img {
-          width: 90%;
-          height: fit-content;
-          margin:0 10px 20px;
+
+        & .expandedCardText {
+          & .description,
+          .challenges,
+          .solution,
+          .expandedSkillBar,
+          .expandedCardLinks {
+            padding: 0;
+
+            & h3 {
+              font-size: 4rem;
+ 
+            }
+            & h4 {
+              font-size: 3.6rem;
+    
+            }
+            & p {
+              font-size: 2.4rem;
+            }
+          }
+          & .description {
+            & p {
+              padding-bottom: 20px;
+            }
+            & p:last-of-type {
+              padding-bottom: 0;
+            }
+          }
         }
-}
+        & .expandedCardText,
+        .col-1,
+        .col-2 {
+          padding: 1rem;
+        }
+
+        & .col-1 {
+          /* background: purple; */
+          & .expandedSkillBar {
+            margin: 0 auto;
+            width: 100%;
+   
+            & i {
+              padding: 0 2rem 0 0;
+              font-size: 4rem;
+            }
+
+            & .additionalSkills {
+              padding: 0;
+            }
+          }
+          & .expandedCardLinks {
+            width:100%;
+            & a {
+              width: 100%;
+              padding: 1rem;
+              font-size: 3.2rem;
+              margin: 1.5rem auto;
+            }
+          }
+        }
+      }
     }
 
-}
-@media only screen and (max-width: 480px) {
-    .expanded {
-      & .imgWrapper {
-        & iframe {
-          flex: 1 1 100%;
-          width: 100%;
-          height: 200px;
-        }
-     }
+    & .imgWrapper {
+      padding: 0 1rem 1rem;
+
+      & .videoTitle {
+        font-size: 2.8rem;
+      }
+      & .demoVideo {
+        width: 100%;
+        height: 360px;
+        margin: 1rem 0;
+        padding: 0;
+      }
+      & .extraImage {
+        width: 45%;
+        height: auto;
+        object-fit: cover;
+        margin:  1rem;
+        border-radius: 10px;
+        position: relative;
+      }
   }
+}
+}
+@media only screen and (max-width: 375px) {
+    .expanded {
+    & .card {
+      & .cardText {
+        & .cardTitleWrapper {
+          & .cardTitle {
+            font-size: 8rem;
+          }
+          & .cardSubTitle {
+            font-size: 3.8rem;
+            line-height: 4.4rem;
+          }
+        }
+
+        & .expandedCardText {
+          & .description,
+          .challenges,
+          .solution,
+          .expandedSkillBar,
+          .expandedCardLinks {
+
+            & h3 {
+              font-size: 4rem;
+            }
+            & h4 {
+              font-size: 3.6rem;
+            }
+            & p {
+              font-size: 2rem;
+            }
+          }
+
+        }  
+          & .expandedCardLinks {
+            & a {
+              font-size: 2.8rem;
+            }
+          
+        }
+      }
+    }
+
+    & .imgWrapper {
+
+      & .demoVideo {
+         height: 180px;
+      }
+      & .extraImage {
+        width: 100%;
+      }
+  }
+}
 }
 `;
 

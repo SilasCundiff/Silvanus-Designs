@@ -52,6 +52,9 @@ const StyledMain = styled.main`
   /* @media only screen and (max-width: 1280px) {
     padding: 100px 0 0;
   } */
+  @media screen and (max-width: 768px) { 
+    
+  }
 `;
 
 export default Main

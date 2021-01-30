@@ -118,13 +118,27 @@ const StyledNav = styled.nav`
       justify-content: center;
       align-items: flex-end;
       flex-direction: column;
-      height: 100%;
+      height: 80%;
       width: 300px;
       gap: 20px 0;
     }
     .list-item {
       .link {
         font-size: 1.8rem;
+      }
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .list-item {
+      .link {
+        font-size: 4.8rem;
+      }
+    }
+  }
+  @media screen and (max-width: 375px) {
+    .list-item {
+      .link {
+        font-size: 4rem;
       }
     }
   }

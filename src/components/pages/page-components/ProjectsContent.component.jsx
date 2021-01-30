@@ -34,6 +34,20 @@ const ContentWrap = styled.div`
     padding: 0;
     margin-top: 0;
   }
+  @media screen and (max-width: 768px) {
+    height: 85%;
+    overflow-y: auto;
+    margin-top: auto;
+    #ZenifyCard,
+    #ZenifyCard2,
+    #ZenifyCard3,
+    #ZenifyCard4 {
+      position: relative;
+      top: unset;
+      left: unset;
+      right: unset;
+    }
+  }
   /* @media only screen and (max-width: 1280px) {
     flex-wrap: nowrap;
     flex-direction: column;
@@ -42,8 +56,6 @@ const ContentWrap = styled.div`
 
   } */
 `;
-
-
 
 function ProjectsContent() {
   //Example icons object values
@@ -58,60 +70,54 @@ function ProjectsContent() {
 
   return (
     <ContentWrap id='projectsWrap' className='contentWrap'>
-      
-        <ProjectsCard
-   
-          title={'Zenify'}
-          subtitle={'A Particle based Spotify Player & Audio Visualizer'}
-          imgSrc={img}
-          icons={{
-            react: true,
-            html: true,
-            css: true,
-            js: true,
-          }}
-          id="ZenifyCard"
-        />
-        <ProjectsCard
-  
-          title={'Test'}
-          subtitle={'A Particle based Spotify Player & Audio Visualizer'}
-          imgSrc={img}
-          icons={{
-            react: true,
-            html: true,
-            css: true,
-            js: true,
-          }}
-          id="ZenifyCard2"
-        />
-        <ProjectsCard
-  
-          title={'Zenify'}
-          subtitle={'A Particle based Spotify Player & Audio Visualizer'}
-          imgSrc={img}
-          icons={{
-            react: true,
-            html: true,
-            css: true,
-            js: true,
-          }}
-          id="ZenifyCard3"
-        />
-        <ProjectsCard
-  
-          title={'Zenify'}
-          subtitle={'A Particle based Spotify Player & Audio Visualizer'}
-          imgSrc={img}
-          icons={{
-            react: true,
-            html: true,
-            css: true,
-            js: true,
-          }}
-          id="ZenifyCard4"
-        />
-
+      <ProjectsCard
+        title={'Zenify'}
+        subtitle={'A Particle based Spotify Player & Audio Visualizer'}
+        imgSrc={img}
+        icons={{
+          react: true,
+          html: true,
+          css: true,
+          js: true,
+        }}
+        id='ZenifyCard'
+      />
+      <ProjectsCard
+        title={'Test'}
+        subtitle={'A Particle based Spotify Player & Audio Visualizer'}
+        imgSrc={img}
+        icons={{
+          react: true,
+          html: true,
+          css: true,
+          js: true,
+        }}
+        id='ZenifyCard2'
+      />
+      <ProjectsCard
+        title={'Zenify'}
+        subtitle={'A Particle based Spotify Player & Audio Visualizer'}
+        imgSrc={img}
+        icons={{
+          react: true,
+          html: true,
+          css: true,
+          js: true,
+        }}
+        id='ZenifyCard3'
+      />
+      <ProjectsCard
+        title={'Zenify'}
+        subtitle={'A Particle based Spotify Player & Audio Visualizer'}
+        imgSrc={img}
+        icons={{
+          react: true,
+          html: true,
+          css: true,
+          js: true,
+        }}
+        id='ZenifyCard4'
+      />
     </ContentWrap>
   );
 }

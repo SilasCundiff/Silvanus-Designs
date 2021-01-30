@@ -56,7 +56,7 @@ const ContentWrap = styled.div`
   }
   @media screen and (max-width: 1680px) {
     width: 100vw;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.2);
     margin-top: auto;
     padding: 0;
 
@@ -74,6 +74,61 @@ const ContentWrap = styled.div`
       width: 40%;
       align-self: unset;
       margin: 20px auto;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    height: 89%;
+    align-items: flex-end;
+    padding: 1rem;
+    overflow-y: scroll;
+    .intro {
+      font-size: 10rem;
+      margin-bottom: 2rem;
+      line-height: 12rem;
+    }
+    & div {
+      width: 100%;
+    }
+    & div h2 {
+      font-size: 6rem;
+      line-height: 0.9;
+      padding-bottom: 1rem;
+    }
+    & div p {
+      font-size: 3.8rem;
+      line-height: 1.2;
+      padding-bottom: 3rem;
+    }
+    & .resumeButton {
+      width: 80%;
+      margin: 0 auto 4rem;
+    }
+  }
+  @media screen and (max-width: 375px) {
+    height: 85%;
+    align-items: flex-end;
+    padding: 1rem;
+    overflow-y: scroll;
+    .intro {
+      font-size: 6rem;
+      margin-bottom: 2rem;
+      line-height: 8rem;
+    }
+    & div {
+      width: 100%;
+    }
+    & div h2 {
+      font-size: 3.6rem;
+      line-height: 0.9;
+      padding-bottom: 1rem;
+    }
+    & div p {
+      font-size: 3rem;
+      line-height: 1.2;
+      padding-bottom: 3rem;
+    }
+    & .resumeButton {
+      width: 80%;
     }
   }
 `;

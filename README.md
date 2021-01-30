@@ -10,5 +10,6 @@ TODO:
 - add contact form functionality
 - update footer video credits
 - custom nav toggle icon
-- bugfix projects page layout moving on card collapse
+- ~~bugfix projects page layout moving on card collapse~~
 - make projects page responsive
+- make cards collapse on projects page on tablet and smaller

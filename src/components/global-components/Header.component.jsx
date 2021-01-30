@@ -187,12 +187,37 @@ const StyledHeader = styled.header`
   }
 
   @media screen and (max-width: 768px) {
-    /* padding: 40px; */
-    & .logo-container {
-      & .logo-text-sub {
+  padding-left: .5rem;
+  & .logo-container {
+    & .logo-text-main,
+    & .logo-text-sub {
+      font-size: 5rem;
+    }
+    .logo-text-s {
+      font-size: 11rem;
+    }
+  }
+  & .logo-text-sub {
         color: ${(props) => props.theme.colors.tertiary};
       }
+  .toggle {
+    top: 0;
+    right: 2%;
+    position: fixed;
     }
+  
+  }
+  @media screen and (max-width: 375px) {
+  & .logo-container {
+    & .logo-text-main,
+    & .logo-text-sub {
+      font-size: 3.2rem;
+    }
+    .logo-text-s {
+      font-size: 7rem;
+    }
+  }
+  
   }
 `;
 
@@ -202,5 +227,12 @@ const StyledLogo = styled(Logo)`
   min-width: 64px;
   width: 10rem;
   margin: 0 -1rem 0 0;
+  @media screen and (max-width: 768px) { 
+    margin: 0 -.5rem 0 0;
+    width: 9rem;
+  }
+  @media screen and (max-width: 375px) { 
+    width: 8rem;
+  }
 `;
 export default Header;
