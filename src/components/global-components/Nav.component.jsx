@@ -128,7 +128,7 @@ const StyledNav = styled.nav`
       }
     }
   }
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1279px) {
     .list-item {
       .link {
         font-size: 4.8rem;

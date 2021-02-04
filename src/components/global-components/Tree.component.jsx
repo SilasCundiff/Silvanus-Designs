@@ -98,16 +98,16 @@ const treeVariants = {
 
 };
 
-const foliageVariants = {
-  hidden: {
-    opacity: 0,
-  },
-  visible: {
-    opacity: 1,
-    transition: { duration: 2, delay: 4, ease: 'easeInOut' },
-  },
+// const foliageVariants = {
+//   hidden: {
+//     opacity: 0,
+//   },
+//   visible: {
+//     opacity: 1,
+//     transition: { duration: 2, delay: 4, ease: 'easeInOut' },
+//   },
 
-};
+// };
 
 
 
@@ -142,16 +142,16 @@ const altTreeVariants = {
     transition: { duration: 2, delay: 0, ease: 'easeInOut' },
   },
 };
-const altFoliageVariants = {
-  hidden: {
-    opacity: 0,
-  },
-  visible: {
-    opacity: 1,
-    transition: { duration: 2, delay: 1, ease: 'easeInOut' },
-  },
+// const altFoliageVariants = {
+//   hidden: {
+//     opacity: 0,
+//   },
+//   visible: {
+//     opacity: 1,
+//     transition: { duration: 2, delay: 1, ease: 'easeInOut' },
+//   },
 
-};
+// };
 
 function Tree({ classname, page }) {
   return (

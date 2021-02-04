@@ -179,15 +179,10 @@ const StyledHeader = styled.header`
     cursor: pointer;
     transition: all 0.1s;
   }
-  @media screen and (max-width: 1279px) {
-    pointer-events: all;
-    .toggle {
-      display: block;
-    }
-  }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1279px) {
   padding-left: .5rem;
+  pointer-events: all;
   & .logo-container {
     & .logo-text-main,
     & .logo-text-sub {
@@ -204,9 +199,11 @@ const StyledHeader = styled.header`
     top: 0;
     right: 2%;
     position: fixed;
+    display: block;
     }
   
   }
+
   @media screen and (max-width: 375px) {
   & .logo-container {
     & .logo-text-main,

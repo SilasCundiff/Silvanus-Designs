@@ -1,39 +1,69 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+const pulse = keyframes`
+  0% {
+    transform: scale(1)
+  }
+  50% {
+    transform: scale(1.5)
+  }
+  100% {
+    transform: scale(1)
+  }
+`;
 
 const StyledFooter = styled.footer`
   position: fixed;
-  bottom: 0;
+  bottom: -70px;
   z-index: 100;
   display: flex;
   align-items: center;
   justify-content: flex-end;
   width: 100%;
+  height: 100px;
   background-color: transparent;
-
+  background: ${(props) => props.theme.colors.primary};
+  transition: bottom 0.5s;
+  text-shadow: 3px 3px 3px rgba(20, 20, 20, 0.8);
+  &:hover {
+    bottom: 0;
+    .fa-chevron-up {
+      opacity: 0;
+    }
+  }
   * {
     color: #fafafa;
   }
+  .fa-chevron-up {
+    font-size: 2.4rem;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    animation: ${pulse} 2s infinite;
+    transition: opacity 1s;
+  }
+
   .credits,
   .creator,
   .socials-bar,
   .splitter {
-    margin: 10px;
+    margin: 1.4rem;
   }
   .credits,
   .creator,
   .splitter {
-    font-size: 0.6rem;
+    font-size: 3rem;
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
   }
   .socials-bar {
     & i {
-      font-size: 0.8rem;
+      font-size: 4rem;
       padding: 6px;
     }
   }
-  @media screen and (max-width: 1639px) {
+  /* @media screen and (max-width: 1639px) {
     align-items: center;
     justify-content: center;
     flex-direction: column;
@@ -59,14 +89,24 @@ const StyledFooter = styled.footer`
     .splitter {
       display: none;
     }
-  }
+  } */
   @media screen and (max-width: 1279px) {
     z-index: 1;
     background-color: #fafafa;
-
+    bottom: 0;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    right: 0;
+    width: 300px;
+    text-shadow: 3px 3px 6px rgba(20, 20, 20, 0.3);
     * {
       transition: color 0.5s;
       color: ${(props) => props.theme.colors.primary};
+    }
+    .fa-chevron-up {
+      display: none;
     }
     .credits,
     .creator,
@@ -81,6 +121,9 @@ const StyledFooter = styled.footer`
       & i {
         padding: 0 12px;
       }
+    }
+    .splitter {
+      display: none;
     }
   }
   @media screen and (max-width: 768px) {
@@ -100,7 +143,7 @@ const StyledFooter = styled.footer`
       }
     }
   }
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1279px) {
     .credits,
     .creator,
     .socials-bar {
@@ -141,6 +184,7 @@ const StyledFooter = styled.footer`
 function Footer() {
   return (
     <StyledFooter>
+      <i className='fas fa-chevron-up'></i>
       <div className='socials-bar'>
         <i className='fab fa-linkedin'></i>
         <i className='fas fa-envelope-square'></i>

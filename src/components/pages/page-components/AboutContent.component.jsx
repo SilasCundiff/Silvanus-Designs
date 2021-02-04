@@ -73,10 +73,10 @@ const ContentWrap = styled.div`
     & .resumeButton {
       width: 40%;
       align-self: unset;
-      margin: 20px auto;
+      margin: 2rem auto 8rem;
     }
   }
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1279px) {
     height: 89%;
     align-items: flex-end;
     padding: 1rem;
@@ -102,6 +102,17 @@ const ContentWrap = styled.div`
     & .resumeButton {
       width: 80%;
       margin: 0 auto 4rem;
+    }
+  }
+  @media screen and (max-width: 1024px) {
+    height: 89%;
+    align-items: flex-end;
+    padding: 1rem;
+    overflow-y: scroll;
+    .intro {
+      font-size: 8.6rem;
+      margin-bottom: 2rem;
+      line-height: 12rem;
     }
   }
   @media screen and (max-width: 375px) {

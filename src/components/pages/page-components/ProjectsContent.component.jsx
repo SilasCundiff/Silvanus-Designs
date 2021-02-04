@@ -34,7 +34,7 @@ const ContentWrap = styled.div`
     padding: 0;
     margin-top: 0;
   }
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1279px) {
     height: 85%;
     overflow-y: auto;
     margin-top: auto;

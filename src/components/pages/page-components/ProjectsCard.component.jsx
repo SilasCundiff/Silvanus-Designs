@@ -292,8 +292,8 @@ const Card = styled.div`
     /* position: absolute; */
     transition: translate 0.2s;
     background: radial-gradient(
-      rgba(200, 200, 200, 0.2),
-      rgba(200, 200, 200, 0.5)
+      rgba(20, 20, 20, 0.2),
+      rgba(20, 20, 20, 0.5)
     );
     border-radius: 15px;
     backdrop-filter: blur(10px);
@@ -654,7 +654,7 @@ const Card = styled.div`
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1279px) {
   width: 90vw;
   height: fit-content;
   margin: 2rem auto;

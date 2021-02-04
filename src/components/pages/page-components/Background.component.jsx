@@ -98,8 +98,9 @@ const BackgroundContainer = styled.div`
     background-color: ${(props) => props.theme.colors.secondary};
     z-index: -98;
     mix-blend-mode: hue;
+    /* background-blend-mode: darken; */
     transition: background-color 1.2s;
-    /* backdrop-filter: blur(3px); */
+    backdrop-filter: blur(5px);
   }
   video {
     z-index: -99;
