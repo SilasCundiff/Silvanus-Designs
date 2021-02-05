@@ -218,6 +218,10 @@ const Card = styled.div`
         height: 0;
  
       }
+      &  .videoTitle {
+          opacity: 0;
+        visibility: hidden;
+      }
       & .cardSkillBar,
       & .expandButton {
         opacity: 0;

@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom';
 
 const ContentWrap = styled.div`
   height: 100%;
-  width: 100%;
+  width: auto;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -33,20 +34,24 @@ const ContentWrap = styled.div`
     }
   }
   & .ctaButtons {
-    width: 100%;
+    width: auto;
     display: flex;
     align-items: center;
 
     & a {
       cursor: pointer;
-      background-color: ${(props) => props.theme.colors.primary};
+      background-color: rgba(20,20,20,.2);
+      backdrop-filter: blur(10px);
       color: ${(props) => props.theme.colors.tertiary};
       padding: 0.3rem 2rem;
       border-radius: 2rem;
       box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
-      font-size: 5rem;
+      font-size: 4.2rem;
       transition: all 1s;
       text-transform: uppercase;
+      width: auto;
+      backdrop-filter: blur(10px);
+      font-weight: 700;
     }
     & .projectsButton {
       margin: 0 6rem 0 auto;
@@ -57,17 +62,19 @@ const ContentWrap = styled.div`
   }
   & .resumeButton {
     cursor: pointer;
-    background-color: ${(props) => props.theme.colors.primary};
+    background-color: rgba(20,20,20,.2);
+    backdrop-filter: blur(10px);
     color: ${(props) => props.theme.colors.tertiary};
-    padding: 0.3rem 0.4rem;
+    padding: 0.3rem 2rem;
     border-radius: 2rem;
     margin: 4rem 0;
-    width: 25%;
+    width: auto;
     text-align: center;
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
-    font-size: 6rem;
+    font-size: 4.2rem;
     transition: all 1s;
     text-transform: uppercase;
+    font-weight: 700;
   }
   @media screen and (max-width: 1279px) {
     height: 100%;
@@ -95,7 +102,7 @@ const ContentWrap = styled.div`
       }
     }
     & .ctaButtons {
-      width: 100%;
+
       display: flex;
       align-items: center;
       margin: 0 auto;
@@ -109,7 +116,6 @@ const ContentWrap = styled.div`
       }
     }
     & .resumeButton {
-      width: 50%;
       padding: 0.3rem 2rem;
       margin: 3rem auto 0;
       font-size: 4.2rem;
@@ -158,7 +164,7 @@ function HomeContent() {
     <ContentWrap className='contentWrap'>
       <div className='title'>
         <h1>Hey, I'm Silas</h1>
-        <h2>I design & develop websites</h2>
+        <h2>making beautiful websites is my passion</h2>
       </div>
       <div className='ctaButtons'>
         <Link className='projectsButton' to='/projects'>

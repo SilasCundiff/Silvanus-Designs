@@ -42,15 +42,17 @@ const ContentWrap = styled.div`
   }
   & .resumeButton {
     cursor: pointer;
-    background-color: ${(props) => props.theme.colors.primary};
+    background-color: rgba(20,20,20,.2);
+    backdrop-filter: blur(10px);
     color: ${(props) => props.theme.colors.tertiary};
-    padding: 0.2rem 0.4rem;
+    padding: 0.2rem 2rem;
     border-radius: 2rem;
     margin: auto;
-    width: 25%;
+    width: auto;
     text-align: center;
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
     font-size: 3.8rem;
+    font-weight: 700;
     transition: all 1s;
     text-transform: uppercase;
   }
@@ -74,6 +76,7 @@ const ContentWrap = styled.div`
       width: 40%;
       align-self: unset;
       margin: 2rem auto 8rem;
+      
     }
   }
   @media screen and (max-width: 1279px) {
@@ -147,7 +150,7 @@ const ContentWrap = styled.div`
 function AboutContent() {
   return (
     <ContentWrap className='contentWrap'>
-      <h1 className='intro'>My name is Silas, and I'm</h1>
+      {/* <h1 className='intro'>My name is Silas, and I'm</h1>
       <div className='education'>
         <h2>A graduate of Southern Crescent Technical College</h2>
         <p>With a double major in programming & Web Design/Development</p>
@@ -164,10 +167,10 @@ function AboutContent() {
         <h2>An Abode suite Designer</h2>
         <p>that loves Photoshop, Illustrator, XD, Animate</p>
       </div>
-      {/* !! TODO Update link */}
+   1
       <a className='resumeButton' href='https://www.linkedin.com/jobs'>
         My Resume
-      </a>
+      </a> */}
     </ContentWrap>
   );
 }

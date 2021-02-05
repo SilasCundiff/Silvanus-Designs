@@ -70,54 +70,7 @@ function ProjectsContent() {
 
   return (
     <ContentWrap id='projectsWrap' className='contentWrap'>
-      <ProjectsCard
-        title={'Zenify'}
-        subtitle={'A Particle based Spotify Player & Audio Visualizer'}
-        imgSrc={img}
-        icons={{
-          react: true,
-          html: true,
-          css: true,
-          js: true,
-        }}
-        id='ZenifyCard'
-      />
-      <ProjectsCard
-        title={'Test'}
-        subtitle={'A Particle based Spotify Player & Audio Visualizer'}
-        imgSrc={img}
-        icons={{
-          react: true,
-          html: true,
-          css: true,
-          js: true,
-        }}
-        id='ZenifyCard2'
-      />
-      <ProjectsCard
-        title={'Zenify'}
-        subtitle={'A Particle based Spotify Player & Audio Visualizer'}
-        imgSrc={img}
-        icons={{
-          react: true,
-          html: true,
-          css: true,
-          js: true,
-        }}
-        id='ZenifyCard3'
-      />
-      <ProjectsCard
-        title={'Zenify'}
-        subtitle={'A Particle based Spotify Player & Audio Visualizer'}
-        imgSrc={img}
-        icons={{
-          react: true,
-          html: true,
-          css: true,
-          js: true,
-        }}
-        id='ZenifyCard4'
-      />
+      {/* 1 */}
     </ContentWrap>
   );
 }
