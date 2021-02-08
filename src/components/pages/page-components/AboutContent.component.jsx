@@ -25,33 +25,41 @@ const ContentWrap = styled.div`
       min-height: 45%;
       background-color: rgba(55, 55, 55, 0.4);
       backdrop-filter: blur(10px);
-      border-radius: 5px;
+      border-radius: 15px;
       color: ${(props) => props.theme.colors.tertiary};
-      & i {
-        color: ${(props) => props.theme.colors.primary};
-        position: absolute;
-        font-size: calc(12rem + 15vw);
-
-        top: 0;
-        left: 0;
-        margin: 3rem;
-        z-index: -1;
-        filter: opacity(30%);
-      }
+      overflow: hidden;
       & .card-title {
-        padding: 2rem;
+        padding: 1rem 1rem 3rem;
         min-height: 120px;
+        & i {
+          color: ${(props) => props.theme.colors.primary};
+          position: absolute;
+          font-size: 35vw;
+          top: -25%;
+          left: -15%;
+          margin: 2rem 0;
+          z-index: -1;
+          opacity: 60%;
+        }
+        /* & .fa-graduation-cap {
+          font-size: calc(2rem + 8vw);
+        } */
         & h2 {
-          font-size: calc(2rem + 2vw);
-
-          line-height: 90%;
-          font-weight: 900;
+          font-family: 'Pacifico', cursive;
+          font-size: calc(2rem + 3vw);
+          padding: 2rem 0;
+          line-height: 100%;
+          font-weight: 700;
+          text-align: center;
+          position: relative;
+          z-index: 1;
         }
       }
       & .card-paragraphs {
-        /* background-color: green; */
         min-height: 40rem;
-        padding: 0 2rem 4rem;
+        padding: 0 4rem 4rem;
+        position: relative;
+        z-index: 1;
         & p {
           font-size: calc(1.6rem + 1vw);
           width: auto;
@@ -65,11 +73,19 @@ const ContentWrap = styled.div`
       width: 100%;
       & .card {
         flex: 1 1 100%;
+        overflow: hidden;
         & .card-title {
           min-height: auto;
+          & i {
+            font-size: 50vw;
+            top: -10%;
+            left: -10%;
+          }
+          & .fa-graduation-cap {
+            font-size: 50vw;
+          }
           & h2 {
             font-size: calc(4rem + 2vw);
-
             line-height: 90%;
             font-weight: 900;
           }
@@ -113,9 +129,9 @@ function AboutContent() {
       </a> */}
       <div className='card-container'>
         <div className='card education'>
-          <i className='fas fa-graduation-cap'></i>
           <div className='card-title'>
-            <h2>Where I Learn &amp; Grow</h2>
+            <i className='fas fa-graduation-cap'></i>
+            <h2>Southern Crescent Technical College</h2>
           </div>
           <div className='card-paragraphs'>
             <p>
@@ -129,9 +145,9 @@ function AboutContent() {
           </div>
         </div>
         <div className='card focus'>
-          <i className='fas fa-crosshairs'></i>
           <div className='card-title'>
-            <h2>Full-Stack Creativity</h2>
+            <i className='fas fa-crosshairs'></i>
+            <h2>Front-end Focused, Back-end Capable</h2>
           </div>
           <div className='card-paragraphs'>
             <p>
@@ -145,9 +161,9 @@ function AboutContent() {
           </div>
         </div>
         <div className='card coding'>
-          <i className='fas fa-code'></i>
           <div className='card-title'>
-            <h2>Main Coding Languages</h2>
+            <i className='fas fa-code'></i>
+            <h2>What I code in</h2>
           </div>
           <div className='card-paragraphs'>
             <p>
@@ -162,8 +178,8 @@ function AboutContent() {
           </div>
         </div>
         <div className='card design'>
-          <i className='fas fa-pencil-ruler'></i>
           <div className='card-title'>
+            <i className='fas fa-pen-fancy'></i>
             <h2>Design Tools I Love</h2>
           </div>
           <div className='card-paragraphs'>
