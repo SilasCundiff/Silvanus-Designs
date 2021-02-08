@@ -6,7 +6,7 @@ const ContentWrap = styled.div`
   height: 100%;
   width: 100%;
   position: relative;
-  #ZenifyCard {
+  /* #ZenifyCard {
     position: absolute;
     top: 15%;
     left: 10%;
@@ -46,7 +46,7 @@ const ContentWrap = styled.div`
       top: unset;
       left: unset;
       right: unset;
-    }
+    } */
   }
   /* @media only screen and (max-width: 1280px) {
     flex-wrap: nowrap;
@@ -70,7 +70,8 @@ function ProjectsContent() {
 
   return (
     <ContentWrap id='projectsWrap' className='contentWrap'>
-      {/* 1 */}
+      
+      
     </ContentWrap>
   );
 }

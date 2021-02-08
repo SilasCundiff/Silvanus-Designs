@@ -5,144 +5,85 @@ const ContentWrap = styled.div`
   height: 100%;
   width: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 4rem;
-  .intro {
-    font-family: 'Pacifico', cursive;
-    font-size: 8rem;
-    color: ${(props) => props.theme.colors.tertiary};
-    padding: 0 0 1rem 0;
-    text-shadow: 2px 2px 1px ${(props) => props.theme.colors.primary};
-    transition: color 2s;
-    width: 100%;
-  }
-
-  & div {
-    width: 100%;
+  justify-content: center;
+  /* align-items: center; */
+  padding-top: 2rem;
+  .card-container {
+    height: auto;
+    width: 90%;
+    overflow-y: auto;
     display: flex;
-    flex-direction: column;
-    & * {
-      font-family: 'Poppins', sans-serif;
-    }
-  }
-  & div h2 {
-    font-weight: bold;
-    font-size: 6rem;
-    color: ${(props) => props.theme.colors.tertiary};
-    text-shadow: 2px 2px 1px ${(props) => props.theme.colors.primary};
-    line-height: 0.9;
-  }
-  & div p {
-    font-weight: light;
-    font-size: 3rem;
-    text-shadow: 2px 2px 1px ${(props) => props.theme.colors.primary};
-    color: ${(props) => props.theme.colors.tertiary};
-    padding-bottom: 1.8rem;
-  }
-  & .resumeButton {
-    cursor: pointer;
-    background-color: rgba(20,20,20,.2);
-    backdrop-filter: blur(10px);
-    color: ${(props) => props.theme.colors.tertiary};
-    padding: 0.2rem 2rem;
-    border-radius: 2rem;
-    margin: auto;
-    width: auto;
-    text-align: center;
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
-    font-size: 3.8rem;
-    font-weight: 700;
-    transition: all 1s;
-    text-transform: uppercase;
-  }
-  @media screen and (max-width: 1680px) {
-    width: 100vw;
-    background: rgba(0, 0, 0, 0.2);
-    margin-top: auto;
-    padding: 0;
+    flex-wrap: wrap;
+    gap: 2rem 4rem;
+    padding: 2rem 2rem 6rem;
+    margin-top: 2rem;
+    justify-content: center;
+    align-items: center;
 
-    .intro {
-      margin-top: auto;
-      width: 100%;
-      text-align: center;
-    }
+    & .card {
+      flex: 1 1 45%;
+      min-height: 45%;
+      background-color: rgba(55, 55, 55, 0.4);
+      backdrop-filter: blur(10px);
+      border-radius: 5px;
+      color: ${(props) => props.theme.colors.tertiary};
+      & i {
+        color: ${(props) => props.theme.colors.primary};
+        position: absolute;
+        font-size: calc(12rem + 15vw);
 
-    & div {
-      width: 80%;
-      padding: 0 auto;
-    }
-    & .resumeButton {
-      width: 40%;
-      align-self: unset;
-      margin: 2rem auto 8rem;
-      
+        top: 0;
+        left: 0;
+        margin: 3rem;
+        z-index: -1;
+        filter: opacity(30%);
+      }
+      & .card-title {
+        padding: 2rem;
+        min-height: 120px;
+        & h2 {
+          font-size: calc(2rem + 2vw);
+
+          line-height: 90%;
+          font-weight: 900;
+        }
+      }
+      & .card-paragraphs {
+        /* background-color: green; */
+        min-height: 40rem;
+        padding: 0 2rem 4rem;
+        & p {
+          font-size: calc(1.6rem + 1vw);
+          width: auto;
+          padding-top: 2rem;
+        }
+      }
     }
   }
   @media screen and (max-width: 1279px) {
-    height: 89%;
-    align-items: flex-end;
-    padding: 1rem;
-    overflow-y: scroll;
-    .intro {
-      font-size: 10rem;
-      margin-bottom: 2rem;
-      line-height: 12rem;
-    }
-    & div {
+    .card-container {
       width: 100%;
-    }
-    & div h2 {
-      font-size: 6rem;
-      line-height: 0.9;
-      padding-bottom: 1rem;
-    }
-    & div p {
-      font-size: 3.8rem;
-      line-height: 1.2;
-      padding-bottom: 3rem;
-    }
-    & .resumeButton {
-      width: 80%;
-      margin: 0 auto 4rem;
-    }
-  }
-  @media screen and (max-width: 1024px) {
-    height: 89%;
-    align-items: flex-end;
-    padding: 1rem;
-    overflow-y: scroll;
-    .intro {
-      font-size: 8.6rem;
-      margin-bottom: 2rem;
-      line-height: 12rem;
-    }
-  }
-  @media screen and (max-width: 375px) {
-    height: 85%;
-    align-items: flex-end;
-    padding: 1rem;
-    overflow-y: scroll;
-    .intro {
-      font-size: 6rem;
-      margin-bottom: 2rem;
-      line-height: 8rem;
-    }
-    & div {
-      width: 100%;
-    }
-    & div h2 {
-      font-size: 3.6rem;
-      line-height: 0.9;
-      padding-bottom: 1rem;
-    }
-    & div p {
-      font-size: 3rem;
-      line-height: 1.2;
-      padding-bottom: 3rem;
-    }
-    & .resumeButton {
-      width: 80%;
+      & .card {
+        flex: 1 1 100%;
+        & .card-title {
+          min-height: auto;
+          & h2 {
+            font-size: calc(4rem + 2vw);
+
+            line-height: 90%;
+            font-weight: 900;
+          }
+        }
+        & .card-paragraphs {
+          /* background-color: green; */
+          min-height: auto;
+          & p {
+            font-size: calc(2.4rem + 1vw);
+            width: auto;
+            padding-top: 2rem;
+          }
+        }
+      }
     }
   }
 `;
@@ -167,10 +108,77 @@ function AboutContent() {
         <h2>An Abode suite Designer</h2>
         <p>that loves Photoshop, Illustrator, XD, Animate</p>
       </div>
-   1
       <a className='resumeButton' href='https://www.linkedin.com/jobs'>
         My Resume
       </a> */}
+      <div className='card-container'>
+        <div className='card education'>
+          <i className='fas fa-graduation-cap'></i>
+          <div className='card-title'>
+            <h2>Where I Learn &amp; Grow</h2>
+          </div>
+          <div className='card-paragraphs'>
+            <p>
+              I graduated from Southern Crescent Technical College with a
+              dual-diploma in Programming and Web Design & Development.
+            </p>
+            <p>
+              A lot of my free time is spent taking additional online courses as
+              well.
+            </p>
+          </div>
+        </div>
+        <div className='card focus'>
+          <i className='fas fa-crosshairs'></i>
+          <div className='card-title'>
+            <h2>Full-Stack Creativity</h2>
+          </div>
+          <div className='card-paragraphs'>
+            <p>
+              My main focus has always been front-end design because that's what
+              I enjoy the most.
+            </p>
+            <p>
+              However, I'm not afraid to dive into backend systems, especially
+              when they enable amazing front-end designs
+            </p>
+          </div>
+        </div>
+        <div className='card coding'>
+          <i className='fas fa-code'></i>
+          <div className='card-title'>
+            <h2>Main Coding Languages</h2>
+          </div>
+          <div className='card-paragraphs'>
+            <p>
+              HTML, CSS, and JS are my most used, with React being my favorite
+              library. I've gained experience with Git, Node, SQL, Sass,
+              Express, Redux, Bootstrap, and Styled-components
+            </p>
+            <p>
+              I have some experience with other languages such as PHP, and Java,
+              but they aren't my focus.
+            </p>
+          </div>
+        </div>
+        <div className='card design'>
+          <i className='fas fa-pencil-ruler'></i>
+          <div className='card-title'>
+            <h2>Design Tools I Love</h2>
+          </div>
+          <div className='card-paragraphs'>
+            <p>
+              Adobe is what I use when I need to plan designs, create assets, or
+              make edits to existing assets. With Photoshop, Illustrator, and XD
+              being some of my most used tools.
+            </p>
+            <p>
+              I have some experience with Animate and Dreamweaver as well, but
+              their use is very niche.
+            </p>
+          </div>
+        </div>
+      </div>
     </ContentWrap>
   );
 }

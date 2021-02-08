@@ -22,7 +22,7 @@ a {
 }
 @media screen and (max-width: 768px) { 
     .container {
-    height: 100vh;
+    ${'' /* height: 100vh; */}
 }
 
 }
