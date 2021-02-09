@@ -53,7 +53,7 @@ const StyledFooter = styled.footer`
   .credits,
   .creator,
   .splitter {
-    font-size: 3rem;
+    font-size: calc(1.2rem + 1vw);
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
   }

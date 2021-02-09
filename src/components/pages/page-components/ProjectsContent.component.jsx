@@ -71,7 +71,7 @@ function ProjectsContent() {
   return (
     <ContentWrap id='projectsWrap' className='contentWrap'>
       
-      
+     
     </ContentWrap>
   );
 }

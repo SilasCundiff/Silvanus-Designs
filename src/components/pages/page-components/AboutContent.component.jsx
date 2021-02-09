@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-
+import Button from './Button.component';
 const ContentWrap = styled.div`
   height: 100%;
   width: 100%;
@@ -28,11 +28,13 @@ const ContentWrap = styled.div`
       border-radius: 15px;
       color: ${(props) => props.theme.colors.tertiary};
       overflow: hidden;
+      position: relative;
       & .card-title {
         padding: 1rem 1rem 3rem;
         min-height: 120px;
         & i {
           color: ${(props) => props.theme.colors.primary};
+          transition: color 1.2s;
           position: absolute;
           font-size: 35vw;
           top: -25%;
@@ -91,7 +93,6 @@ const ContentWrap = styled.div`
           }
         }
         & .card-paragraphs {
-          /* background-color: green; */
           min-height: auto;
           & p {
             font-size: calc(2.4rem + 1vw);
@@ -107,26 +108,6 @@ const ContentWrap = styled.div`
 function AboutContent() {
   return (
     <ContentWrap className='contentWrap'>
-      {/* <h1 className='intro'>My name is Silas, and I'm</h1>
-      <div className='education'>
-        <h2>A graduate of Southern Crescent Technical College</h2>
-        <p>With a double major in programming & Web Design/Development</p>
-      </div>
-      <div className='type'>
-        <h2>Front-end Focused, Back-end Capable</h2>
-        <p>with a love of projects that allow for creativity</p>
-      </div>
-      <div className='codeExperience'>
-        <h2>Most experienced in HTML, CSS, & JS</h2>
-        <p>with experience in Sass, Express, Redux, and React</p>
-      </div>
-      <div className='designExperience'>
-        <h2>An Abode suite Designer</h2>
-        <p>that loves Photoshop, Illustrator, XD, Animate</p>
-      </div>
-      <a className='resumeButton' href='https://www.linkedin.com/jobs'>
-        My Resume
-      </a> */}
       <div className='card-container'>
         <div className='card education'>
           <div className='card-title'>
@@ -194,6 +175,7 @@ function AboutContent() {
             </p>
           </div>
         </div>
+        <Button url='#' innerText='Resume' />
       </div>
     </ContentWrap>
   );
