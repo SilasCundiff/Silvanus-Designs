@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-
 function ProjectsCard({ title, subtitle, imgSrc, icons, id }) {
   const [expanded, setExpanded] = useState(false);
   const handleClick = () => {
@@ -9,120 +8,120 @@ function ProjectsCard({ title, subtitle, imgSrc, icons, id }) {
   };
   return (
     <Card id={id}>
-        <div className={`cardWrapper ${expanded ? 'expanded' : ""}  ${window.innerWidth < 1280 ? 'expanded' : ""}  `}>
-            <div className='card'>
-              <div className='cardText'>
-                <div className='cardTitleWrapper'>
-                  <h2 className='cardTitle'>{title}</h2>
-                  <p className='cardSubTitle'>{subtitle}</p>
-                </div>
-                <div className='expandedCardText'>
-                  <div className='col-1'>
-                    <div className='description'>
-                      <h3>The Rundown</h3>
-                      <p>
-                        Zenify is an app I created that makes use of Spotify's web
-                        playback and audio analysis to power a particle based
-                        audio visualizer. Many of the hardest problems that arose
-                        during development did not have solutions or information
-                        online.
-                      </p>
-                      <p>
-                        For more detailed information, feel free to drop by my
-                        GitHub.
-                      </p>
-                      <div className='expandedCardLinks'>
-                      <a href='https://github.com/SilasCundiff/zenify'>
-                        Project Github
-                      </a>
-                      <a href='zenify-server.herokuapp.com/'>Live Project</a>
-                    </div>
-                    </div>
-                    <div className='expandedSkillBar'>
-                      <h3>Main Skills:</h3>
-                      {icons.html ? <i className='fab fa-html5'></i> : null}
-                      {icons.css ? <i className='fab fa-css3-alt'></i> : null}
-                      {icons.js ? <i className='fab fa-js-square'></i> : null}
-                      {icons.react ? <i className='fab fa-react'></i> : null}
-                      {icons.bootstrap ? (
-                        <i className='fab fa-bootstrap'></i>
-                      ) : null}
-                      {icons.sass ? <i className='fab fa-sass'></i> : null}
-                      <h4>Additional Skills:</h4>
-                      <p className='additionalSkills'>
-                        Spotify Web Api, tsParticles, styled-components, redux,
-                        express
-                      </p>
-                    </div>
-                    
-                  </div>
-                  <div className='col-2'>
-                    <div className='challenges'>
-                      <h3>The Hardest Problem</h3>
-                      <p>
-                        The Spotify's Web Api information is very detailed, but it
-                        is all in JSON format. I needed a way to compare the
-                        listener's current position in the song to the analysis
-                        data for the current segment in the song.
-                      </p>
-                    </div>
-                    <div className='solution'>
-                      <h3>My Solution</h3>
-                      <p>
-                        I designed a system that uses real time to create
-                        timestamps that can be used to track playback progress.
-                        Then I use the timestamp to retrieve the current segment
-                        in the song. Then I make use of the segment's data to
-                        manipulate the particles based on the musical properties
-                        of the segment.
-                      </p>
-                    </div>
-                  </div>
-                  
-                </div>
-               
-              </div>
-              <div className='imgWrapper'>
-                <div className='imgOverlay'></div>
-                <h4 className='videoTitle'>{title} Demo Video</h4>
-                <iframe
-                  className='demoVideo'
-                  title='test'
-                  width='560'
-                  height='315'
-                  src={`${
-                    expanded || window.innerWidth < 1280 ? 'https://www.youtube.com/embed/VoUHpIFCetk' : null
-                  }`}
-                  frameBorder='0'
-                  allow='clipboard-write; encrypted-media; picture-in-picture'
-                  allowFullScreen
-                ></iframe>
-                <img src={imgSrc} alt='' className='cardImage mainImage' />
-                <img src={imgSrc} alt='' className='cardImage extraImage' />
-                <img src={imgSrc} alt='' className='cardImage extraImage' />
-                <img src={imgSrc} alt='' className='cardImage extraImage' />
-                <img src={imgSrc} alt='' className='cardImage extraImage' />
-              </div>
-              <div className='cardSkillBar'>
-                {icons.html ? <i className='fab fa-html5'></i> : null}
-                {icons.css ? <i className='fab fa-css3-alt'></i> : null}
-                {icons.js ? <i className='fab fa-js-square'></i> : null}
-                {icons.react ? <i className='fab fa-react'></i> : null}
-                {icons.bootstrap ? <i className='fab fa-bootstrap'></i> : null}
-                {icons.sass ? <i className='fab fa-sass'></i> : null}
-              </div>
-              <button onClick={handleClick} className='expandButton'>
-                <i className='fas fa-expand'></i>
-              </button>
-              <button
-                onClick={handleClick}
-                className={`closeButton ${expanded ? null : 'hidden'}`}
-              >
-                <i className='fas fa-times'></i>
-              </button>
+      <div
+        className={`cardWrapper ${expanded ? 'expanded' : ''}  ${
+          window.innerWidth < 1280 ? 'expanded' : ''
+        }  `}
+      >
+        <div className='card'>
+          <div className='cardText'>
+            <div className='cardTitleWrapper'>
+              <h2 className='cardTitle'>{title}</h2>
+              <p className='cardSubTitle'>{subtitle}</p>
             </div>
+            <div className='expandedCardText'>
+              <div className='col-1'>
+                <div className='description'>
+                  <h3>The Rundown</h3>
+                  <p>
+                    Zenify is an app I created that uses Spotify's web
+                    playback and audio analysis to power a particle based audio
+                    visualizer. Many of the hardest problems that arose during
+                    development did not have solutions or information online.
+                  </p>
+                  <p>
+                    For more detailed information, feel free to drop by my
+                    GitHub.
+                  </p>
+                  <div className='expandedCardLinks'>
+                    <a href='https://github.com/SilasCundiff/zenify'>
+                      Project Github
+                    </a>
+                    <a href='zenify-server.herokuapp.com/'>Live Project</a>
+                  </div>
+                </div>
+                <div className='expandedSkillBar'>
+                  <h3>Main Skills:</h3>
+                  {icons.html ? <i className='fab fa-html5'></i> : null}
+                  {icons.css ? <i className='fab fa-css3-alt'></i> : null}
+                  {icons.js ? <i className='fab fa-js-square'></i> : null}
+                  {icons.react ? <i className='fab fa-react'></i> : null}
+                  {icons.bootstrap ? (
+                    <i className='fab fa-bootstrap'></i>
+                  ) : null}
+                  {icons.sass ? <i className='fab fa-sass'></i> : null}
+                  <h4>Additional Skills:</h4>
+                  <p className='additionalSkills'>
+                    Spotify Web Api, tsParticles, styled-components, redux,
+                    express
+                  </p>
+                </div>
+              </div>
+              <div className='col-2'>
+                <div className='challenges'>
+                  <h3>The Hardest Problem</h3>
+                  <p>
+                    The Spotify's Web Api information is very detailed, but it
+                    is all in JSON format. I needed a way to compare the
+                    listener's current position in the song to the analysis data
+                    for the current segment in the song.
+                  </p>
+                </div>
+                <div className='solution'>
+                  <h3>My Solution</h3>
+                  <p>
+                    I designed a system that uses real time to create timestamps
+                    that can be used to track playback progress. Then I use the
+                    timestamp to retrieve the current segment in the song. Then
+                    I make use of the segment's data to manipulate the particles
+                    based on the musical properties of the segment.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className='imgWrapper'>
+            <div className='imgOverlay'></div>
+            <h4 className='videoTitle'>{title} Demo Video</h4>
+            <iframe
+              className='demoVideo'
+              title='test'
+              width='560'
+              height='315'
+              src={`${
+                expanded || window.innerWidth < 1280
+                  ? 'https://www.youtube.com/embed/VoUHpIFCetk'
+                  : null
+              }`}
+              frameBorder='0'
+              allow='clipboard-write; encrypted-media; picture-in-picture'
+              allowFullScreen
+            ></iframe>
+            <img src={imgSrc} alt='' className='cardImage mainImage' />
+            <img src={imgSrc} alt='' className='cardImage extraImage' />
+            <img src={imgSrc} alt='' className='cardImage extraImage' />
+            <img src={imgSrc} alt='' className='cardImage extraImage' />
+            <img src={imgSrc} alt='' className='cardImage extraImage' />
+          </div>
+          <div className='cardSkillBar'>
+            {icons.html ? <i className='fab fa-html5'></i> : null}
+            {icons.css ? <i className='fab fa-css3-alt'></i> : null}
+            {icons.js ? <i className='fab fa-js-square'></i> : null}
+            {icons.react ? <i className='fab fa-react'></i> : null}
+            {icons.bootstrap ? <i className='fab fa-bootstrap'></i> : null}
+            {icons.sass ? <i className='fab fa-sass'></i> : null}
+          </div>
+          <button onClick={handleClick} className='expandButton'>
+            <i className='fas fa-expand'></i>
+          </button>
+          <button
+            onClick={handleClick}
+            className={`closeButton ${expanded ? null : 'hidden'}`}
+          >
+            <i className='fas fa-times'></i>
+          </button>
         </div>
-
+      </div>
     </Card>
   );
 }
@@ -145,12 +144,12 @@ const Card = styled.div`
         width: 50%;
         height: fit-content;
         z-index: 2;
- 
+
         & .cardTitleWrapper {
           & .cardTitle,
           & .cardSubTitle {
             font-family: 'Poppins', sans-serif;
-            transition: all .2s;
+            transition: all 0.2s;
           }
           & .cardTitle {
             font-size: 6rem;
@@ -179,12 +178,13 @@ const Card = styled.div`
           }
         }
       }
-      & .col-1, .col-2 {
+      & .col-1,
+      .col-2 {
         & p {
           display: none;
         }
       }
-        & .imgOverlay {
+      & .imgOverlay {
         width: 450px;
         height: 300px;
         background-color: rgba(0, 0, 0, 0.4);
@@ -207,7 +207,7 @@ const Card = styled.div`
         visibility: visible;
         transition: opacity 0.5s 0.4s;
       }
-      & .demoVideo,  
+      & .demoVideo,
       .extraImage {
         opacity: 0;
         visibility: hidden;
@@ -216,10 +216,9 @@ const Card = styled.div`
         left: 0;
         width: 0;
         height: 0;
- 
       }
-      &  .videoTitle {
-          opacity: 0;
+      & .videoTitle {
+        opacity: 0;
         visibility: hidden;
       }
       & .cardSkillBar,
@@ -232,7 +231,7 @@ const Card = styled.div`
       & .cardSkillBar {
         font-size: 6rem;
         bottom: -1.2rem;
-        left: .6rem;
+        left: 0.6rem;
         z-index: 2;
         color: ${(props) => props.theme.colors.primary};
         & i {
@@ -245,7 +244,7 @@ const Card = styled.div`
         background-color: transparent;
         cursor: pointer;
         padding: 10px;
-      
+
         top: 50%;
         left: 50%;
         z-index: 2;
@@ -295,10 +294,7 @@ const Card = styled.div`
     z-index: 10;
     /* position: absolute; */
     transition: translate 0.2s;
-    background: radial-gradient(
-      rgba(20, 20, 20, 0.2),
-      rgba(20, 20, 20, 0.5)
-    );
+    background: radial-gradient(rgba(20, 20, 20, 0.2), rgba(20, 20, 20, 0.5));
     border-radius: 15px;
     backdrop-filter: blur(10px);
     /* transform-origin: initial; */
@@ -393,16 +389,17 @@ const Card = styled.div`
             position: relative;
             & p {
               opacity: 1;
-            visibility: visible;
-            position: relative;
+              visibility: visible;
+              position: relative;
             }
           }
         }
-        & .col-1, .col-2 {
-        & p {
-          display: block;
+        & .col-1,
+        .col-2 {
+          & p {
+            display: block;
+          }
         }
-      }
         & .col-1 {
           height: 100%;
           width: 50%;
@@ -414,9 +411,8 @@ const Card = styled.div`
           & .expandedSkillBar {
             & i {
               padding: 0 3rem 0 0;
-              font-size:3.8rem;
+              font-size: 3.8rem;
             }
-
           }
           & .expandedCardLinks {
             display: flex;
@@ -453,13 +449,13 @@ const Card = styled.div`
       justify-content: center;
       margin: 0;
       padding: 0 3rem 2rem;
-      & .demoVideo, .videoTitle, 
+      & .demoVideo,
+      .videoTitle,
       .extraImage {
         opacity: 1;
         visibility: visible;
         position: relative;
         transition: opacity 0.8s 0.4s;
-
       }
       & .mainImage {
         opacity: 0;
@@ -494,7 +490,7 @@ const Card = styled.div`
         width: 40%;
         height: auto;
         object-fit: cover;
-        margin:  20px;
+        margin: 20px;
         border-radius: 10px;
         position: relative;
       }
@@ -513,7 +509,7 @@ const Card = styled.div`
       opacity: 1;
       visibility: visible;
       position: fixed;
-      top: .5rem;
+      top: 0.5rem;
       right: 1rem;
       background: none;
       padding: 0.2rem 0.5rem;
@@ -531,308 +527,302 @@ const Card = styled.div`
   }
   @media only screen and (max-width: 1280px) {
     .expanded {
-    margin-top: 0;
-    top:50%;
-    left: 50%;
-    position: relative;
-    & .card {
-      height: fit-content;
-      width: 80vw;
-      flex-direction: column-reverse;
-      & .cardText {
-        position: relative;
-        width: 100%;
-        & .cardTitleWrapper {
-          margin-top: 0;
-
-          & .cardTitle {
-            font-size: 10vw;
-          }
-          & .cardSubTitle {
-            font-size: 3vw;
-            padding: 1rem;
-            line-height: 2rem;
-            flex: 0 1 100%;
-          }
-        }
-
-        & .expandedCardText {
-          & .description,
-          .challenges,
-          .solution,
-          .expandedSkillBar,
-          .expandedCardLinks {
-            padding: 0;
-
-            & h3 {
-              font-size: 5vw;
-              padding-bottom: 6px;
-            }
-            & h4 {
-              font-size: 4vw;
-              padding: 16px 0 0 0;
-            }
-            & p {
-              font-size: 2vw;
-            }
-          }
-          & .description {
-            & p {
-              padding-bottom: 20px;
-            }
-            & p:last-of-type {
-              padding-bottom: 20px;
-            }
-          }
-        }
-        & .expandedCardText,
-        .col-1,
-        .col-2 {
-          opacity: 1;
-          visibility: visible;
-          padding: 2vw;
-        }
-
-        & .col-1 {
-          height: 100%;
-          width: 100%;
-          flex: 1 0 100%;
-          flex-direction: row;
-          flex-wrap: wrap;
-          transition: opacity 0.4s 0.8s;
-          /* background: purple; */
-          & .expandedSkillBar {
-            margin: 0 auto 0 auto;
-            width: 50%;
-            flex: 1 1 45%;
-            & i {
-              padding: 0 1.6vw 0 0;
-              font-size: 4vw;
-            }
-
-            & .additionalSkills {
-              padding: 0;
-            }
-          }
-          & .expandedCardLinks {
-            width: 50%;
-            flex: 1 1 45%;
-            display: flex;
-            flex-direction: column;
-            & a {
-              height: fit-content;
-              width: 70%;
-              text-align: center;
-              padding:2vw;
-              font-size: 3vw;
-              margin: 20px auto;
-            }
-          }
-        }
-      }
-    }
-
-    & .imgWrapper {
-      flex-direction: row;
-      width: 100%;
-      height: 100%;
-
-      & iframe {
-        flex: 1 0 100%;
-        width: 100%;
-        height: 400px;
-        margin-bottom: 20px;
-        padding: 0 20px;
-      }
-      & img {
-        width: 40%;
+      margin-top: 0;
+      top: 50%;
+      left: 50%;
+      position: relative;
+      & .card {
         height: fit-content;
-        margin:0 10px 20px;
-      }
-    }
+        width: 80vw;
+        flex-direction: column-reverse;
+        & .cardText {
+          position: relative;
+          width: 100%;
+          & .cardTitleWrapper {
+            margin-top: 0;
 
-    & .closeButton {
-      opacity: 0;
-      visibility: hidden;
-    }
-  }
-}
-
-@media only screen and (max-width: 1279px) {
-  width: 90vw;
-  height: fit-content;
-  margin: 2rem auto;
-    .expanded {
-    margin-top: 2rem;
-    position: relative;
-    overflow-y: hidden;
-    top: unset;
-    left: unset;
-    transform: translate(0, 0);
-    & .card {
-      height: fit-content;
-      width: 100%;
-      flex-direction: column;
-      & .cardText {
-        margin-bottom: 2rem;
-
-        & .cardTitleWrapper {
-          margin-top: 0;
-          margin-bottom: 2rem;
-          flex-direction: column;
-          padding-bottom: 0;
-          & .cardTitle {
-            font-size: 10rem;
-            line-height: 7rem;
-            width: 100%;
-          }
-          & .cardSubTitle {
-            width: 100%;
-            font-size: 4.8rem;
-            padding: 0;
-            line-height: 4.4rem;
-          }
-        }
-
-        & .expandedCardText {
-          & .description,
-          .challenges,
-          .solution,
-          .expandedSkillBar,
-          .expandedCardLinks {
-            padding: 0;
-
-            & h3 {
-              font-size: 4rem;
- 
+            & .cardTitle {
+              font-size: 10vw;
             }
-            & h4 {
-              font-size: 3.6rem;
-    
-            }
-            & p {
-              font-size: 2.4rem;
-            }
-          }
-          & .description {
-            & p {
-              padding-bottom: 20px;
-            }
-            & p:last-of-type {
-              padding-bottom: 0;
-            }
-          }
-        }
-        & .expandedCardText,
-        .col-1,
-        .col-2 {
-          padding: 1rem;
-        }
-
-        & .col-1 {
-          /* background: purple; */
-          & .expandedSkillBar {
-            margin: 0 auto;
-            width: 100%;
-   
-            & i {
-              padding: 0 2rem 0 0;
-              font-size: 4rem;
-            }
-
-            & .additionalSkills {
-              padding: 0;
-            }
-          }
-          & .expandedCardLinks {
-            width:100%;
-            & a {
-              width: 100%;
+            & .cardSubTitle {
+              font-size: 3vw;
               padding: 1rem;
-              font-size: 3.2rem;
-              margin: 1.5rem auto;
+              line-height: 2rem;
+              flex: 0 1 100%;
             }
           }
+
+          & .expandedCardText {
+            & .description,
+            .challenges,
+            .solution,
+            .expandedSkillBar,
+            .expandedCardLinks {
+              padding: 0;
+
+              & h3 {
+                font-size: 5vw;
+                padding-bottom: 6px;
+              }
+              & h4 {
+                font-size: 4vw;
+                padding: 16px 0 0 0;
+              }
+              & p {
+                font-size: 2vw;
+              }
+            }
+            & .description {
+              & p {
+                padding-bottom: 20px;
+              }
+              & p:last-of-type {
+                padding-bottom: 20px;
+              }
+            }
+          }
+          & .expandedCardText,
+          .col-1,
+          .col-2 {
+            opacity: 1;
+            visibility: visible;
+            padding: 2vw;
+          }
+
+          & .col-1 {
+            height: 100%;
+            width: 100%;
+            flex: 1 0 100%;
+            flex-direction: row;
+            flex-wrap: wrap;
+            transition: opacity 0.4s 0.8s;
+            /* background: purple; */
+            & .expandedSkillBar {
+              margin: 0 auto 0 auto;
+              width: 50%;
+              flex: 1 1 45%;
+              & i {
+                padding: 0 1.6vw 0 0;
+                font-size: 4vw;
+              }
+
+              & .additionalSkills {
+                padding: 0;
+              }
+            }
+            & .expandedCardLinks {
+              width: 50%;
+              flex: 1 1 45%;
+              display: flex;
+              flex-direction: column;
+              & a {
+                height: fit-content;
+                width: 70%;
+                text-align: center;
+                padding: 2vw;
+                font-size: 3vw;
+                margin: 20px auto;
+              }
+            }
+          }
+        }
+      }
+
+      & .imgWrapper {
+        flex-direction: row;
+        width: 100%;
+        height: 100%;
+
+        & iframe {
+          flex: 1 0 100%;
+          width: 100%;
+          height: 400px;
+          margin-bottom: 20px;
+          padding: 0 20px;
+        }
+        & img {
+          width: 40%;
+          height: fit-content;
+          margin: 0 10px 20px;
+        }
+      }
+
+      & .closeButton {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 1279px) {
+    width: 90vw;
+    height: fit-content;
+    margin: 2rem auto;
+    .expanded {
+      margin-top: 2rem;
+      position: relative;
+      overflow-y: hidden;
+      top: unset;
+      left: unset;
+      transform: translate(0, 0);
+      & .card {
+        height: fit-content;
+        width: 100%;
+        flex-direction: column;
+        & .cardText {
+          margin-bottom: 2rem;
+
+          & .cardTitleWrapper {
+            margin-top: 0;
+            margin-bottom: 2rem;
+            flex-direction: column;
+            padding-bottom: 0;
+            & .cardTitle {
+              font-size: 10rem;
+              line-height: 7rem;
+              width: 100%;
+            }
+            & .cardSubTitle {
+              width: 100%;
+              font-size: 4.8rem;
+              padding: 0;
+              line-height: 4.4rem;
+            }
+          }
+
+          & .expandedCardText {
+            & .description,
+            .challenges,
+            .solution,
+            .expandedSkillBar,
+            .expandedCardLinks {
+              padding: 0;
+
+              & h3 {
+                font-size: 4rem;
+              }
+              & h4 {
+                font-size: 3.6rem;
+              }
+              & p {
+                font-size: 2.4rem;
+              }
+            }
+            & .description {
+              & p {
+                padding-bottom: 20px;
+              }
+              & p:last-of-type {
+                padding-bottom: 0;
+              }
+            }
+          }
+          & .expandedCardText,
+          .col-1,
+          .col-2 {
+            padding: 1rem;
+          }
+
+          & .col-1 {
+            /* background: purple; */
+            & .expandedSkillBar {
+              margin: 0 auto;
+              width: 100%;
+
+              & i {
+                padding: 0 2rem 0 0;
+                font-size: 4rem;
+              }
+
+              & .additionalSkills {
+                padding: 0;
+              }
+            }
+            & .expandedCardLinks {
+              width: 100%;
+              & a {
+                width: 100%;
+                padding: 1rem;
+                font-size: 3.2rem;
+                margin: 1.5rem auto;
+              }
+            }
+          }
+        }
+      }
+
+      & .imgWrapper {
+        padding: 0 1rem 1rem;
+
+        & .videoTitle {
+          font-size: 2.8rem;
+        }
+        & .demoVideo {
+          width: 100%;
+          height: 360px;
+          margin: 1rem 0;
+          padding: 0;
+        }
+        & .extraImage {
+          width: 45%;
+          height: auto;
+          object-fit: cover;
+          margin: 1rem;
+          border-radius: 10px;
+          position: relative;
         }
       }
     }
-
-    & .imgWrapper {
-      padding: 0 1rem 1rem;
-
-      & .videoTitle {
-        font-size: 2.8rem;
-      }
-      & .demoVideo {
-        width: 100%;
-        height: 360px;
-        margin: 1rem 0;
-        padding: 0;
-      }
-      & .extraImage {
-        width: 45%;
-        height: auto;
-        object-fit: cover;
-        margin:  1rem;
-        border-radius: 10px;
-        position: relative;
-      }
   }
-}
-}
-@media only screen and (max-width: 375px) {
+  @media only screen and (max-width: 375px) {
     .expanded {
-    & .card {
-      & .cardText {
-        & .cardTitleWrapper {
-          & .cardTitle {
-            font-size: 8rem;
-          }
-          & .cardSubTitle {
-            font-size: 3.8rem;
-            line-height: 4.4rem;
-          }
-        }
-
-        & .expandedCardText {
-          & .description,
-          .challenges,
-          .solution,
-          .expandedSkillBar,
-          .expandedCardLinks {
-
-            & h3 {
-              font-size: 4rem;
+      & .card {
+        & .cardText {
+          & .cardTitleWrapper {
+            & .cardTitle {
+              font-size: 8rem;
             }
-            & h4 {
-              font-size: 3.6rem;
-            }
-            & p {
-              font-size: 2rem;
+            & .cardSubTitle {
+              font-size: 3.8rem;
+              line-height: 4.4rem;
             }
           }
 
-        }  
+          & .expandedCardText {
+            & .description,
+            .challenges,
+            .solution,
+            .expandedSkillBar,
+            .expandedCardLinks {
+              & h3 {
+                font-size: 4rem;
+              }
+              & h4 {
+                font-size: 3.6rem;
+              }
+              & p {
+                font-size: 2rem;
+              }
+            }
+          }
           & .expandedCardLinks {
             & a {
               font-size: 2.8rem;
             }
-          
+          }
+        }
+      }
+
+      & .imgWrapper {
+        & .demoVideo {
+          height: 180px;
+        }
+        & .extraImage {
+          width: 100%;
         }
       }
     }
-
-    & .imgWrapper {
-
-      & .demoVideo {
-         height: 180px;
-      }
-      & .extraImage {
-        width: 100%;
-      }
   }
-}
-}
 `;
 
 export default ProjectsCard;

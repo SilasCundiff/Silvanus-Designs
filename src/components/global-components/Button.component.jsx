@@ -9,7 +9,7 @@ const StyledButton = styled.div`
   color: rgba(240, 240, 240, 1);
   backdrop-filter: blur(30px);
   text-align: center;
-  margin-top: 2rem;
+  margin-bottom: 2rem;
   flex: 0 1 25%;
   & .buttonText {
     display: block;

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Button from './Button.component';
+import Button from '../../global-components/Button.component';
 
 const ContentWrap = styled.div`
   height: 100%;

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Button from './Button.component';
+import Button from '../../global-components/Button.component';
 const ContentWrap = styled.div`
   height: 100%;
   width: 100%;
@@ -15,11 +15,11 @@ const ContentWrap = styled.div`
     display: flex;
     flex-wrap: wrap;
     gap: 2rem 4rem;
-    padding: 2rem 2rem 6rem;
-    margin-top: 2rem;
+    padding: 2rem 2rem 0;
+    margin-top: 2.4rem;
+    margin-bottom: 4rem;
     justify-content: center;
     align-items: center;
-
     & .card {
       flex: 1 1 45%;
       min-height: 45%;

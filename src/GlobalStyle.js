@@ -20,11 +20,6 @@ a {
     height: 90vh;
     display: flex;
 }
-@media screen and (max-width: 768px) { 
-    .container {
-    ${'' /* height: 100vh; */}
-}
 
-}
 `;
 export default GlobalStyle;
