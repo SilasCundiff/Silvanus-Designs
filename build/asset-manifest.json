@@ -1,0 +1,37 @@
+{
+  "files": {
+    "main.js": "/static/js/main.0cdb9a5d.chunk.js",
+    "main.js.map": "/static/js/main.0cdb9a5d.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.ab767636.js",
+    "runtime-main.js.map": "/static/js/runtime-main.ab767636.js.map",
+    "static/js/2.fbb2f7a1.chunk.js": "/static/js/2.fbb2f7a1.chunk.js",
+    "static/js/2.fbb2f7a1.chunk.js.map": "/static/js/2.fbb2f7a1.chunk.js.map",
+    "static/js/3.7d2f1950.chunk.js": "/static/js/3.7d2f1950.chunk.js",
+    "static/js/3.7d2f1950.chunk.js.map": "/static/js/3.7d2f1950.chunk.js.map",
+    "index.html": "/index.html",
+    "static/js/2.fbb2f7a1.chunk.js.LICENSE.txt": "/static/js/2.fbb2f7a1.chunk.js.LICENSE.txt",
+    "static/media/autumn-1280x720.7373140c.mp4": "/static/media/autumn-1280x720.7373140c.mp4",
+    "static/media/autumn-1920x1080.9bb1e4c2.mp4": "/static/media/autumn-1920x1080.9bb1e4c2.mp4",
+    "static/media/autumn-853x480.a013c76d.png": "/static/media/autumn-853x480.a013c76d.png",
+    "static/media/autumn.5962544d.mp4": "/static/media/autumn.5962544d.mp4",
+    "static/media/silas-cundiff.dev_.ad8d81f4.png": "/static/media/silas-cundiff.dev_.ad8d81f4.png",
+    "static/media/spring-1280x720.fb8fd5aa.mp4": "/static/media/spring-1280x720.fb8fd5aa.mp4",
+    "static/media/spring-1920x1080.84fbc707.mp4": "/static/media/spring-1920x1080.84fbc707.mp4",
+    "static/media/spring-853x480.df8fda77.png": "/static/media/spring-853x480.df8fda77.png",
+    "static/media/spring.2293f35a.mp4": "/static/media/spring.2293f35a.mp4",
+    "static/media/summer-1280x720.22d9b7f5.mp4": "/static/media/summer-1280x720.22d9b7f5.mp4",
+    "static/media/summer-1920x1080.e4390e22.mp4": "/static/media/summer-1920x1080.e4390e22.mp4",
+    "static/media/summer-853x480.b28a657e.png": "/static/media/summer-853x480.b28a657e.png",
+    "static/media/summer.b5b42121.mp4": "/static/media/summer.b5b42121.mp4",
+    "static/media/winter-1280x720.0f3fb888.mp4": "/static/media/winter-1280x720.0f3fb888.mp4",
+    "static/media/winter-1920x1080.188910ed.mp4": "/static/media/winter-1920x1080.188910ed.mp4",
+    "static/media/winter-853x480.da31edca.png": "/static/media/winter-853x480.da31edca.png",
+    "static/media/winter.f551a092.mp4": "/static/media/winter.f551a092.mp4",
+    "static/media/zenifyimgplaceholder.409d30c0.png": "/static/media/zenifyimgplaceholder.409d30c0.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ab767636.js",
+    "static/js/2.fbb2f7a1.chunk.js",
+    "static/js/main.0cdb9a5d.chunk.js"
+  ]
+}
