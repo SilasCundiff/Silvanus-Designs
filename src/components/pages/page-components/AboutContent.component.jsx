@@ -105,7 +105,7 @@ const ContentWrap = styled.div`
   }
   @media screen and (max-width: 576px) { 
 
-   & .card-container {
+  & .card-container {
       & .card {
         & .card-title {
           padding: 1rem 0;

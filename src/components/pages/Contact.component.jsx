@@ -1,7 +1,7 @@
 import React from 'react'
 import Background from './page-components/Background.component';
 import {motion} from 'framer-motion';
-
+import ContactForm from './page-components/ContactForm.component';
 const containerVariants = {
   hidden: {
     opacity: 0,
@@ -25,6 +25,7 @@ function Contact(props) {
             exit='exit'
         >
                 <Background page={props.page} />
+                <ContactForm />
         </motion.div>
     )
 }
