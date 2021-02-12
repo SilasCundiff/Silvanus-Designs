@@ -11,5 +11,5 @@ TODO:
 - update footer video credits
 - custom nav toggle icon
 - ~~bugfix projects page layout moving on card collapse~~
-- make projects page responsive
-- make cards collapse on projects page on tablet and smaller
+- ~~make projects page responsive~~
+- no longer needed ~~make cards collapse on projects page on tablet and smaller~~

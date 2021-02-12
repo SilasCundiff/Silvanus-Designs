@@ -8,7 +8,6 @@ import oldPortfolioImg from '../../../assets/silas-cundiff.dev_.png';
 const ContentWrap = styled.div`
   height: 100%;
   width: 100%;
-  /* position: relative; */
   & .container {
     height: 85vh;
     width: 90%;
@@ -34,18 +33,18 @@ const ContentWrap = styled.div`
           text-align: center;
           & h2 {
             font-family: 'Pacifico', cursive;
-            font-size: calc(2rem + 6vw);
+            font-size: calc(2rem + 5.2vw);
             line-height: 160%;
           }
           & h3 {
-            font-size: calc(1rem + 2vw);
+            font-size: calc(0.6rem + 2vw);
             font-weight: 400;
           }
         }
         & .projectHeaderImage {
           padding: 2rem;
           flex: 1 1 50%;
-          height: 400px;
+          height: 20vw;
           width: auto;
           object-fit: cover;
         }
@@ -58,7 +57,7 @@ const ContentWrap = styled.div`
         flex-wrap: wrap;
         overflow: hidden;
         max-height: 0;
-        transition: max-height 1s;
+        transition: max-height 0.2s;
         transform-origin: initial;
         & .col-1,
         .col-2,
@@ -75,6 +74,9 @@ const ContentWrap = styled.div`
           }
         }
         & .col-4 {
+          & p {
+            margin-bottom: 1rem;
+          }
           & .icons {
             font-size: calc(2rem + 3vw);
             width: 100%;
@@ -95,7 +97,7 @@ const ContentWrap = styled.div`
 
       & .expander {
         font-size: calc(2rem + 2vw);
-        margin: 0 auto 6rem;
+        margin: 0 auto 2rem;
         border-bottom: solid white 3px;
         width: 90%;
         cursor: pointer;
@@ -103,15 +105,151 @@ const ContentWrap = styled.div`
         padding-bottom: 1rem;
         & .rotate {
           transform: rotate(180deg);
-          transition: transform 0.5s;
+          transition: transform 0.2s;
         }
         & i {
           margin-left: 50%;
-          transition: transform 0.5s;
+          transition: transform 0.2s;
         }
         & span {
           padding-left: 2rem;
           font-size: calc(0.2rem + 1.5vw);
+        }
+      }
+      & .fixedExpander {
+        display: none;
+      }
+    }
+  }
+  @media screen and (max-width: 1024px) {
+    & .container {
+      & .project {
+        & .projectHeader {
+          & .projectHeaderText {
+            & h2 {
+              font-size: calc(2rem + 10vw);
+            }
+            & h3 {
+              font-size: calc(1rem + 4vw);
+            }
+          }
+          & .projectHeaderImage {
+            height: 40vw;
+          }
+        }
+
+        & .projectBody {
+          & .col-1,
+          .col-2,
+          .col-3,
+          .col-4 {
+            flex: 1 1 50%;
+            padding: 2rem;
+            & h3 {
+              font-size: calc(1rem + 2vw);
+            }
+            & p {
+              font-size: calc(0.6rem + 1.6vw);
+              text-align: left;
+            }
+          }
+          & .col-4 {
+            & .icons {
+              font-size: calc(2rem + 4vw);
+            }
+          }
+        }
+        & .expanded {
+          max-height: 100vh;
+          transition: max-height 1s;
+          transform-origin: initial;
+        }
+
+        & .expander {
+          font-size: calc(2rem + 3vw);
+          & span {
+            padding-left: 2rem;
+            font-size: calc(1rem + 2vw);
+          }
+        }
+        & .fixedExpander {
+          display: inline;
+          position: fixed;
+          top: 1rem;
+          right: 2rem;
+          font-size: calc(2rem + 4vw);
+          line-height: 10%;
+          & i {
+            transition: transform 0.2s;
+          }
+          & .rotate {
+            transform: rotate(180deg);
+            transition: transform 0.2s;
+          }
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 576px) {
+    & .container {
+      width: 100%;
+      padding: 0.5rem;
+      & .project {
+        & .projectHeader {
+          & .projectHeaderText {
+            & h2 {
+              font-size: calc(2rem + 16vw);
+            }
+            & h3 {
+              font-size: calc(1rem + 4.8vw);
+            }
+          }
+          & .projectHeaderImage {
+            height: auto;
+            width: 90vw;
+            padding: 0;
+          }
+        }
+
+        & .projectBody {
+          & .col-1,
+          .col-2,
+          .col-3,
+          .col-4 {
+            flex: 1 1 50%;
+            padding: 1rem;
+            & h3 {
+              font-size: calc(1rem + 4vw);
+            }
+            & p {
+              font-size: calc(1rem + 2vw);
+              text-align: left;
+            }
+          }
+          & .col-3,
+          .col-4 {
+            flex: 1 1 100%;
+          }
+          & .col-4 {
+            & .icons {
+              font-size: calc(2rem + 4vw);
+            }
+          }
+        }
+        & .expanded {
+          max-height: 200vh;
+          transition: max-height 1s;
+          transform-origin: initial;
+        }
+
+        & .expander {
+          padding-top: 1rem;
+          margin-bottom: 0.5rem;
+          font-size: calc(2rem + 3vw);
+          & span {
+            padding-left: 1rem;
+            font-size: calc(1rem + 2vw);
+          }
         }
       }
     }
@@ -217,6 +355,16 @@ function ProjectsContent() {
             <span>
               show {expandedProjects.zenify.expanded ? 'less' : 'more'}
             </span>
+          </div>
+          <div
+            className='fixedExpander'
+            onClick={() => handleClick(expandedProjects.zenify, 'zenify')}
+          >
+            <i
+              className={`fas fa-chevron-down ${
+                expandedProjects.zenify.expanded ? 'rotate' : null
+              }`}
+            ></i>
           </div>
         </div>
 

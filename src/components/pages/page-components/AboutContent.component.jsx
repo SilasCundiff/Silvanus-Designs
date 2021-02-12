@@ -103,6 +103,36 @@ const ContentWrap = styled.div`
       }
     }
   }
+  @media screen and (max-width: 576px) { 
+
+   & .card-container {
+      & .card {
+        & .card-title {
+          padding: 1rem 0;
+          & i {
+            font-size: 70vw;
+            top: -10%;
+            left: -10%;
+          }
+          & .fa-graduation-cap {
+            font-size: 75vw;
+            top: -15%;
+          }
+          & h2 {
+            font-size: calc(2rem + 4vw);
+            padding-bottom: 0;
+          }
+        }
+        & .card-paragraphs {
+          padding:0 1rem 1rem;
+            margin: 0;
+          & p {
+            font-size: calc(1rem + 2.4vw);
+          }
+        }
+      }
+    }
+  }
 `;
 
 function AboutContent() {

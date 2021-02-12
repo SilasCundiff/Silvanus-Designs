@@ -204,7 +204,7 @@ const StyledHeader = styled.header`
   
   }
 
-  @media screen and (max-width: 375px) {
+  @media screen and (max-width: 414px) {
   & .logo-container {
     & .logo-text-main,
     & .logo-text-sub {
