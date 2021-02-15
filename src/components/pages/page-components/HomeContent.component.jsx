@@ -9,7 +9,7 @@ const ContentWrap = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
+  
   & .title {
     width: 100%;
     display: flex;

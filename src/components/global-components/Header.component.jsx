@@ -205,7 +205,9 @@ const StyledHeader = styled.header`
   }
 
   @media screen and (max-width: 414px) {
+    padding-top: 1rem;
   & .logo-container {
+    
     & .logo-text-main,
     & .logo-text-sub {
       font-size: 3.2rem;

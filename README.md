@@ -13,3 +13,4 @@ TODO:
 - ~~bugfix projects page layout moving on card collapse~~
 - ~~make projects page responsive~~
 - no longer needed ~~make cards collapse on projects page on tablet and smaller~~
+- create relevant social media accounts to provide additional ways to contact me
