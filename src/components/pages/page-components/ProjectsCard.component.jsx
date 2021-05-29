@@ -24,8 +24,8 @@ function ProjectsCard({ title, subtitle, imgSrc, icons, id }) {
                 <div className='description'>
                   <h3>The Rundown</h3>
                   <p>
-                    Zenify is an app I created that uses Spotify's web
-                    playback and audio analysis to power a particle based audio
+                    Zenify is an app I created that uses Spotify's web playback
+                    and audio analysis to power a particle based audio
                     visualizer. Many of the hardest problems that arose during
                     development did not have solutions or information online.
                   </p>

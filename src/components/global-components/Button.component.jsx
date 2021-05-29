@@ -3,33 +3,41 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const StyledButton = styled.div`
-  background: rgba(20, 20, 20, 0.3);
-  border-radius: 30px;
-  border: none;
+  background: ${(props) =>
+    props.customStyle
+      ? props.customStyle.backgroundColor
+      : 'rgba(25, 25, 25, 0.3)'};
+
   color: rgba(240, 240, 240, 1);
+  border: solid rgba(240, 240, 240, 1) 4px;
   backdrop-filter: blur(30px);
   text-align: center;
   margin-bottom: 2rem;
-  flex: 0 1 25%;
+  max-width: 49%;
+
   & .buttonText {
-    display: block;
-    border-radius: 30px;
-    font-family: 'Poppins', sans-serif !important;
     font-size: calc(1rem + 2vw);
+    font-weight: bold;
     text-transform: uppercase;
-    padding: 0.5rem 4rem;
+    padding: 2rem 3rem;
   }
 `;
 
-function Button({ url, to, innerText }) {
+function Button({ url, to, innerText, customStyle, customClass }) {
   return (
-    <StyledButton>
+    <StyledButton customStyle={customStyle}>
       {to ? (
-        <Link className='buttonText' to={to}>
+        <Link
+          className={`buttonText ${customClass ? customClass : ''}`}
+          to={to}
+        >
           {innerText}
         </Link>
       ) : (
-        <a className='buttonText' href={url}>
+        <a
+          className={`buttonText ${customClass ? customClass : ''}`}
+          href={url}
+        >
           {innerText}
         </a>
       )}

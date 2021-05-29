@@ -10,43 +10,77 @@ const ContentWrap = styled.div`
   width: 100%;
   & .container {
     height: 85vh;
-    width: 90%;
+    width: 60%;
     margin: 4rem auto;
     padding: 2rem;
     overflow-y: auto;
-    flex-direction: column;
 
+    flex-direction: column;
+    scrollbar-width: thin;
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: ${(props) => props.theme.colors.tertiary};
+    }
+    ::-webkit-scrollbar-thumb {
+      background: ${(props) => props.theme.colors.secondary};
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: ${(props) => props.theme.colors.primary};
+    }
     & .project {
       border-radius: 5px;
       margin-bottom: 2rem;
       width: 100%;
       height: fit-content;
-      background-color: rgba(20, 20, 20, 0.6);
-      backdrop-filter: blur(15px);
+      backdrop-filter: blur(5px);
       color: ${(props) => props.theme.colors.tertiary};
+      background: rgba(20, 20, 20, 0.6);
       & .projectHeader {
         width: 100%;
-        display: flex;
-        flex-wrap: wrap;
+
         & .projectHeaderText {
-          flex: 1 1 50%;
-          text-align: center;
+          display: flex;
+          justify-content: space-evenly;
+          align-items: baseline;
+          background: rgba(20, 20, 20, 0.8);
+          position: absolute;
+          width: 100%;
+          top: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          border-radius: 5px;
+          padding-bottom: 2rem;
+          transition: all 0.5s;
+
           & h2 {
             font-family: 'Pacifico', cursive;
-            font-size: calc(2rem + 5.2vw);
-            line-height: 160%;
+            font-size: calc(2rem + 3.2vw);
+            /* line-height: 160%; */
           }
           & h3 {
-            font-size: calc(0.6rem + 2vw);
+            font-size: calc(0.6rem + 1.6vw);
             font-weight: 400;
           }
         }
+
         & .projectHeaderImage {
-          padding: 2rem;
-          flex: 1 1 50%;
-          height: 20vw;
-          width: auto;
-          object-fit: cover;
+          max-width: 100%;
+          margin: 0 auto;
+          border-radius: 6px;
+          transition: all 0.5s;
+        }
+      }
+      & .expandedHeader {
+        & .projectHeaderText {
+          background: transparent;
+        }
+        & .projectHeaderImage {
+          max-width: 100%;
+          margin: 15% auto 0;
+          border-radius: 5px;
         }
       }
       & .silascundiffHeader {
@@ -57,8 +91,9 @@ const ContentWrap = styled.div`
         flex-wrap: wrap;
         overflow: hidden;
         max-height: 0;
-        transition: max-height 0.2s;
+
         transform-origin: initial;
+        transition: max-height 1s;
         & .col-1,
         .col-2,
         .col-3,
@@ -74,8 +109,15 @@ const ContentWrap = styled.div`
           }
         }
         & .col-4 {
+          & .linksContainer {
+            display: flex;
+            justify-content: space-evenly;
+            & .projectsButton {
+              font-size: 3rem;
+            }
+          }
           & p {
-            margin-bottom: 1rem;
+            margin-bottom: 4rem;
           }
           & .icons {
             font-size: calc(2rem + 3vw);
@@ -83,6 +125,7 @@ const ContentWrap = styled.div`
             display: flex;
             flex-wrap: wrap;
             align-items: baseline;
+            margin: 4rem 0;
             & i {
               margin: 0 auto;
             }
@@ -90,25 +133,32 @@ const ContentWrap = styled.div`
         }
       }
       & .expanded {
-        max-height: 100vh;
-        transition: max-height 1s;
+        max-height: 200vh;
         transform-origin: initial;
       }
 
       & .expander {
         font-size: calc(2rem + 2vw);
-        margin: 0 auto 2rem;
-        border-bottom: solid white 3px;
-        width: 90%;
+        /* margin: 0 auto; */
+        width: 100%;
         cursor: pointer;
         line-height: 10%;
-        padding-bottom: 1rem;
+        padding: 1rem 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(20, 20, 20, 0.8);
+        border-radius: 0 0 5px;
         & .rotate {
           transform: rotate(180deg);
           transition: transform 0.2s;
         }
         & i {
-          margin-left: 50%;
+          /* margin-left: 50%; */
           transition: transform 0.2s;
         }
         & span {
@@ -123,18 +173,19 @@ const ContentWrap = styled.div`
   }
   @media screen and (max-width: 1024px) {
     & .container {
+      width: 80%;
       & .project {
         & .projectHeader {
           & .projectHeaderText {
             & h2 {
-              font-size: calc(2rem + 10vw);
+              /* font-size: calc(2rem + 2vw); */
             }
             & h3 {
-              font-size: calc(1rem + 4vw);
+              /* font-size: calc(1rem + 4vw); */
             }
           }
           & .projectHeaderImage {
-            height: 40vw;
+            /* height: 40vw; */
           }
         }
 
@@ -157,6 +208,16 @@ const ContentWrap = styled.div`
             & .icons {
               font-size: calc(2rem + 4vw);
             }
+          }
+        }
+        & .expandedHeader {
+          & .projectHeaderText {
+            background: transparent;
+          }
+          & .projectHeaderImage {
+            max-width: 100%;
+            margin: 35% auto 0;
+            border-radius: 5px;
           }
         }
         & .expanded {
@@ -193,21 +254,23 @@ const ContentWrap = styled.div`
   @media screen and (max-width: 576px) {
     & .container {
       width: 100%;
-      padding: 0.5rem;
+      padding: 0.6rem;
       & .project {
         & .projectHeader {
           & .projectHeaderText {
+            flex-direction: column;
+            align-items: center;
             & h2 {
-              font-size: calc(2rem + 16vw);
+              font-size: calc(2rem + 6vw);
             }
             & h3 {
-              font-size: calc(1rem + 4.8vw);
+              font-size: calc(1rem + 2vw);
             }
           }
           & .projectHeaderImage {
-            height: auto;
-            width: 90vw;
-            padding: 0;
+            /* height: auto; */
+            /* width: 90vw; */
+            /* padding: 0; */
           }
         }
 
@@ -231,20 +294,26 @@ const ContentWrap = styled.div`
             flex: 1 1 100%;
           }
           & .col-4 {
+            & .linksContainer {
+              display: flex;
+              justify-content: space-around;
+            }
             & .icons {
               font-size: calc(2rem + 4vw);
+              margin: 1rem 0;
             }
           }
         }
         & .expanded {
           max-height: 200vh;
+
           transition: max-height 1s;
           transform-origin: initial;
         }
 
         & .expander {
           padding-top: 1rem;
-          margin-bottom: 0.5rem;
+          margin-bottom: 0;
           font-size: calc(2rem + 3vw);
           & span {
             padding-left: 1rem;
@@ -278,9 +347,16 @@ function ProjectsContent() {
   return (
     <ContentWrap id='projectsWrap' className='contentWrap'>
       <div className='container'>
-        <div className='project'>
-          <div className='projectHeader'>
-            <div className='projectHeaderText'>
+        <div
+          className={`project`}
+          onClick={() => handleClick(expandedProjects.zenify, 'zenify')}
+        >
+          <div
+            className={`projectHeader ${
+              expandedProjects.zenify.expanded ? 'expandedHeader' : ''
+            }`}
+          >
+            <div className={`projectHeaderText`}>
               <h2>Zenify</h2>
               <h3>A particle audio visualizer</h3>
             </div>
@@ -292,7 +368,7 @@ function ProjectsContent() {
           </div>
           <div
             className={`projectBody ${
-              expandedProjects.zenify.expanded ? 'expanded' : null
+              expandedProjects.zenify.expanded ? 'expanded' : ''
             }`}
           >
             <div className='col-1'>
@@ -328,10 +404,12 @@ function ProjectsContent() {
                 <Button
                   url='https://github.com/SilasCundiff/zenify'
                   innerText='Github'
+                  customClass='projectsButton'
                 />
                 <Button
                   url='https://zenify-server.herokuapp.com/'
                   innerText='Demo'
+                  customClass='projectsButton'
                 />
               </div>
               <div className='icons'>
@@ -368,11 +446,20 @@ function ProjectsContent() {
           </div>
         </div>
 
-        <div className='project'>
-          <div className='projectHeader silascundiffHeader'>
+        <div
+          className='project'
+          onClick={() =>
+            handleClick(expandedProjects.silascundiff, 'silascundiff')
+          }
+        >
+          <div
+            className={`projectHeader silascundiffHeader ${
+              expandedProjects.silascundiff.expanded ? 'expandedHeader' : ''
+            }`}
+          >
             <div className='projectHeaderText'>
               <h2>Old Portfolio</h2>
-              <h3>An older version of my portfolio</h3>
+              <h3>Artistic but not scalable</h3>
             </div>
             <img
               src={oldPortfolioImg}
@@ -428,10 +515,12 @@ function ProjectsContent() {
                 <Button
                   url='https://github.com/SilasCundiff/zenify'
                   innerText='update'
+                  customClass='projectsButton'
                 />
                 <Button
                   url='https://zenify-server.herokuapp.com/'
                   innerText='update'
+                  customClass='projectsButton'
                 />
               </div>
               <div className='icons'>

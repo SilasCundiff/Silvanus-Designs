@@ -136,9 +136,13 @@ const StyledNav = styled.nav`
     }
   }
   @media screen and (max-width: 375px) {
+    top: -5%;
+    .nav-list {
+      margin-top: 0;
+    }
     .list-item {
       .link {
-        font-size: 4rem;
+        font-size: 3.4rem;
       }
     }
   }

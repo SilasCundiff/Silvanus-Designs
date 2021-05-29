@@ -6,37 +6,37 @@ const ContentWrap = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
-  /* align-items: center; */
-  padding-top: 2rem;
   .card-container {
-    height: auto;
-    width: 90%;
+    width: 80%;
+    height: 80%;
     overflow-y: auto;
     display: flex;
     flex-wrap: wrap;
-    gap: 2rem 4rem;
-    padding: 2rem 2rem 0;
-    margin-top: 2.4rem;
-    margin-bottom: 4rem;
+    margin: auto;
+    gap: 4rem 2rem;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     & .card {
       flex: 1 1 45%;
-      min-height: 45%;
-      background-color: rgba(55, 55, 55, 0.4);
-      backdrop-filter: blur(10px);
-      border-radius: 15px;
+      /* min-height: 40%; */
+
+      /* background-color: black; */
+      /* backdrop-filter: blur(10px); */
+      /* border-radius: 5px; */
       color: ${(props) => props.theme.colors.tertiary};
       overflow: hidden;
       position: relative;
+      display: flex;
+      flex-direction: column;
+
       & .card-title {
-        padding: 1rem 1rem 3rem;
-        min-height: 120px;
+        padding: 1rem;
+        width: 100%;
         & i {
           color: ${(props) => props.theme.colors.primary};
           transition: color 1.2s;
           position: absolute;
-          font-size: 35vw;
+          /* font-size: 20vw; */
           top: -25%;
           left: -15%;
           margin: 2rem 0;
@@ -48,38 +48,43 @@ const ContentWrap = styled.div`
         } */
         & h2 {
           font-family: 'Pacifico', cursive;
-          font-size: calc(2rem + 3vw);
-          padding: 2rem 0;
+          font-size: calc(0.8rem + 1.2vw);
+          padding: 1rem 0;
           line-height: 100%;
           font-weight: 700;
-          text-align: center;
+          text-align: left;
           position: relative;
           z-index: 1;
         }
       }
       & .card-paragraphs {
-        min-height: 40rem;
-        padding: 0 4rem 4rem;
+        padding: 0 2rem;
+        margin-bottom: auto;
+        margin-top: 1rem;
         position: relative;
         z-index: 1;
+        font-weight: lighter;
         & p {
-          font-size: calc(1.6rem + 1vw);
-          width: auto;
-          padding-top: 2rem;
+          font-size: calc(0.8rem + 0.7vw);
         }
       }
     }
   }
+
   @media screen and (max-width: 1279px) {
     .card-container {
       width: 100%;
+      margin: 4rem 0;
+      height: 90%;
       & .card {
         flex: 1 1 100%;
         overflow: hidden;
+        padding: 2rem;
         & .card-title {
           min-height: auto;
           & i {
             font-size: 50vw;
+            display: none;
             top: -10%;
             left: -10%;
           }
@@ -103,9 +108,11 @@ const ContentWrap = styled.div`
       }
     }
   }
-  @media screen and (max-width: 576px) { 
-
-  & .card-container {
+  & .aboutButton {
+    font-size: 2.6rem;
+  }
+  @media screen and (max-width: 576px) {
+    & .card-container {
       & .card {
         & .card-title {
           padding: 1rem 0;
@@ -124,8 +131,8 @@ const ContentWrap = styled.div`
           }
         }
         & .card-paragraphs {
-          padding:0 1rem 1rem;
-            margin: 0;
+          padding: 0 1rem 1rem;
+          margin: 0;
           & p {
             font-size: calc(1rem + 2.4vw);
           }
@@ -149,10 +156,6 @@ function AboutContent() {
               I graduated from Southern Crescent Technical College with a
               dual-diploma in Programming and Web Design & Development.
             </p>
-            <p>
-              A lot of my free time is spent taking additional online courses as
-              well.
-            </p>
           </div>
         </div>
         <div className='card focus'>
@@ -163,11 +166,8 @@ function AboutContent() {
           <div className='card-paragraphs'>
             <p>
               My main focus has always been front-end design because that's what
-              I enjoy the most.
-            </p>
-            <p>
-              However, I'm not afraid to dive into backend systems, especially
-              when they enable amazing front-end designs
+              I enjoy the most. However, I'm not afraid to dive into backend
+              systems, especially when they enable amazing front-end designs.
             </p>
           </div>
         </div>
@@ -180,11 +180,7 @@ function AboutContent() {
             <p>
               HTML, CSS, and JS are my most used, with React being my favorite
               library. I've gained experience with Git, Node, SQL, Sass,
-              Express, Redux, Bootstrap, and Styled-components
-            </p>
-            <p>
-              I have some experience with other languages such as PHP, and Java,
-              but they aren't my focus.
+              Express, Redux, Bootstrap, and Styled-components.
             </p>
           </div>
         </div>
@@ -199,13 +195,9 @@ function AboutContent() {
               make edits to existing assets. With Photoshop, Illustrator, and XD
               being some of my most used tools.
             </p>
-            <p>
-              I have some experience with Animate and Dreamweaver as well, but
-              their use is very niche.
-            </p>
           </div>
         </div>
-        <Button url='#' innerText='Resume' />
+        <Button url='#' innerText='Resume' customClass={`aboutButton`} />
       </div>
     </ContentWrap>
   );

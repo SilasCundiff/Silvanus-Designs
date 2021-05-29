@@ -7,16 +7,16 @@ const Form = styled.form`
   height: 80%;
   margin: auto auto auto 0;
   padding: 1rem;
-  background-color: rgba(20, 20, 20, 0.6);
+  background-color: rgba(20, 20, 20, 0.2);
   backdrop-filter: blur(15px);
-  border-radius: 15px;
+  border-radius: 5px;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(
+  /* background: linear-gradient(
     220deg,
     rgba(108, 167, 245, 0.6),
     rgba(67, 92, 175, 0.8)
-  );
+  ); */
 
   & h2 {
     font-family: 'Pacifico', cursive;
@@ -95,11 +95,10 @@ const Form = styled.form`
     }
   }
 
-  @media screen and (max-width: 768px) {
-    flex: 1 0 20%;
-    /* max-width: 90%; */
+  @media screen and (max-width: 1024px) {
+    flex: 1 1 100%;
     min-width: 90%;
-    margin: 4rem auto;
+    margin: 4rem auto 8rem;
   }
 `;
 
@@ -136,7 +135,7 @@ export default function ContactForm(props) {
       <h2>Send me a message!</h2>
       <div className='fieldsContainer'>
         <div className='contactField nameField'>
-          <label for='name'>Name:</label>
+          <label htmlFor='name'>Name:</label>
           <input
             type='text'
             name='name'
@@ -145,7 +144,7 @@ export default function ContactForm(props) {
           />
         </div>
         <div className='contactField emailField'>
-          <label for='email'>Email:</label>
+          <label htmlFor='email'>Email:</label>
           <input
             type='email'
             name='email'
@@ -154,7 +153,7 @@ export default function ContactForm(props) {
           />
         </div>
         <div className='contactField messageField'>
-          <label for='message'>Message:</label>
+          <label htmlFor='message'>Message:</label>
           <textarea
             name='message'
             value={formData.message}

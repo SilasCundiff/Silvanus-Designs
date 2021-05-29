@@ -100,7 +100,7 @@ const StyledFooter = styled.footer`
     flex-direction: column;
     right: 0;
     width: 300px;
-    text-shadow: 3px 3px 6px rgba(20, 20, 20, 0.3);
+    text-shadow: none;
     * {
       transition: color 0.5s;
       color: ${(props) => props.theme.colors.primary};
