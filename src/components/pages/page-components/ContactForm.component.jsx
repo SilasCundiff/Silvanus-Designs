@@ -17,7 +17,7 @@ const Form = styled.form`
     rgba(108, 167, 245, 0.6),
     rgba(67, 92, 175, 0.8)
   ); */
-
+  position: relative;
   & h2 {
     font-family: 'Pacifico', cursive;
     font-size: calc(1rem + 4vw);

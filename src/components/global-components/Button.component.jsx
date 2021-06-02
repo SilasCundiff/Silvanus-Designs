@@ -13,13 +13,12 @@ const StyledButton = styled.div`
   backdrop-filter: blur(30px);
   text-align: center;
   margin-bottom: 2rem;
-  max-width: 49%;
-
+  /* max-width: 49%; */
+  padding: 2% 6%;
   & .buttonText {
     font-size: calc(1rem + 2vw);
     font-weight: bold;
     text-transform: uppercase;
-    padding: 2rem 3rem;
   }
 `;
 

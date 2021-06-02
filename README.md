@@ -7,10 +7,8 @@ TODO:
 - make mobile nav close when link is clicked
 - add resume link
 - make all buttons function
-- add contact form functionality
+- ~~add contact form functionality~~
 - update footer video credits
-- custom nav toggle icon
 - ~~bugfix projects page layout moving on card collapse~~
 - ~~make projects page responsive~~
-- no longer needed ~~make cards collapse on projects page on tablet and smaller~~
-- create relevant social media accounts to provide additional ways to contact me
+- optimize background layer content

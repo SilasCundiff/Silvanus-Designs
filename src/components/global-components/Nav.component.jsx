@@ -135,6 +135,13 @@ const StyledNav = styled.nav`
       }
     }
   }
+  @media screen and (max-width: 600px) {
+    .list-item {
+      .link {
+        font-size: calc(1rem + 7vw);
+      }
+    }
+  }
   @media screen and (max-width: 375px) {
     top: -5%;
     .nav-list {

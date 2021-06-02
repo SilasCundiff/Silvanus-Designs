@@ -11,7 +11,7 @@ const ContentWrap = styled.div`
   & .container {
     height: 85vh;
     width: 60%;
-    margin: 4rem auto;
+    margin: 8rem auto;
     padding: 2rem;
     overflow-y: auto;
 
@@ -36,6 +36,7 @@ const ContentWrap = styled.div`
       width: 100%;
       height: fit-content;
       backdrop-filter: blur(5px);
+      position: relative;
       color: ${(props) => props.theme.colors.tertiary};
       background: rgba(20, 20, 20, 0.6);
       & .projectHeader {
@@ -46,11 +47,11 @@ const ContentWrap = styled.div`
           justify-content: space-evenly;
           align-items: baseline;
           background: rgba(20, 20, 20, 0.8);
-          position: absolute;
+          /* position: absolute; */
           width: 100%;
-          top: 0;
+          /* top: 0;
           left: 50%;
-          transform: translateX(-50%);
+          transform: translateX(-50%); */
           border-radius: 5px;
           padding-bottom: 2rem;
           transition: all 0.5s;
@@ -73,16 +74,7 @@ const ContentWrap = styled.div`
           transition: all 0.5s;
         }
       }
-      & .expandedHeader {
-        & .projectHeaderText {
-          background: transparent;
-        }
-        & .projectHeaderImage {
-          max-width: 100%;
-          margin: 15% auto 0;
-          border-radius: 5px;
-        }
-      }
+
       & .silascundiffHeader {
         flex-direction: row-reverse;
       }
@@ -113,7 +105,7 @@ const ContentWrap = styled.div`
             display: flex;
             justify-content: space-evenly;
             & .projectsButton {
-              font-size: 3rem;
+              font-size: calc(1rem + 1.4vw);
             }
           }
           & p {
@@ -139,7 +131,6 @@ const ContentWrap = styled.div`
 
       & .expander {
         font-size: calc(2rem + 2vw);
-        /* margin: 0 auto; */
         width: 100%;
         cursor: pointer;
         line-height: 10%;
@@ -158,7 +149,6 @@ const ContentWrap = styled.div`
           transition: transform 0.2s;
         }
         & i {
-          /* margin-left: 50%; */
           transition: transform 0.2s;
         }
         & span {
@@ -210,16 +200,6 @@ const ContentWrap = styled.div`
             }
           }
         }
-        & .expandedHeader {
-          & .projectHeaderText {
-            background: transparent;
-          }
-          & .projectHeaderImage {
-            max-width: 100%;
-            margin: 35% auto 0;
-            border-radius: 5px;
-          }
-        }
         & .expanded {
           max-height: 100vh;
           transition: max-height 1s;
@@ -235,11 +215,12 @@ const ContentWrap = styled.div`
         }
         & .fixedExpander {
           display: inline;
-          position: fixed;
+          position: absolute;
           top: 1rem;
           right: 2rem;
           font-size: calc(2rem + 4vw);
           line-height: 10%;
+          z-index: 50;
           & i {
             transition: transform 0.2s;
           }
@@ -255,6 +236,7 @@ const ContentWrap = styled.div`
     & .container {
       width: 100%;
       padding: 0.6rem;
+      margin: 10rem auto;
       & .project {
         & .projectHeader {
           & .projectHeaderText {
@@ -421,7 +403,7 @@ function ProjectsContent() {
               </div>
             </div>
           </div>
-          <div
+          {/* <div
             className='expander'
             onClick={() => handleClick(expandedProjects.zenify, 'zenify')}
           >
@@ -433,11 +415,8 @@ function ProjectsContent() {
             <span>
               show {expandedProjects.zenify.expanded ? 'less' : 'more'}
             </span>
-          </div>
-          <div
-            className='fixedExpander'
-            onClick={() => handleClick(expandedProjects.zenify, 'zenify')}
-          >
+          </div> */}
+          <div className='fixedExpander'>
             <i
               className={`fas fa-chevron-down ${
                 expandedProjects.zenify.expanded ? 'rotate' : null
@@ -531,7 +510,7 @@ function ProjectsContent() {
               </div>
             </div>
           </div>
-          <div
+          {/* <div
             className='expander'
             onClick={() =>
               handleClick(expandedProjects.silascundiff, 'silascundiff')
@@ -545,6 +524,13 @@ function ProjectsContent() {
             <span>
               show {expandedProjects.silascundiff.expanded ? 'less' : 'more'}
             </span>
+          </div> */}
+          <div className='fixedExpander'>
+            <i
+              className={`fas fa-chevron-down ${
+                expandedProjects.silascundiff.expanded ? 'rotate' : null
+              }`}
+            ></i>
           </div>
         </div>
       </div>

@@ -2,26 +2,18 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 // Videos & posters
-//home
-import homeUltraHD from '../../../assets/1440/spring.mp4';
-import homeFullHD from '../../../assets/1440/spring.mp4';
-import homeHD from '../../../assets/1440/spring.mp4';
-import homePoster from '../../../assets/1440/spring.mp4';
-//about
-import aboutUltraHD from '../../../assets/1440/summer2.mp4';
-import aboutFullHD from '../../../assets/1440/summer2.mp4';
-import aboutHD from '../../../assets/1440/summer2.mp4';
-import aboutPoster from '../../../assets/1440/summer2.mp4';
-//projects
-import projectsUltraHD from '../../../assets/1440/autumn2.mp4';
-import projectsFullHD from '../../../assets/1440/autumn2.mp4';
-import projectsHD from '../../../assets/1440/autumn2.mp4';
-import projectsPoster from '../../../assets/1440/autumn2.mp4';
-//contact
-import contactUltraHD from '../../../assets/1440/winter2.mp4';
-import contactFullHD from '../../../assets/1440/winter2.mp4';
-import contactHD from '../../../assets/1440/winter2.mp4';
-import contactPoster from '../../../assets/1440/winter2.mp4';
+
+import homePoster from '../../../assets/new/spring3.jpg';
+import homeFull from '../../../assets/new/spring.mp4';
+
+import aboutPoster from '../../../assets/new/summer3.jpg';
+import aboutFull from '../../../assets/new/summer.mp4';
+
+import projectsPoster from '../../../assets/new/autumn3.jpg';
+import projectsFull from '../../../assets/new/autumn.mp4';
+
+import contactPoster from '../../../assets/new/winter3.jpg';
+import contactFull from '../../../assets/new/winter.mp4';
 
 function Background({ page }) {
   const [video, setVideo] = useState(null);
@@ -31,28 +23,21 @@ function Background({ page }) {
   useEffect(() => {
     const getVideoSrc = (width) => {
       if (video === 'home') {
-        if (width >= 1440) setVideoSrc(homeUltraHD);
-        if (width <= 1440 && width >= 1080) setVideoSrc(homeFullHD);
-        if (width <= 1080 && width >= 481) setVideoSrc(homeHD);
-        if (width <= 480) setVideoSrc(homeHD);
+        // if (width >= 1440) setVideoSrc(homeUltraHD);
+        if (width >= 1080) setVideoSrc(homeFull);
+        if (width <= 480) setVideoSrc(null);
       }
       if (video === 'about') {
-        if (width >= 1080) setVideoSrc(aboutUltraHD);
-        if (width <= 1080 && width >= 720) setVideoSrc(aboutFullHD);
-        if (width <= 720 && width >= 480) setVideoSrc(aboutHD);
-        if (width <= 480) setVideoSrc(aboutHD);
+        if (width >= 1080) setVideoSrc(aboutFull);
+        if (width <= 480) setVideoSrc(null);
       }
       if (video === 'projects') {
-        if (width >= 1080) setVideoSrc(projectsUltraHD);
-        if (width <= 1080 && width >= 720) setVideoSrc(projectsFullHD);
-        if (width <= 720 && width >= 480) setVideoSrc(projectsHD);
-        if (width <= 480) setVideoSrc(projectsHD);
+        if (width >= 1080) setVideoSrc(projectsFull);
+        if (width <= 480) setVideoSrc(null);
       }
       if (video === 'contact') {
-        if (width >= 1080) setVideoSrc(contactUltraHD);
-        if (width <= 1080 && width >= 720) setVideoSrc(contactFullHD);
-        if (width <= 720 && width >= 480) setVideoSrc(contactHD);
-        if (width <= 480) setVideoSrc(contactHD);
+        if (width >= 1080) setVideoSrc(contactFull);
+        if (width <= 480) setVideoSrc(null);
       }
     };
     // const { page } = props;
@@ -113,6 +98,9 @@ const BackgroundContainer = styled.div`
     left: 0;
     bottom: 0;
     right: 0;
+    @media screen and (max-width: 600px) {
+      display: none;
+    }
   }
   .fallback {
     z-index: -100;

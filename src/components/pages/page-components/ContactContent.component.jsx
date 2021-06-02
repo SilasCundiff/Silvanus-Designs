@@ -9,8 +9,9 @@ const ContentWrap = styled.div`
   display: flex;
   align-content: center;
   gap: 2rem 2rem;
-  /* flex-wrap: wrap; */
+  margin: auto auto 2rem;
   overflow-y: auto;
+  overflow-x: hidden;
   & .contactInfoContainer {
     flex: 1 1 25%;
     max-width: 30%;
@@ -22,6 +23,7 @@ const ContentWrap = styled.div`
     backdrop-filter: blur(15px);
     color: ${(props) => props.theme.colors.tertiary};
     display: flex;
+    position: relative;
     & h2 {
       font-family: 'Pacifico', cursive;
       font-size: calc(0.6rem + 3vw);
@@ -101,7 +103,7 @@ const ContentWrap = styled.div`
     }
   }
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 768px) {
     /* background-color: red; */
     flex-direction: column;
 
@@ -132,13 +134,12 @@ const ContentWrap = styled.div`
     }
   }
   @media screen and (max-width: 600px) {
-    /* background-color: red; */
+    height: 85%;
     flex-direction: column;
-
     & .contactInfoContainer {
       min-width: 90%;
       min-height: 60%;
-      margin: 4vh auto auto;
+
       & h2 {
         font-size: calc(0.6rem + 6vw);
         left: 5%;

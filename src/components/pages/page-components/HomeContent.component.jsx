@@ -23,7 +23,7 @@ const ContentWrap = styled.div`
       & h1 {
         font-size: calc(2rem + 5vw);
         color: ${(props) => props.theme.colors.tertiary};
-        /* padding: 0; */
+
         text-shadow: 5px 5px 8px rgba(0, 0, 0, 0.6);
         transition: color 2s;
       }
@@ -60,7 +60,7 @@ const ContentWrap = styled.div`
     & .title {
       & .titleText {
         & h1 {
-          font-size: calc(2rem + 9vw);
+          font-size: calc(2rem + 8vw);
           margin-bottom: 2rem;
         }
         & .subtext {
