@@ -9,7 +9,7 @@ const ContentWrap = styled.div`
   height: 100%;
   width: 100%;
   & .container {
-    height: 85vh;
+    height: 75vh;
     width: 60%;
     margin: 8rem auto;
     padding: 2rem;
@@ -33,7 +33,8 @@ const ContentWrap = styled.div`
     & .project {
       border-radius: 5px;
       margin-bottom: 2rem;
-      width: 100%;
+      margin: 0 auto 2rem;
+      width: 80%;
       height: fit-content;
       backdrop-filter: blur(5px);
       position: relative;
@@ -47,22 +48,17 @@ const ContentWrap = styled.div`
           justify-content: space-evenly;
           align-items: baseline;
           background: rgba(20, 20, 20, 0.8);
-          /* position: absolute; */
           width: 100%;
-          /* top: 0;
-          left: 50%;
-          transform: translateX(-50%); */
           border-radius: 5px;
           padding-bottom: 2rem;
           transition: all 0.5s;
 
           & h2 {
             font-family: 'Pacifico', cursive;
-            font-size: calc(2rem + 3.2vw);
-            /* line-height: 160%; */
+            font-size: calc(2rem + 2.8vw);
           }
           & h3 {
-            font-size: calc(0.6rem + 1.6vw);
+            font-size: calc(0.6rem + 1.4vw);
             font-weight: 400;
           }
         }
@@ -236,7 +232,7 @@ const ContentWrap = styled.div`
     & .container {
       width: 100%;
       padding: 0.6rem;
-      margin: 10rem auto;
+      margin: 4rem auto 0;
       & .project {
         & .projectHeader {
           & .projectHeaderText {

@@ -11,7 +11,9 @@ function App() {
   const [navOpen, setNavOpen] = useState(false);
   const [currentTheme, setCurrentTheme] = useState(homeTheme);
   const handleClick = () => {
-    setNavOpen(!navOpen);
+    if (window.innerWidth <= 1279) {
+      setNavOpen(!navOpen);
+    }
   };
   useEffect(() => {
     const handlePageChange = () => {
@@ -44,8 +46,8 @@ function App() {
       <StyledApp>
         <Header navOpen={navOpen} onClick={handleClick} />
         <Main navOpen={navOpen} page={page} />
-        <Nav />
-        <Footer />
+        <Nav handleClick={handleClick} />
+        <Footer page={page} />
       </StyledApp>
     </ThemeProvider>
   );

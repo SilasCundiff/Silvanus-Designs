@@ -3,8 +3,6 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
-//TODO make mobile nav close when link is clicked
-
 const listVariants = {
   hidden: {
     opacity: 0,
@@ -34,7 +32,7 @@ const listItemVariants = {
   },
 };
 
-function Nav() {
+function Nav({ handleClick }) {
   return (
     <StyledNav>
       <motion.ul
@@ -44,22 +42,30 @@ function Nav() {
         initial='hidden'
       >
         <motion.li className='list-item' variants={listItemVariants}>
-          <Link className='link home-link' to='/'>
+          <Link className='link home-link' to='/' onClick={handleClick}>
             Home
           </Link>
         </motion.li>
         <motion.li className='list-item' variants={listItemVariants}>
-          <Link className='link about-link' to='/about'>
+          <Link className='link about-link' to='/about' onClick={handleClick}>
             About
           </Link>
         </motion.li>
         <motion.li className='list-item' variants={listItemVariants}>
-          <Link className='link projects-link' to='/projects'>
+          <Link
+            className='link projects-link'
+            to='/projects'
+            onClick={handleClick}
+          >
             Projects
           </Link>
         </motion.li>
         <motion.li className='list-item' variants={listItemVariants}>
-          <Link className='link contact-link' to='/contact'>
+          <Link
+            className='link contact-link'
+            to='/contact'
+            onClick={handleClick}
+          >
             Contact
           </Link>
         </motion.li>

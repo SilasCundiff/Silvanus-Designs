@@ -98,7 +98,7 @@ function Header(props) {
               ilvanus
             </motion.span>
             <motion.span
-              className='logo-text-sub'
+              className={`logo-text-sub ${props.navOpen ? 'open' : 'closed'}`}
               variants={textLogoSubVariants}
               initial='hidden'
               animate='visible'
@@ -106,9 +106,8 @@ function Header(props) {
               Designs
             </motion.span>
           </div>
-          
         </div>
-        </Link>
+      </Link>
       <div
         className={`toggle ${props.navOpen ? 'active' : null}`}
         onClick={handleClick}
@@ -129,7 +128,7 @@ const StyledHeader = styled.header`
     align-items: center;
     color: ${(props) => props.theme.colors.primary};
     transition: color 1.5s;
-    
+
     & .logo-text-container {
       display: flex;
       flex-direction: column;
@@ -181,42 +180,45 @@ const StyledHeader = styled.header`
   }
 
   @media screen and (max-width: 1279px) {
-  padding-left: .5rem;
-  pointer-events: all;
-  & .logo-container {
-    & .logo-text-main,
-    & .logo-text-sub {
-      font-size: 5rem;
-    }
-    .logo-text-s {
-      font-size: 11rem;
-    }
-  }
-  & .logo-text-sub {
-        color: ${(props) => props.theme.colors.tertiary};
+    padding-left: 0.5rem;
+    pointer-events: all;
+    & .logo-container {
+      & .logo-text-main,
+      & .logo-text-sub {
+        font-size: 5rem;
       }
-  .toggle {
-    top: 0;
-    right: 2%;
-    position: fixed;
-    display: block;
+      .logo-text-s {
+        font-size: 11rem;
+      }
     }
-  
+    & .logo-text-sub {
+      transition: color 0.5s;
+    }
+    & .open {
+      color: ${(props) => props.theme.colors.tertiary} !important;
+    }
+    & .closed {
+      color: ${(props) => props.theme.colors.primary} !important;
+    }
+    .toggle {
+      top: 0;
+      right: 2%;
+      position: fixed;
+      display: block;
+    }
   }
 
   @media screen and (max-width: 414px) {
     padding-top: 1rem;
-  & .logo-container {
-    
-    & .logo-text-main,
-    & .logo-text-sub {
-      font-size: 3.2rem;
+    & .logo-container {
+      & .logo-text-main,
+      & .logo-text-sub {
+        font-size: 3.2rem;
+      }
+      .logo-text-s {
+        font-size: 7rem;
+      }
     }
-    .logo-text-s {
-      font-size: 7rem;
-    }
-  }
-  
   }
 `;
 
@@ -226,11 +228,11 @@ const StyledLogo = styled(Logo)`
   min-width: 64px;
   width: 10rem;
   margin: 0 -1rem 0 0;
-  @media screen and (max-width: 768px) { 
-    margin: 0 -.5rem 0 0;
+  @media screen and (max-width: 768px) {
+    margin: 0 -0.5rem 0 0;
     width: 9rem;
   }
-  @media screen and (max-width: 375px) { 
+  @media screen and (max-width: 375px) {
     width: 8rem;
   }
 `;

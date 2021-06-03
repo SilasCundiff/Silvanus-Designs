@@ -204,25 +204,34 @@ function ContactContent() {
         <h2>Ways to contact me</h2>
         <div className='wrapper'>
           <div className='contact-item'>
-            <a href='/' className='contact-item-link'>
+            <a href='tel:678-557-2630' className='contact-item-link'>
               <i className='fas fas fa-phone-square'></i>
               <span>678-557-2630</span>
             </a>
           </div>
           <div className='contact-item'>
-            <a href='/' className='contact-item-link'>
+            <a
+              href='mailto:silvanusdesigns@gmail.com'
+              className='contact-item-link'
+            >
               <i className='fas fa-envelope-square'></i>
               <span>SilvanusDesigns@gmail.com</span>
             </a>
           </div>
           <div className='contact-item'>
-            <a href='/' className='contact-item-link'>
+            <a
+              href='https://github.com/SilasCundiff'
+              className='contact-item-link'
+            >
               <i className='fab fa-github-square'></i>
               <span>github.com/SilasCundiff</span>
             </a>
           </div>
           <div className='contact-item'>
-            <a href='/' className='contact-item-link'>
+            <a
+              href='https://www.linkedin.com/in/silascundiff/'
+              className='contact-item-link'
+            >
               <i className='fab fa-linkedin'></i>
               <span>linkedin.com/in/silascundiff/</span>
             </a>
