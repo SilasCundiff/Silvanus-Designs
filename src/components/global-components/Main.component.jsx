@@ -32,12 +32,11 @@ function Main(props) {
 }
 const StyledMain = styled.main`
   position: absolute;
+  top: 0;
   right: 0;
   width: 100%;
-  min-height: 100%;
+  height: 100%;
   padding: 0;
-  display: flex;
-  align-items: flex-end;
   background: ${(props) => props.theme.colors.black};
   z-index: 2;
   transition: right 0.5s;

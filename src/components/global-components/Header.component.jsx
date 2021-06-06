@@ -119,10 +119,12 @@ const StyledHeader = styled.header`
   position: absolute;
   top: 0;
   left: 0;
+  min-height: 15vh;
   width: fit-content;
   padding-left: 2rem;
   padding-top: 2.6rem;
   z-index: 3;
+  /* background-color: blue; */
   & .logo-container {
     display: flex;
     align-items: center;

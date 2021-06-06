@@ -12,3 +12,6 @@ TODO:
 - ~~bugfix projects page layout moving on card collapse~~
 - ~~make projects page responsive~~
 - optimize background layer content
+- add new project
+- make sure project buttons/demos work
+- investigate form message box text

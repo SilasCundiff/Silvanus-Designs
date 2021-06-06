@@ -4,12 +4,8 @@ import ContactForm from './ContactForm.component';
 import Button from '../../global-components/Button.component';
 const ContentWrap = styled.div`
   width: 100%;
-  height: 95%;
-  align-self: flex-end;
   display: flex;
-  align-content: center;
-  gap: 2rem 2rem;
-  margin: auto auto 2rem;
+
   overflow-y: auto;
   overflow-x: hidden;
   & .contactInfoContainer {
@@ -134,7 +130,7 @@ const ContentWrap = styled.div`
     }
   }
   @media screen and (max-width: 600px) {
-    height: 85%;
+    /* height: 85%; */
     flex-direction: column;
     & .contactInfoContainer {
       min-width: 90%;
