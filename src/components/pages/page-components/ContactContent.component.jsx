@@ -5,7 +5,6 @@ import Button from '../../global-components/Button.component';
 const ContentWrap = styled.div`
   width: 100%;
   display: flex;
-
   overflow-y: auto;
   overflow-x: hidden;
   & .contactInfoContainer {
