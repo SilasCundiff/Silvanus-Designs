@@ -101,6 +101,7 @@ const StyledNav = styled.nav`
       font-size: 3.4rem;
       color: ${(props) => props.theme.colors.tertiary};
       transition: all 0.5s;
+      font-weight: 300;
     }
     .home-link:hover {
       color: #ffa3ba;

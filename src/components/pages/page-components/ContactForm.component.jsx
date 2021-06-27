@@ -2,36 +2,23 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 
 const Form = styled.form`
-  flex: 1 1 40%;
-  max-width: 50%;
-  height: 80%;
-  margin: auto auto auto 0;
-  padding: 1rem;
-  background-color: rgba(20, 20, 20, 0.2);
+  margin: auto;
+  padding: 3rem;
+  background-color: rgba(20, 20, 20, 0.4);
   backdrop-filter: blur(15px);
   border-radius: 5px;
   display: flex;
   flex-direction: column;
-  /* background: linear-gradient(
-    220deg,
-    rgba(108, 167, 245, 0.6),
-    rgba(67, 92, 175, 0.8)
-  ); */
   position: relative;
   & h2 {
     font-family: 'Pacifico', cursive;
-    font-size: calc(1rem + 4vw);
+    font-size: calc(1rem + 2vw);
     color: ${(props) => props.theme.colors.tertiary};
     text-shadow: 3px 3px 10px rgba(20, 20, 20, 0.6);
-    position: absolute;
-    line-height: 20%;
-    top: -3%;
-    left: 5%;
-    width: 300%;
   }
   & .fieldsContainer {
-    height: 90%;
-    width: 90%;
+    /* height: 90%; */
+    /* width: 90%; */
     margin: auto;
     display: flex;
     flex-direction: column;
@@ -43,14 +30,14 @@ const Form = styled.form`
       flex-direction: column;
       margin-bottom: 2rem;
       & label {
-        font-size: calc(1rem + 2vw);
+        font-size: calc(1rem + 1vw);
         font-weight: 700;
         color: ${(props) => props.theme.colors.tertiary};
         margin-bottom: 0.5rem;
         text-shadow: 3px 3px 10px rgba(20, 20, 20, 0.4);
       }
       & input {
-        font-size: calc(1rem + 1.4vw);
+        font-size: calc(1rem + 0.8vw);
         color: ${(props) => props.theme.colors.primary};
         border: none;
       }
@@ -72,6 +59,7 @@ const Form = styled.form`
   }
 
   & .contactButton {
+    margin: 0 auto;
     & button {
       background: ${(props) => props.theme.colors.secondary};
       border-radius: 5px;
@@ -82,11 +70,12 @@ const Form = styled.form`
       text-transform: uppercase;
       padding: 0.5rem 4rem;
       cursor: pointer;
-      width: 50%;
-      position: absolute;
+
+      /* width: 50%; */
+      /* position: absolute;
       bottom: -3%;
-      left: 50%;
-      transform: translateX(-50%);
+      left: 50%; */
+      /* transform: translateX(-50%); */
       box-shadow: 5px 5px 10px rgba(20, 20, 20, 0.8);
       &:active,
       &:focus {

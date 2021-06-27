@@ -19,16 +19,12 @@ const ContentWrap = styled.div`
     color: ${(props) => props.theme.colors.tertiary};
     display: flex;
     position: relative;
+    flex-direction: column;
     & h2 {
       font-family: 'Pacifico', cursive;
       font-size: calc(0.6rem + 3vw);
       color: ${(props) => props.theme.colors.secondary};
       text-shadow: 3px 3px 10px rgba(20, 20, 20, 0.6);
-      position: absolute;
-      line-height: 20%;
-      top: -3%;
-      left: 0%;
-      width: 300%;
     }
 
     & .wrapper {

@@ -69,6 +69,11 @@ const ContentWrap = styled.div`
         }
       }
     }
+    & .aboutButton {
+      font-size: 2.6rem;
+      flex-grow: 0;
+      padding: 1rem 1rem;
+    }
   }
 
   @media screen and (max-width: 1279px) {
@@ -110,6 +115,7 @@ const ContentWrap = styled.div`
   }
   & .aboutButton {
     font-size: 2.6rem;
+    flex-grow: 0;
   }
   @media screen and (max-width: 576px) {
     & .card-container {

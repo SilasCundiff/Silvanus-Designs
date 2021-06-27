@@ -33,6 +33,7 @@ const ContentWrap = styled.div`
         color: ${(props) => props.theme.colors.primary};
         transition: color 2s;
         padding-bottom: 2rem;
+        font-weight: 200;
       }
     }
   }
