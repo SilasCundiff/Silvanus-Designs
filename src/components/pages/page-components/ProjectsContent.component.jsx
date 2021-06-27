@@ -591,8 +591,8 @@ function ProjectsContent() {
                   customClass='projectsButton'
                 />
                 <Button
-                  url='/'
-                  innerText='No Demo Yet'
+                  url='https://silascundiff.github.io/sakura-blossoms/'
+                  innerText='Demo site'
                   customClass='projectsButton'
                 />
               </div>
