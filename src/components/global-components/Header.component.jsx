@@ -124,7 +124,6 @@ const StyledHeader = styled.header`
   padding-left: 2rem;
   padding-top: 2.6rem;
   z-index: 3;
-  /* background-color: blue; */
   & .logo-container {
     display: flex;
     align-items: center;
@@ -215,10 +214,10 @@ const StyledHeader = styled.header`
     & .logo-container {
       & .logo-text-main,
       & .logo-text-sub {
-        font-size: 3.2rem;
+        font-size: 2.8rem;
       }
       .logo-text-s {
-        font-size: 7rem;
+        font-size: 6.1rem;
       }
     }
   }
@@ -235,7 +234,7 @@ const StyledLogo = styled(Logo)`
     width: 9rem;
   }
   @media screen and (max-width: 375px) {
-    width: 8rem;
+    width: 3rem;
   }
 `;
 export default Header;
