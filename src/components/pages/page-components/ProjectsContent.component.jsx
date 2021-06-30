@@ -508,7 +508,7 @@ function ProjectsContent() {
                   customClass='projectsButton'
                 />
                 <Button
-                  url='https://silas-cundiff.dev'
+                  url='https://silascundiff.github.io/Portfolio/'
                   innerText='Site Link'
                   customClass='projectsButton'
                 />
