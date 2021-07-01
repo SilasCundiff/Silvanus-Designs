@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import Button from '../../global-components/Button.component';
 const ContentWrap = styled.div`
   height: 100%;
   width: 100%;
@@ -18,11 +17,6 @@ const ContentWrap = styled.div`
     align-items: flex-start;
     & .card {
       flex: 1 1 45%;
-      /* min-height: 40%; */
-
-      /* background-color: black; */
-      /* backdrop-filter: blur(10px); */
-      /* border-radius: 5px; */
       color: ${(props) => props.theme.colors.tertiary};
       overflow: hidden;
       position: relative;
@@ -203,7 +197,6 @@ function AboutContent() {
             </p>
           </div>
         </div>
-        <Button url='#' innerText='Resume' customClass={`aboutButton`} />
       </div>
     </ContentWrap>
   );

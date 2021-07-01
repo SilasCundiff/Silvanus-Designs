@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import ContactForm from './ContactForm.component';
-import Button from '../../global-components/Button.component';
+import pdf from '../../../assets/silasCundiff-resume.pdf';
 const ContentWrap = styled.div`
   width: 100%;
   display: flex;
@@ -51,11 +51,12 @@ const ContentWrap = styled.div`
         }
       }
       & .resume-link {
-        & * {
-          margin: auto;
-
-          width: 100%;
+        /* width: fit-content; */
+        margin: 0 auto;
+        & a {
           font-size: 2.4rem;
+          color: ${(props) => props.theme.colors.secondary};
+          padding: 1rem;
         }
       }
     }
@@ -228,11 +229,7 @@ function ContactContent() {
             </a>
           </div>
           <div className='contact-item resume-link'>
-            <Button
-              url='#'
-              innerText='Resume'
-              customClass='resume-link-button'
-            />
+            <a href={pdf}>RESUME</a>
           </div>
         </div>
       </div>
